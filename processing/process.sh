@@ -37,6 +37,13 @@ do
 		index=${v3%.dot}
 		python $source/CADPGen.py $folderN $index $source
 
+		lnt.open test_${index}_none.lnt generator test_${index}_none.bcg
+		lnt.open test_${index}_obe.lnt generator test_${index}_obe.bcg
+		lnt.open test_${index}_hsa.lnt generator test_${index}_hsa.bcg
+		lnt.open test_${index}_lobe.lnt generator test_${index}_lobe.bcg
+		lnt.open test_${index}_hsa_obe.lnt generator test_${index}_hsa_obe.bcg
+		svl test_${index}.svl
+
 		count=`expr $count + 1`
 	fi
 	done 		
