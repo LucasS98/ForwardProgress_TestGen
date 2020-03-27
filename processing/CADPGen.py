@@ -141,9 +141,9 @@ def createCADPString(filename):
                     nInst +=1
 
             if exchVal == "":
-                output += "                            ATOMIC_EXCH_BRANCH(MemLoc(" + str(int(chkLoc)+1) + "), " + str(chkVal) + ", false, 0, " + str(nInst) + ", true)"
+                output += "                            ATOMIC_EXCH_BRANCH(MemLoc(" + str(int(chkLoc)+1) + "), " + str(chkVal) + ", false, 0, " + str(nInst + 1) + ", true)"
             else:
-                output += "                            ATOMIC_EXCH_BRANCH(MemLoc(" + str(int(chkLoc)+1) + "), " + str(chkVal) + ", true, " + exchVal + ", " + str(nInst) + ", true)"
+                output += "                            ATOMIC_EXCH_BRANCH(MemLoc(" + str(int(chkLoc)+1) + "), " + str(chkVal) + ", true, " + exchVal + ", " + str(nInst + 1) + ", true)"
 
             if (nextPo != ""):
                 output += ","
