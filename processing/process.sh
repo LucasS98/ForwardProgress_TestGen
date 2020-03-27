@@ -42,7 +42,8 @@ do
 		(cd $folderN/checker && lnt.open test_${index}_hsa.lnt generator test_${index}_hsa.bcg)
 		(cd $folderN/checker && lnt.open test_${index}_lobe.lnt generator test_${index}_lobe.bcg)
 		(cd $folderN/checker && lnt.open test_${index}_hsa_obe.lnt generator test_${index}_hsa_obe.bcg)
-		(cd $folderN/checker && svl test_${index}.svl)
+		(cd $folderN/checker && svl test_${index}.svl > labels_${index}.txt)
+		python $source/ProcessLabels.py $folderN/checker/labels_${index}.txt
 
 		count=`expr $count + 1`
 	fi
