@@ -143,7 +143,7 @@ def InstructionString(path, operationName):
                         if (exchVal == ""):
                             return thd + '\nIf Mem['+ chkLoc + '] ==' + chkVal + ': \n goto END)'
                         else:
-                            return thd + '\nIf CAS(Mem['+ chkLoc + '], ' + chkVal + ',' + exchVal + '): \n goto END'
+                            return thd + '\nIf Exch(Mem['+ chkLoc + '], '+ exchVal + ') == ' + chkVal + ':\n goto END'
                     else:
                         nInst = 0
                         while operations[nInst] != branch_target:
@@ -151,7 +151,7 @@ def InstructionString(path, operationName):
                         if (exchVal == ""):
                             return thd + '\nIf Mem['+ chkLoc + '] ==' + chkVal + ': \n goto ' + str(nInst)
                         else:
-                            return thd + '\nIf CAS(Mem['+ chkLoc + '], ' + chkVal + ',' + exchVal + '): \n goto '+ str(nInst)
+                            return thd + '\nIf Exch(Mem['+ chkLoc + '], '+ exchVal + ') == ' + chkVal + ':\n goto '+ str(nInst)
 
             operation = nextPo
     return ""

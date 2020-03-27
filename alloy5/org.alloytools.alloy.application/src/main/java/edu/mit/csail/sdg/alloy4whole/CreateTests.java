@@ -125,6 +125,8 @@ public final class CreateTests {
                         // Delete files/folders
                         File file3 = new File("../"+ args[0]+"/"+i +"/" + i + ".xml");
                         File file4 = new File("../"+ args[0]+"/"+i +"/" + i + ".txt");
+                        File file5 = new File("../"+ args[0]+"/"+i +"/" + i + "_simple.txt");
+                        file5.delete();
                         file4.delete();
                         file3.delete();
                         file2.delete();

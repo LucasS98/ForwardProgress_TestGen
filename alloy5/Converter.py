@@ -13,6 +13,7 @@ def convertXML(filename, folderName):
     except:
         pass
     f = open("../"+ folderName+ "/" + filename + "/"+ filename + ".txt", "w")
+    f2 = open("../"+ folderName+ "/" + filename + "/"+ filename + "_simple.txt", "w")
   
     # Check the number of threads in XML
     nItems = 0
@@ -40,6 +41,7 @@ def convertXML(filename, folderName):
 
         threadName = nextThreadName
         f.write('THREAD' + str(i) + '\n')
+        f2.write('THREAD' + str(i) + '\n')
 
         # Find next thread
         for field in root.findall('./instance/field'):
@@ -139,27 +141,35 @@ def convertXML(filename, folderName):
 
             if (nextPo == branch_target): 
                 f.write('atomic_store('+ chkLoc + ',' + exchVal + ')\n')
+                f2.write('Mem['+ chkLoc + '] = ' + exchVal + '\n')
             else:
                 if branch_target == "":
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ', END)\n')
+                        f2.write('If Mem['+ chkLoc + '] == ' + chkVal + ': goto END\n')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ', END)\n')
+                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ") == " + chkVal + ": goto END\n')
                 else:
                     nInst = 0
                     while operations[nInst] != branch_target:
                         nInst +=1
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ','+ str(nInst) +  ')\n')
+                        f2.write('If Mem['+ chkLoc + '] == ' + chkVal + ": goto " + str(nInst) +'\n')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ','+ str(nInst) +  ')\n')
+                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ") == " + chkVal + ": goto " + str(nInst) +'\n')
 
             operation = nextPo
             f.write('\n')
+            f2.write('\n')
 
         f.write('\n')
+        f2.write('\n')
 
     f.close()
+    f2.close()
 
 
 def main(argv):
