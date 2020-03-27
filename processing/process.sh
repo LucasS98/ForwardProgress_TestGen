@@ -37,11 +37,11 @@ do
 		index=${v3%.dot}
 		python $source/CADPGen.py $folderN $index $source
 
-		(cd $folderN/checker && lnt.open test_${index}_none.lnt generator test_${index}_none.bcg)
-		(cd $folderN/checker && lnt.open test_${index}_obe.lnt generator test_${index}_obe.bcg)
-		(cd $folderN/checker && lnt.open test_${index}_hsa.lnt generator test_${index}_hsa.bcg)
-		(cd $folderN/checker && lnt.open test_${index}_lobe.lnt generator test_${index}_lobe.bcg)
-		(cd $folderN/checker && lnt.open test_${index}_hsa_obe.lnt generator test_${index}_hsa_obe.bcg)
+		(cd $folderN/checker && lnt.open test_${index}_none.lnt generator test_${index}_none.bcg > /dev/null)
+		(cd $folderN/checker && lnt.open test_${index}_obe.lnt generator test_${index}_obe.bcg > /dev/null)
+		(cd $folderN/checker && lnt.open test_${index}_hsa.lnt generator test_${index}_hsa.bcg > /dev/null)
+		(cd $folderN/checker && lnt.open test_${index}_lobe.lnt generator test_${index}_lobe.bcg > /dev/null)
+		(cd $folderN/checker && lnt.open test_${index}_hsa_obe.lnt generator test_${index}_hsa_obe.bcg > /dev/null)
 		(cd $folderN/checker && svl test_${index}.svl > labels_${index}.txt)
 		python $source/ProcessLabels.py $folderN/checker/labels_${index}.txt
 

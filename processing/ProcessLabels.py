@@ -12,8 +12,10 @@ def main(argv):
     for i in range(6):
         if (text.find("FAIL", index) < text.find("PASS", index) or text.find("PASS", index) == -1):
             results.append("FAIL")
+            index = text.find("FAIL", index) + 4
         else:
             results.append("PASS")
+            index = text.find("PASS", index) + 4
     f.close()
 
     f = open(txtFile, "w")
