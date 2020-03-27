@@ -330,6 +330,7 @@ class BenchmarkSymmStats2 {
                 // System.out.println(parts);
             }
         }
+        ;
 
         final SymmReporter reporter = new SymmReporter();
         final Solver solver = new Solver();
@@ -370,6 +371,7 @@ class BenchmarkSymmStats2 {
                 // System.out.println(parts);
             }
         }
+        ;
 
         final SymmReporter reporter = new SymmReporter();
         final Solver solver = new Solver();

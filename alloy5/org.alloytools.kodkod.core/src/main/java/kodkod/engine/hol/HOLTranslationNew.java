@@ -666,6 +666,7 @@ public abstract class HOLTranslationNew extends HOLTranslation {
                     } else {
                         rep.holSplitChoiceUNSAT(OR.this);
                     }
+                    ;
                 }
                 solTr = null;
                 return false;
