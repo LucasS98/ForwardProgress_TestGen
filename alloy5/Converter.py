@@ -149,17 +149,17 @@ def convertXML(filename, folderName):
                         f2.write('If Mem['+ chkLoc + '] == ' + chkVal + ': goto END\n')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ', END)\n')
-                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ") == " + chkVal + ": goto END\n')
+                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ': goto END\n')
                 else:
                     nInst = 0
                     while operations[nInst] != branch_target:
                         nInst +=1
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ','+ str(nInst) +  ')\n')
-                        f2.write('If Mem['+ chkLoc + '] == ' + chkVal + ": goto " + str(nInst) +'\n')
+                        f2.write('If Mem['+ chkLoc + '] == ' + chkVal + ': goto ' + str(nInst) +'\n')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ','+ str(nInst) +  ')\n')
-                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ") == " + chkVal + ": goto " + str(nInst) +'\n')
+                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ': goto ' + str(nInst) +'\n')
 
             operation = nextPo
             f.write('\n')
