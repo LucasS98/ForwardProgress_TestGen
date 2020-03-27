@@ -1,0 +1,507 @@
+
+svl clean info: [persistent] test_51_none.bcg
+
+"test_51_none.bcg" = generation of "test_51_none.lnt"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] test_51_none.o
+
+svl clean info: [temporary] test_51_none.err
+
+% lnt.open   "test_51_none.lnt"  generator  "test_51_none.bcg"
+
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_5wnNeK/COMMON.lib'' ...
+/tmp/ls24_lnt.open_5wnNeK/common.lnt:290: warning: value stored in variable TID is not used later
+
+lnt.open: translating ``test_51_none.lnt'' to ``/tmp/ls24_lnt.open_5wnNeK/test_51_none.lotos'' ...
+
+lnt.open: calling lotos.open for ``test_51_none.lotos'' ...
+lotos.open: using ``(direct) caesar''
+lotos.open: calling ``caesar.adt -debug -silent test_51_none''
+cadp_indent: cannot find ``indent''
+             file ``test_51_none.h'' will not be formatted
+lotos.open: calling ``lnt_check'' for ``test_51_none.h''
+lotos.open: calling ``caesar -silent test_51_none''
+#109 warning during restriction:
+     detection of unreachable processes
+In specification TEST_51_NONE [3]
+
+   - process SCHEDULER_OBE [COMMON:344] is never reached
+
+   - process LOOP__1 [COMMON:353] is never reached
+
+   - process SCHEDULER_HSA [COMMON:379] is never reached
+
+   - process LOOP__1 [COMMON:385] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+
+   - process LOOP__1 [COMMON:414] is never reached
+
+   - process COND__2 [COMMON:439] is never reached
+
+   - process LOOP__2 [COMMON:448] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:461] is never reached
+
+   - process LOOP__1 [COMMON:470] is never reached
+
+   - process COND__2 [COMMON:486] is never reached
+command exit with status 0
+
+info about test_51_none.bcg:
+    (* 9 states, 15 transitions, 2.5 Kbytes *)
+
+property AtLeastOneLassoUnderNoScheduler (test_51_none)
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl001_formula_inline
+
+svl clean info: [persistent] test_51_none_one_lasso.bcg
+
+svl clean info: [temporary] svl001_formula_inline.mcl
+
+svl clean info: [temporary] svl001_formula_inline.xm
+
+"svl001_formula_inline.mcl" =
+    < true* > < 'EX .*' > @
+
+"test_51_none_one_lasso.bcg" = verify "svl001_formula_inline.mcl" in "test_51_none.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_51_none.bcg"  evaluator4 -source "test_51.svl:7" -dfs -diag "svl000_output.bcg"  "svl001_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_51.svl:7 -dfs -diag svl000_output.bcg svl001_formula_inline.mcl'' for ``./test_51_none.bcg''
+
+TRUE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_51_none_one_lasso.bcg"
+command exit with status 0
+
+PASS
+
+property CanAlwaysReachTermination (test_51_none)
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl002_formula_inline
+
+svl clean info: [persistent] test_51_none_no_termination.bcg
+
+svl clean info: [temporary] svl002_formula_inline.mcl
+
+svl clean info: [temporary] svl002_formula_inline.xm
+
+"svl002_formula_inline.mcl" =
+    [ true* . (not "exit") ] < (not "exit")* . "exit" > true
+
+"test_51_none_no_termination.bcg" = verify "svl002_formula_inline.mcl" in "test_51_none.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_51_none.bcg"  evaluator4 -source "test_51.svl:17" -dfs -diag "svl000_output.bcg"  "svl002_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_51.svl:17 -dfs -diag svl000_output.bcg svl002_formula_inline.mcl'' for ``./test_51_none.bcg''
+
+FALSE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_51_none_no_termination.bcg"
+command exit with status 0
+
+FAIL
+
+svl clean info: [persistent] test_51_obe.bcg
+
+"test_51_obe.bcg" = generation of "test_51_obe.lnt"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] test_51_obe.o
+
+svl clean info: [temporary] test_51_obe.err
+
+% lnt.open   "test_51_obe.lnt"  generator  "test_51_obe.bcg"
+
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_3MZjyP/COMMON.lib'' ...
+/tmp/ls24_lnt.open_3MZjyP/common.lnt:290: warning: value stored in variable TID is not used later
+
+lnt.open: translating ``test_51_obe.lnt'' to ``/tmp/ls24_lnt.open_3MZjyP/test_51_obe.lotos'' ...
+
+lnt.open: calling lotos.open for ``test_51_obe.lotos'' ...
+lotos.open: using ``(direct) caesar''
+lotos.open: calling ``caesar.adt -debug -silent test_51_obe''
+cadp_indent: cannot find ``indent''
+             file ``test_51_obe.h'' will not be formatted
+lotos.open: calling ``lnt_check'' for ``test_51_obe.h''
+lotos.open: calling ``caesar -silent test_51_obe''
+#109 warning during restriction:
+     detection of unreachable processes
+In specification TEST_51_OBE [3]
+
+   - process SCHEDULER_NONE [COMMON:321] is never reached
+
+   - process LOOP__1 [COMMON:327] is never reached
+
+   - process SCHEDULER_HSA [COMMON:379] is never reached
+
+   - process LOOP__1 [COMMON:385] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+
+   - process LOOP__1 [COMMON:414] is never reached
+
+   - process COND__2 [COMMON:439] is never reached
+
+   - process LOOP__2 [COMMON:448] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:461] is never reached
+
+   - process LOOP__1 [COMMON:470] is never reached
+
+   - process COND__2 [COMMON:486] is never reached
+command exit with status 0
+
+info about test_51_obe.bcg:
+    (* 6 states, 7 transitions, 2.5 Kbytes *)
+
+property FreeFromDeadlockLasso (test_51_obe)
+ | There are no deadlock lassos in test_51_obe
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl003_formula_inline
+
+svl clean info: [persistent] test_51_obe_deadlock.bcg
+
+svl clean info: [temporary] svl003_formula_inline.mcl
+
+svl clean info: [temporary] svl003_formula_inline.xm
+
+"svl003_formula_inline.mcl" =
+    < true* > < 'EX .*' > @
+
+"test_51_obe_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_51_obe.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_51_obe.bcg"  evaluator4 -source "test_51.svl:32" -dfs -diag "svl000_output.bcg"  "svl003_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_51.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_51_obe.bcg''
+
+TRUE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_51_obe_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
+svl clean info: [persistent] test_51_hsa.bcg
+
+"test_51_hsa.bcg" = generation of "test_51_hsa.lnt"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] test_51_hsa.o
+
+svl clean info: [temporary] test_51_hsa.err
+
+% lnt.open   "test_51_hsa.lnt"  generator  "test_51_hsa.bcg"
+
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_mYAOCW/COMMON.lib'' ...
+/tmp/ls24_lnt.open_mYAOCW/common.lnt:290: warning: value stored in variable TID is not used later
+
+lnt.open: translating ``test_51_hsa.lnt'' to ``/tmp/ls24_lnt.open_mYAOCW/test_51_hsa.lotos'' ...
+
+lnt.open: calling lotos.open for ``test_51_hsa.lotos'' ...
+lotos.open: using ``(direct) caesar''
+lotos.open: calling ``caesar.adt -debug -silent test_51_hsa''
+cadp_indent: cannot find ``indent''
+             file ``test_51_hsa.h'' will not be formatted
+lotos.open: calling ``lnt_check'' for ``test_51_hsa.h''
+lotos.open: calling ``caesar -silent test_51_hsa''
+#109 warning during restriction:
+     detection of unreachable processes
+In specification TEST_51_HSA [3]
+
+   - process SCHEDULER_NONE [COMMON:321] is never reached
+
+   - process LOOP__1 [COMMON:327] is never reached
+
+   - process SCHEDULER_OBE [COMMON:344] is never reached
+
+   - process LOOP__1 [COMMON:353] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+
+   - process LOOP__1 [COMMON:414] is never reached
+
+   - process COND__2 [COMMON:439] is never reached
+
+   - process LOOP__2 [COMMON:448] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:461] is never reached
+
+   - process LOOP__1 [COMMON:470] is never reached
+
+   - process COND__2 [COMMON:486] is never reached
+command exit with status 0
+
+info about test_51_hsa.bcg:
+    (* 2 states, 2 transitions, 2.4 Kbytes *)
+
+property FreeFromDeadlockLasso (test_51_hsa)
+ | There are no deadlock lassos in test_51_hsa
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl003_formula_inline
+
+svl clean info: [persistent] test_51_hsa_deadlock.bcg
+
+svl clean info: [temporary] svl003_formula_inline.mcl
+
+svl clean info: [temporary] svl003_formula_inline.xm
+
+"svl003_formula_inline.mcl" =
+    < true* > < 'EX .*' > @
+
+"test_51_hsa_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_51_hsa.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_51_hsa.bcg"  evaluator4 -source "test_51.svl:32" -dfs -diag "svl000_output.bcg"  "svl003_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_51.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_51_hsa.bcg''
+
+TRUE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_51_hsa_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
+svl clean info: [persistent] test_51_hsa_obe.bcg
+
+"test_51_hsa_obe.bcg" = generation of "test_51_hsa_obe.lnt"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] test_51_hsa_obe.o
+
+svl clean info: [temporary] test_51_hsa_obe.err
+
+% lnt.open   "test_51_hsa_obe.lnt"  generator  "test_51_hsa_obe.bcg"
+
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_j2OcC8/COMMON.lib'' ...
+/tmp/ls24_lnt.open_j2OcC8/common.lnt:290: warning: value stored in variable TID is not used later
+
+lnt.open: translating ``test_51_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_j2OcC8/test_51_hsa_obe.lotos'' ...
+
+lnt.open: calling lotos.open for ``test_51_hsa_obe.lotos'' ...
+lotos.open: using ``(direct) caesar''
+lotos.open: calling ``caesar.adt -debug -silent test_51_hsa_obe''
+cadp_indent: cannot find ``indent''
+             file ``test_51_hsa_obe.h'' will not be formatted
+lotos.open: calling ``lnt_check'' for ``test_51_hsa_obe.h''
+lotos.open: calling ``caesar -silent test_51_hsa_obe''
+#109 warning during restriction:
+     detection of unreachable processes
+In specification TEST_51_HSA_OBE [3]
+
+   - process SCHEDULER_NONE [COMMON:321] is never reached
+
+   - process LOOP__1 [COMMON:327] is never reached
+
+   - process SCHEDULER_OBE [COMMON:344] is never reached
+
+   - process LOOP__1 [COMMON:353] is never reached
+
+   - process SCHEDULER_HSA [COMMON:379] is never reached
+
+   - process LOOP__1 [COMMON:385] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:461] is never reached
+
+   - process LOOP__1 [COMMON:470] is never reached
+
+   - process COND__2 [COMMON:486] is never reached
+command exit with status 0
+
+info about test_51_hsa_obe.bcg:
+    (* 2 states, 2 transitions, 2.4 Kbytes *)
+
+property FreeFromDeadlockLasso (test_51_hsa_obe)
+ | There are no deadlock lassos in test_51_hsa_obe
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl003_formula_inline
+
+svl clean info: [persistent] test_51_hsa_obe_deadlock.bcg
+
+svl clean info: [temporary] svl003_formula_inline.mcl
+
+svl clean info: [temporary] svl003_formula_inline.xm
+
+"svl003_formula_inline.mcl" =
+    < true* > < 'EX .*' > @
+
+"test_51_hsa_obe_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_51_hsa_obe.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_51_hsa_obe.bcg"  evaluator4 -source "test_51.svl:32" -dfs -diag "svl000_output.bcg"  "svl003_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_51.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_51_hsa_obe.bcg''
+
+TRUE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_51_hsa_obe_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
+svl clean info: [persistent] test_51_lobe.bcg
+
+"test_51_lobe.bcg" = generation of "test_51_lobe.lnt"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] test_51_lobe.o
+
+svl clean info: [temporary] test_51_lobe.err
+
+% lnt.open   "test_51_lobe.lnt"  generator  "test_51_lobe.bcg"
+
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_jfZcvX/COMMON.lib'' ...
+/tmp/ls24_lnt.open_jfZcvX/common.lnt:290: warning: value stored in variable TID is not used later
+
+lnt.open: translating ``test_51_lobe.lnt'' to ``/tmp/ls24_lnt.open_jfZcvX/test_51_lobe.lotos'' ...
+
+lnt.open: calling lotos.open for ``test_51_lobe.lotos'' ...
+lotos.open: using ``(direct) caesar''
+lotos.open: calling ``caesar.adt -debug -silent test_51_lobe''
+cadp_indent: cannot find ``indent''
+             file ``test_51_lobe.h'' will not be formatted
+lotos.open: calling ``lnt_check'' for ``test_51_lobe.h''
+lotos.open: calling ``caesar -silent test_51_lobe''
+#109 warning during restriction:
+     detection of unreachable processes
+In specification TEST_51_LOBE [3]
+
+   - process SCHEDULER_NONE [COMMON:321] is never reached
+
+   - process LOOP__1 [COMMON:327] is never reached
+
+   - process SCHEDULER_OBE [COMMON:344] is never reached
+
+   - process LOOP__1 [COMMON:353] is never reached
+
+   - process SCHEDULER_HSA [COMMON:379] is never reached
+
+   - process LOOP__1 [COMMON:385] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+
+   - process LOOP__1 [COMMON:414] is never reached
+
+   - process COND__2 [COMMON:439] is never reached
+
+   - process LOOP__2 [COMMON:448] is never reached
+command exit with status 0
+
+info about test_51_lobe.bcg:
+    (* 2 states, 2 transitions, 2.4 Kbytes *)
+
+property FreeFromDeadlockLasso (test_51_lobe)
+ | There are no deadlock lassos in test_51_lobe
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl003_formula_inline
+
+svl clean info: [persistent] test_51_lobe_deadlock.bcg
+
+svl clean info: [temporary] svl003_formula_inline.mcl
+
+svl clean info: [temporary] svl003_formula_inline.xm
+
+"svl003_formula_inline.mcl" =
+    < true* > < 'EX .*' > @
+
+"test_51_lobe_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_51_lobe.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_51_lobe.bcg"  evaluator4 -source "test_51.svl:32" -dfs -diag "svl000_output.bcg"  "svl003_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_51.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_51_lobe.bcg''
+
+TRUE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_51_lobe_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
