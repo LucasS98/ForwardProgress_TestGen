@@ -186,6 +186,7 @@ def main(argv):
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_obe.lnt", replace)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_lobe.lnt", replace)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_obe.lnt", replace)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_none.lnt", replace)
     writeCADPFile(CADPfolder, folderName, index, "common.lnt", replace)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace)              
       
