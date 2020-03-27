@@ -10,7 +10,7 @@ def main(argv):
     text = f.read()
     index = 0
     for i in range(6):
-        if (text.find("FAIL", index) < text.find("PASS", index) or text.find("PASS", index) == -1):
+        if (text.find("FAIL", index) < text.find("PASS", index) or (text.find("PASS", index) == -1 and text.find("FAIL") != -1)):
             results.append("FAIL")
             index = text.find("FAIL", index) + 4
         else:
