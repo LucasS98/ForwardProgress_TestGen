@@ -45,6 +45,8 @@ do
 		(cd $folderN/checker && svl test_${index}.svl > labels_${index}.txt)
 		python $source/ProcessLabels.py $folderN/checker/labels_${index}.txt
 
+		python $source/amber_test_generation.py {$v2}.txt {$v2}.amber
+
 		count=`expr $count + 1`
 	fi
 	done 		
