@@ -1,0 +1,23 @@
+In specification TEST_3_NONE [3]
+
+   - process SCHEDULER_OBE [COMMON:335] is never reached
+
+   - process LOOP__1 [COMMON:344] is never reached
+
+   - process SCHEDULER_HSA [COMMON:370] is never reached
+
+   - process LOOP__1 [COMMON:376] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:393] is never reached
+
+   - process LOOP__1 [COMMON:405] is never reached
+
+   - process COND__2 [COMMON:430] is never reached
+
+   - process LOOP__2 [COMMON:439] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:452] is never reached
+
+   - process LOOP__1 [COMMON:461] is never reached
+
+   - process COND__2 [COMMON:477] is never reached
