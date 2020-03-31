@@ -1,2 +1,0 @@
-bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
-bcg_open: running ``evaluator4 -source test_0.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_0_obe.bcg''

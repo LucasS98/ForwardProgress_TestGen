@@ -13,15 +13,15 @@ end type
 
 -- Shared memory
 function NumMemLoc() : nat is
-  return 2
+  return 1
 end function
 
 type MemArray is
-  array [1..2] of int
+  array [1..1] of int
 end type
 
 type MemLoc is
-  range 1..2 of nat
+  range 1..1 of nat
 end type
 
 type Instruction is

@@ -1,4 +1,4 @@
-Unfair - At least one lasso: FAIL
+Unfair - At least one lasso: PASS
 Unfair - Can reach termination: PASS
 OBE - No lasso: PASS
 HSA - No lasso: PASS

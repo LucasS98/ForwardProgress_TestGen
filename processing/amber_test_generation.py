@@ -7,7 +7,7 @@ import re
 from configuration import Configuration
 
 # default Configuration object to be used in the Amber test generation
-default_config = Configuration(timeout=20000, workgroups=65535, threads_per_workgroup=1)
+#default_config = Configuration(timeout=20000, workgroups=65535, threads_per_workgroup=1)
 
 
 # write the necessary "boiler plate" code to generate an amber test, along with a Shader
@@ -111,7 +111,7 @@ def handle_atomic_exchange_branch(output, check_value, exchange_value, instructi
     elif instruction_address != "END":
         output.write("\t\t   pc = " + instruction_address + ";\n")
     else:
-        print("Incorrect instruction_address in handle_amber_check_branch", file=sys.stderr)
+        print("Incorrect instruction_address in handle_amber_check_branch")
         exit(1)
 
     output.write("\t\t}\n")
@@ -131,7 +131,7 @@ def handle_amber_check_branch(output, check_value, instruction_address, instruct
     elif instruction_address != "END":
         output.write("\t\t   pc = " + instruction_address + ";\n")
     else:
-        print("Incorrect instruction_address in handle_amber_check_branch", file=sys.stderr)
+        print("Incorrect instruction_address in handle_amber_check_branch")
         exit(1)
 
     output.write("\t\t}\n")
@@ -172,12 +172,12 @@ def write_amber_epilogue(output, workgroups, threads_per_workgroup):
 
 # generate an amber test with a provided input file, a desired output file name, and a Configuration object to set up
 # the number of workgroups, threads per workgroup, and timeout
-def generate_amber_test(inputted_file, output_file_name, config=default_config):
+def generate_amber_test(inputted_file, output_file_name):
     input_file = inputted_file
-    timeout = config.get_timeout()
+    timeout = 20000
 
     if output_file_name.endswith(".amber"):
-        print("Script will include the .amber extension, please provide a different output file name", file=sys.stderr)
+        print("Script will include the .amber extension, please provide a different output file name")
         exit(1)
 
     with open(input_file, 'r') as file:
@@ -208,8 +208,8 @@ def generate_amber_test(inputted_file, output_file_name, config=default_config):
     output_amber_file = output_amber_file + ".amber"
     output = open(output_amber_file, "a")
 
-    threads_per_workgroup = config.get_threads_per_workgroup()
-    workgroups = config.get_number_of_workgroups()
+    threads_per_workgroup = 1
+    workgroups = 65535
 
     # call the appropriate functions to generate the amber test
     write_amber_prologue(output, timeout, threads_per_workgroup)
@@ -222,14 +222,14 @@ def generate_amber_test(inputted_file, output_file_name, config=default_config):
 
 def main():
     if len(sys.argv) != 3:
-        print("Please provide a .txt file to parse and the desired name for the outputted Amber file", file=sys.stderr)
+        print("Please provide a .txt file to parse and the desired name for the outputted Amber file")
         exit(1)
 
     input_file = sys.argv[1]
     output_file = sys.argv[2]
 
     # generate an amber test for the desired inputs, with a default configuration if none was provided
-    generate_amber_test(input_file, output_file, default_config)
+    generate_amber_test(input_file, output_file)
 
 
 if __name__ == "__main__":

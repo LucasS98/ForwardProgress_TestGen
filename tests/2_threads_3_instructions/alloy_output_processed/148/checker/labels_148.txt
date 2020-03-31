@@ -1,6 +1,6 @@
 Unfair - At least one lasso: PASS
 Unfair - Can reach termination: PASS
-OBE - No lasso: FAIL
+OBE - No lasso: PASS
 HSA - No lasso: PASS
 OBE+HSA - No lasso: PASS
 LOBE - No lasso: PASS

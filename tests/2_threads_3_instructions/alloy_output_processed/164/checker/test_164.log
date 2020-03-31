@@ -13,10 +13,10 @@ svl clean info: [temporary] test_164_none.err
 
 % lnt.open   "test_164_none.lnt"  generator  "test_164_none.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_E3nl9z/COMMON.lib'' ...
-/tmp/ls24_lnt.open_E3nl9z/common.lnt:290: warning: value stored in variable TID is not used later
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_3pWDPx/COMMON.lib'' ...
+/tmp/ls24_lnt.open_3pWDPx/common.lnt:290: warning: value stored in variable TID is not used later
 
-lnt.open: translating ``test_164_none.lnt'' to ``/tmp/ls24_lnt.open_E3nl9z/test_164_none.lotos'' ...
+lnt.open: translating ``test_164_none.lnt'' to ``/tmp/ls24_lnt.open_3pWDPx/test_164_none.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_164_none.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -29,31 +29,31 @@ lotos.open: calling ``caesar -silent test_164_none''
      detection of unreachable processes
 In specification TEST_164_NONE [3]
 
-   - process SCHEDULER_OBE [COMMON:344] is never reached
+   - process SCHEDULER_OBE [COMMON:335] is never reached
 
-   - process LOOP__1 [COMMON:353] is never reached
+   - process LOOP__1 [COMMON:344] is never reached
 
-   - process SCHEDULER_HSA [COMMON:379] is never reached
+   - process SCHEDULER_HSA [COMMON:370] is never reached
 
-   - process LOOP__1 [COMMON:385] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:393] is never reached
 
-   - process LOOP__1 [COMMON:414] is never reached
+   - process LOOP__1 [COMMON:405] is never reached
 
-   - process COND__2 [COMMON:439] is never reached
+   - process COND__2 [COMMON:430] is never reached
 
-   - process LOOP__2 [COMMON:448] is never reached
+   - process LOOP__2 [COMMON:439] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:461] is never reached
+   - process SCHEDULER_LOBE [COMMON:452] is never reached
 
-   - process LOOP__1 [COMMON:470] is never reached
+   - process LOOP__1 [COMMON:461] is never reached
 
-   - process COND__2 [COMMON:486] is never reached
+   - process COND__2 [COMMON:477] is never reached
 command exit with status 0
 
 info about test_164_none.bcg:
-    (* 9 states, 15 transitions, 2.5 Kbytes *)
+    (* 31 states, 44 transitions, 2.7 Kbytes *)
 
 property AtLeastOneLassoUnderNoScheduler (test_164_none)
 
@@ -122,14 +122,14 @@ svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
 bcg_open: running ``evaluator4 -source test_164.svl:17 -dfs -diag svl000_output.bcg svl002_formula_inline.mcl'' for ``./test_164_none.bcg''
 
-FALSE
+TRUE
 (consult diagnostic in file ``svl000_output.bcg'')
 command exit with status 0
 
 % bcg_io   "svl000_output.bcg"   "test_164_none_no_termination.bcg"
 command exit with status 0
 
-FAIL
+PASS
 
 svl clean info: [persistent] test_164_obe.bcg
 
@@ -145,10 +145,10 @@ svl clean info: [temporary] test_164_obe.err
 
 % lnt.open   "test_164_obe.lnt"  generator  "test_164_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_3wDE2F/COMMON.lib'' ...
-/tmp/ls24_lnt.open_3wDE2F/common.lnt:290: warning: value stored in variable TID is not used later
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Mygcop/COMMON.lib'' ...
+/tmp/ls24_lnt.open_Mygcop/common.lnt:290: warning: value stored in variable TID is not used later
 
-lnt.open: translating ``test_164_obe.lnt'' to ``/tmp/ls24_lnt.open_3wDE2F/test_164_obe.lotos'' ...
+lnt.open: translating ``test_164_obe.lnt'' to ``/tmp/ls24_lnt.open_Mygcop/test_164_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_164_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -161,31 +161,31 @@ lotos.open: calling ``caesar -silent test_164_obe''
      detection of unreachable processes
 In specification TEST_164_OBE [3]
 
-   - process SCHEDULER_NONE [COMMON:321] is never reached
+   - process SCHEDULER_NONE [COMMON:312] is never reached
 
-   - process LOOP__1 [COMMON:327] is never reached
+   - process LOOP__1 [COMMON:318] is never reached
 
-   - process SCHEDULER_HSA [COMMON:379] is never reached
+   - process SCHEDULER_HSA [COMMON:370] is never reached
 
-   - process LOOP__1 [COMMON:385] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:393] is never reached
 
-   - process LOOP__1 [COMMON:414] is never reached
+   - process LOOP__1 [COMMON:405] is never reached
 
-   - process COND__2 [COMMON:439] is never reached
+   - process COND__2 [COMMON:430] is never reached
 
-   - process LOOP__2 [COMMON:448] is never reached
+   - process LOOP__2 [COMMON:439] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:461] is never reached
+   - process SCHEDULER_LOBE [COMMON:452] is never reached
 
-   - process LOOP__1 [COMMON:470] is never reached
+   - process LOOP__1 [COMMON:461] is never reached
 
-   - process COND__2 [COMMON:486] is never reached
+   - process COND__2 [COMMON:477] is never reached
 command exit with status 0
 
 info about test_164_obe.bcg:
-    (* 6 states, 7 transitions, 2.5 Kbytes *)
+    (* 9 states, 9 transitions, 2.6 Kbytes *)
 
 property FreeFromDeadlockLasso (test_164_obe)
  | There are no deadlock lassos in test_164_obe
@@ -240,10 +240,10 @@ svl clean info: [temporary] test_164_hsa.err
 
 % lnt.open   "test_164_hsa.lnt"  generator  "test_164_hsa.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_n06RTt/COMMON.lib'' ...
-/tmp/ls24_lnt.open_n06RTt/common.lnt:290: warning: value stored in variable TID is not used later
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_oyvgp5/COMMON.lib'' ...
+/tmp/ls24_lnt.open_oyvgp5/common.lnt:290: warning: value stored in variable TID is not used later
 
-lnt.open: translating ``test_164_hsa.lnt'' to ``/tmp/ls24_lnt.open_n06RTt/test_164_hsa.lotos'' ...
+lnt.open: translating ``test_164_hsa.lnt'' to ``/tmp/ls24_lnt.open_oyvgp5/test_164_hsa.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_164_hsa.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -256,27 +256,27 @@ lotos.open: calling ``caesar -silent test_164_hsa''
      detection of unreachable processes
 In specification TEST_164_HSA [3]
 
-   - process SCHEDULER_NONE [COMMON:321] is never reached
+   - process SCHEDULER_NONE [COMMON:312] is never reached
 
-   - process LOOP__1 [COMMON:327] is never reached
+   - process LOOP__1 [COMMON:318] is never reached
 
-   - process SCHEDULER_OBE [COMMON:344] is never reached
+   - process SCHEDULER_OBE [COMMON:335] is never reached
 
-   - process LOOP__1 [COMMON:353] is never reached
+   - process LOOP__1 [COMMON:344] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:393] is never reached
 
-   - process LOOP__1 [COMMON:414] is never reached
+   - process LOOP__1 [COMMON:405] is never reached
 
-   - process COND__2 [COMMON:439] is never reached
+   - process COND__2 [COMMON:430] is never reached
 
-   - process LOOP__2 [COMMON:448] is never reached
+   - process LOOP__2 [COMMON:439] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:461] is never reached
+   - process SCHEDULER_LOBE [COMMON:452] is never reached
 
-   - process LOOP__1 [COMMON:470] is never reached
+   - process LOOP__1 [COMMON:461] is never reached
 
-   - process COND__2 [COMMON:486] is never reached
+   - process COND__2 [COMMON:477] is never reached
 command exit with status 0
 
 info about test_164_hsa.bcg:
@@ -335,10 +335,10 @@ svl clean info: [temporary] test_164_hsa_obe.err
 
 % lnt.open   "test_164_hsa_obe.lnt"  generator  "test_164_hsa_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_PKPwRG/COMMON.lib'' ...
-/tmp/ls24_lnt.open_PKPwRG/common.lnt:290: warning: value stored in variable TID is not used later
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_ImG9cr/COMMON.lib'' ...
+/tmp/ls24_lnt.open_ImG9cr/common.lnt:290: warning: value stored in variable TID is not used later
 
-lnt.open: translating ``test_164_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_PKPwRG/test_164_hsa_obe.lotos'' ...
+lnt.open: translating ``test_164_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_ImG9cr/test_164_hsa_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_164_hsa_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -351,23 +351,23 @@ lotos.open: calling ``caesar -silent test_164_hsa_obe''
      detection of unreachable processes
 In specification TEST_164_HSA_OBE [3]
 
-   - process SCHEDULER_NONE [COMMON:321] is never reached
+   - process SCHEDULER_NONE [COMMON:312] is never reached
 
-   - process LOOP__1 [COMMON:327] is never reached
+   - process LOOP__1 [COMMON:318] is never reached
 
-   - process SCHEDULER_OBE [COMMON:344] is never reached
+   - process SCHEDULER_OBE [COMMON:335] is never reached
 
-   - process LOOP__1 [COMMON:353] is never reached
+   - process LOOP__1 [COMMON:344] is never reached
 
-   - process SCHEDULER_HSA [COMMON:379] is never reached
+   - process SCHEDULER_HSA [COMMON:370] is never reached
 
-   - process LOOP__1 [COMMON:385] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:461] is never reached
+   - process SCHEDULER_LOBE [COMMON:452] is never reached
 
-   - process LOOP__1 [COMMON:470] is never reached
+   - process LOOP__1 [COMMON:461] is never reached
 
-   - process COND__2 [COMMON:486] is never reached
+   - process COND__2 [COMMON:477] is never reached
 command exit with status 0
 
 info about test_164_hsa_obe.bcg:
@@ -426,10 +426,10 @@ svl clean info: [temporary] test_164_lobe.err
 
 % lnt.open   "test_164_lobe.lnt"  generator  "test_164_lobe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_tRKUdB/COMMON.lib'' ...
-/tmp/ls24_lnt.open_tRKUdB/common.lnt:290: warning: value stored in variable TID is not used later
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_ROZOZl/COMMON.lib'' ...
+/tmp/ls24_lnt.open_ROZOZl/common.lnt:290: warning: value stored in variable TID is not used later
 
-lnt.open: translating ``test_164_lobe.lnt'' to ``/tmp/ls24_lnt.open_tRKUdB/test_164_lobe.lotos'' ...
+lnt.open: translating ``test_164_lobe.lnt'' to ``/tmp/ls24_lnt.open_ROZOZl/test_164_lobe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_164_lobe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -442,25 +442,25 @@ lotos.open: calling ``caesar -silent test_164_lobe''
      detection of unreachable processes
 In specification TEST_164_LOBE [3]
 
-   - process SCHEDULER_NONE [COMMON:321] is never reached
+   - process SCHEDULER_NONE [COMMON:312] is never reached
 
-   - process LOOP__1 [COMMON:327] is never reached
+   - process LOOP__1 [COMMON:318] is never reached
 
-   - process SCHEDULER_OBE [COMMON:344] is never reached
+   - process SCHEDULER_OBE [COMMON:335] is never reached
 
-   - process LOOP__1 [COMMON:353] is never reached
+   - process LOOP__1 [COMMON:344] is never reached
 
-   - process SCHEDULER_HSA [COMMON:379] is never reached
+   - process SCHEDULER_HSA [COMMON:370] is never reached
 
-   - process LOOP__1 [COMMON:385] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:402] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:393] is never reached
 
-   - process LOOP__1 [COMMON:414] is never reached
+   - process LOOP__1 [COMMON:405] is never reached
 
-   - process COND__2 [COMMON:439] is never reached
+   - process COND__2 [COMMON:430] is never reached
 
-   - process LOOP__2 [COMMON:448] is never reached
+   - process LOOP__2 [COMMON:439] is never reached
 command exit with status 0
 
 info about test_164_lobe.bcg:
