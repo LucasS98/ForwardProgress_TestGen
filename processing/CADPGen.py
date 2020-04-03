@@ -135,7 +135,7 @@ def createCADPString(filename):
 
             nInst = 0
             if branch_target == "":
-                nInst = len(operations)
+                nInst = len(operations)-1
             else:
                 while operations[nInst] != branch_target:
                     nInst +=1

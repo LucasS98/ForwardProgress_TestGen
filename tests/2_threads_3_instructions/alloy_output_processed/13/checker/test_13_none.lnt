@@ -10,7 +10,7 @@ process MAIN [EX: ExChan, TERMINATE: NatChan] is
 
        THREAD [EX, TERMINATE] (0, {
                             ATOMIC_EXCH_BRANCH(MemLoc(1), 1, true, 0, 1, true),
-                            ATOMIC_EXCH_BRANCH(MemLoc(1), 1, true, 0, 4, true)
+                            ATOMIC_EXCH_BRANCH(MemLoc(1), 1, true, 0, 3, true)
       })
 
     ||
