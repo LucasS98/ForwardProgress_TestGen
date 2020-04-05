@@ -155,7 +155,7 @@ process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       numCU: nat
    in
       doneThread := 0;
-      numCU := any nat where numCU < numThread
+      numCU := any nat where numCU < numThread;
       activeThreads := {};
 
     loop sched_loop in
