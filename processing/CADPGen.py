@@ -155,13 +155,14 @@ def createCADPString(filename):
         if i < nItems-1:
             output += "\n    ||\n\n"
 
-    return output
+    return output, str(nItems)
 
-def writeCADPFile(CADPfolder, folder, index, filename, replace):
+def writeCADPFile(CADPfolder, folder, index, filename, replace, threads):
     f = open(CADPfolder + "checker/" + filename, "r")
     s = f.read()
     s = s.replace("prod_cons", "test_" + str(index))   
     s = s.replace("$REPLACE$", replace)
+    s = s.replace("$N_THREADS$", threads)
     f.close()
     
     filename = filename.replace("prod_cons", "test_" + str(index))
@@ -175,20 +176,20 @@ def main(argv):
 
     CADPfolder = argv[2]
 
-    replace = createCADPString(folderName + "/"+ str(index)+".xml")
+    replace, threads = createCADPString(folderName + "/"+ str(index)+".xml")
 
     try:
         os.mkdir(folderName +"checker")
     except:
         pass
     
-    writeCADPFile(CADPfolder, folderName, index,"prod_cons_hsa.lnt", replace)
-    writeCADPFile(CADPfolder, folderName, index, "prod_cons_obe.lnt", replace)
-    writeCADPFile(CADPfolder, folderName, index, "prod_cons_lobe.lnt", replace)
-    writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_obe.lnt", replace)
-    writeCADPFile(CADPfolder, folderName, index, "prod_cons_none.lnt", replace)
-    writeCADPFile(CADPfolder, folderName, index, "common.lnt", replace)
-    writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace)              
+    writeCADPFile(CADPfolder, folderName, index,"prod_cons_hsa.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_obe.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_lobe.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_obe.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_none.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "common.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace, threads)              
       
 if __name__ == "__main__": 
   
