@@ -34,6 +34,11 @@ type Program is
    with "access", "length"
 end type
 
+type InactivityCounter is
+   list of (nat, nat)
+   with "access", "length"
+end type
+
 -- A channel is a way to type the interactions between processes
 
 channel NatChan is
@@ -41,8 +46,8 @@ channel NatChan is
 end channel
 
 channel ExChan is
-  -- tid, instruction, do_branch
-  (nat, Instruction)
+  -- tid, instruction, number of steps since fairly scheduled thread
+  (nat, Instruction, nat)
 end channel
 
 -------------------------------------------------------------------------------
@@ -128,7 +133,7 @@ process SCHEDULER_NONE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
          select
 
             -- Execution step of a thread
-            EX(?any nat, ?any Instruction)
+            EX(?any nat, ?any Instruction, 0)
 
          []
 
@@ -162,13 +167,13 @@ process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
         -- First execution step of a thread
-	EX(?tid, ?any Instruction) where length(activeThreads) < numCU and not(member(tid, activeThreads));
+	EX(?tid, ?any Instruction, 0) where length(activeThreads) < numCU and not(member(tid, activeThreads));
         activeThreads := insert(tid, activeThreads)
 
       []
 
         -- a Thread already present in activeThreads can execute
-        EX(?tid, ?any Instruction) where member(tid, activeThreads)
+        EX(?tid, ?any Instruction, 0) where member(tid, activeThreads)
 
       []
 
@@ -192,14 +197,15 @@ end process
 -- increasing by 1 every time the active thread terminates.
 process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
-      activeThread: nat
+      activeThread: nat,
+      eventualCounter: nat
    in
       activeThread := 0;
     loop sched_loop in
       select
 
         -- Only the active thread is guaranteed fair scheduling
-	EX(activeThread, ?any Instruction)
+	EX(?tid, ?any Instruction, eventualCounter) where tid == activeThread or eventualCounter < 10
 
       []
 
@@ -235,13 +241,13 @@ process SCHEDULER_HSA_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numC
       select
 
         -- First execution step of a thread
-	EX(?tid, ?any Instruction) where length(activeThreads) < numCU and not(member(tid, activeThreads));
+	EX(?tid, ?any Instruction, 0) where length(activeThreads) < numCU and not(member(tid, activeThreads));
         activeThreads := insert(tid, activeThreads)
 
       []
 
         -- a Thread already present in activeThreads can execute
-        EX(?tid, ?any Instruction) where member(tid, activeThreads)
+        EX(?tid, ?any Instruction, 0) where member(tid, activeThreads)
 
       []
 
@@ -286,7 +292,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
         -- any Thread up to highestID is guaranteed fairly scheduling
-        EX(?tid, ?any Instruction) where tid < highestID
+        EX(?tid, ?any Instruction, 0) where tid < highestID
 
       []
 
