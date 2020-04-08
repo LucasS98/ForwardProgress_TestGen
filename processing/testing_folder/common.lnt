@@ -42,7 +42,7 @@ end channel
 
 channel ExChan is
   -- tid, instruction, do_branch
-  (nat, Instruction, int)
+  (nat, Instruction, nat)
 end channel
 
 -------------------------------------------------------------------------------
