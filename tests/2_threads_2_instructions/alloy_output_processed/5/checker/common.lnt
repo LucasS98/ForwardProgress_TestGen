@@ -147,14 +147,17 @@ end process
 
 -- This process specifies the scheduler for Occupancy Bound Execution model,
 -- where a thread is fairly scheduled if it has performed at least one operation
-process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numCU: nat) is
+process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThread: nat,
       tid: nat,
-      activeThreads: NatSet
+      activeThreads: NatSet,
+      numCU: nat
    in
       doneThread := 0;
+      numCU := any nat where numCU < numThread;
       activeThreads := {};
+
     loop sched_loop in
       select
 

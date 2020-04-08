@@ -1,0 +1,12 @@
+THREAD0
+If Mem[0] == 0: goto 0
+
+If Mem[1] == 0: goto 1
+
+
+THREAD1
+Mem[0] = 1
+
+Mem[1] = 1
+
+

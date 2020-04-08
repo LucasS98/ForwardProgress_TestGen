@@ -1,0 +1,12 @@
+THREAD0
+If Exch(Mem[0],0) == 1: goto END
+
+If Exch(Mem[0],0) == 0: goto 1
+
+
+THREAD1
+Mem[0] = 1
+
+If Exch(Mem[0],1) == 1: goto 1
+
+
