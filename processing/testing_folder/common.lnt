@@ -195,14 +195,24 @@ end process
 -- increasing by 1 every time the active thread terminates.
 process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
-      activeThread: nat
+      activeThread: nat,
+      tid: nat,
+      nSteps: nat
    in
       activeThread := 0;
+      nSteps := 0;
     loop sched_loop in
       select
 
+   -- Only the active thread is guaranteed fair scheduling
+	EX(activeThread, ?any Instruction, nSteps);
+   nSteps := 0
+
+      []
+
         -- Only the active thread is guaranteed fair scheduling
-	EX(?any nat, ?any Instruction, activeThread)
+	EX(?any nat, ?any Instruction, nSteps) where nSteps < 5;
+   nSteps := nSteps + 1
 
       []
 
