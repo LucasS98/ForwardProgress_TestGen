@@ -41,7 +41,7 @@ def convertXML(filename, folderName):
 
         threadName = nextThreadName
         f.write('THREAD' + str(i) + '\n')
-        f2.write('THREAD' + str(i) + '\n')
+        f2.write('THREAD ' + str(i) + '\n')
 
         # Find next thread
         for field in root.findall('./instance/field'):
@@ -142,25 +142,25 @@ def convertXML(filename, folderName):
 
             if (nextPo == branch_target): 
                 f.write('atomic_store('+ chkLoc + ',' + exchVal + ')\n')
-                f2.write(nInst + ': Mem['+ chkLoc + '] = ' + exchVal + ';')
+                f2.write(str(nInst) + ': Mem['+ chkLoc + '] = ' + exchVal + ';')
             else:
                 if branch_target == "":
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ',END)\n')
-                        f2.write(nInst + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto END;')
+                        f2.write(str(nInst) + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto END;')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ',END)\n')
-                        f2.write(nInst + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto END;')
+                        f2.write(str(nInst) + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto END;')
                 else:
                     nInst = 0
                     while operations[nInst] != branch_target:
                         nInst +=1
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ','+ str(nInst) +  ')\n')
-                        f2.write(nInst + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto ' + str(nInst) + ';')
+                        f2.write(str(nInst) + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto ' + str(nInst) + ';')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ','+ str(nInst) +  ')\n')
-                        f2.write(nInst + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto ' + str(nInst) + ';')
+                        f2.write(str(nInst) + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto ' + str(nInst) + ';')
 
             operation = nextPo
             nInst += 1

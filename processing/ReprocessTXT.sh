@@ -7,14 +7,15 @@ fi
 
 shopt -s nullglob
 
-source="${BASH_SOURCE%/*}/"
-for f in $1/*/
+source="${BASH_SOURCE%/*}"
+for f in $1/*
 do
 	for f2 in $f/*.xml
 	do
+	        folderN=${f2%/*}
 		fileName=${f2##*/}
 		index=${fileName%.xml}
 
-		python $source/Converter.py $f2 $index
+		python $source/Converter.py $folderN $index
 	done 		
 done

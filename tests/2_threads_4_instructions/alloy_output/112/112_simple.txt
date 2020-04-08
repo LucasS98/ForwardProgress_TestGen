@@ -1,12 +1,8 @@
-THREAD0
-If Exch(Mem[0],1) == 1: goto END
+THREAD 0
+0: if (Exch(Mem[0],1) == 1) goto END;
+1: Mem[0] = 0;
+2: if (Mem[0] == 0) goto 2;
 
-Mem[0] = 0
-
-If Mem[0] == 0: goto 2
-
-
-THREAD1
-If Exch(Mem[0],1) == 1: goto 0
-
+THREAD 1
+0: if (Exch(Mem[0],1) == 1) goto 0;
 

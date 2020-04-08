@@ -1,12 +1,8 @@
-THREAD0
-If Mem[0] == 1: goto END
+THREAD 0
+0: if (Mem[0] == 1) goto END;
+1: if (Mem[0] == 1) goto END;
+2: if (Mem[0] == 0) goto 2;
 
-If Mem[0] == 1: goto END
-
-If Mem[0] == 0: goto 2
-
-
-THREAD1
-Mem[0] = 1
-
+THREAD 1
+0: Mem[0] = 1;
 
