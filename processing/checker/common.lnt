@@ -155,7 +155,7 @@ process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       numCU: nat
    in
       doneThread := 0;
-      numCU := any nat where numCU < numThread;
+      numCU := any nat where numCU <= numThread;
       activeThreads := {};
 
     loop sched_loop in
@@ -272,13 +272,14 @@ end process
 -- This process specifies the scheduler for the Linear OBE model,
 -- where threads are guaranteed fair scheduling as soon as any thread
 -- ID greater or equal to theirs has made a first execution step.
-process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numCU: nat) is
+process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThreads: nat,
       tid: nat,
       highestID: nat
    in
       doneThreads := 0;
+      numCU := any nat where numCU <= numThread;
       highestID := numCU;
 
     loop sched_loop in
