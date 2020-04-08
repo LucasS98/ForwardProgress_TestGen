@@ -34,11 +34,6 @@ type Program is
    with "access", "length"
 end type
 
-type InactivityCounter is
-   list of (nat, nat)
-   with "access", "length"
-end type
-
 -- A channel is a way to type the interactions between processes
 
 channel NatChan is
@@ -71,10 +66,10 @@ process Thread [EX: ExChan, TERMINATE: NatChan] (tid: nat, prog: Program) is
       case access(prog, pc) of Instruction in
          ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, any bool) ->
             select
-               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, true));
+               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, true), ?any nat);
                pc := branch_target
             []
-               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, false));
+               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, false), ?any nat);
                pc := pc + 1
             end select
       end case;
@@ -105,7 +100,7 @@ process SHARED_MEMORY [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       -- main loop
       loop mem_loop in
          select
-            EX(?any nat, ?ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, any nat, do_branch)) where do_branch == (check_val == mem[nat(check_loc)]);
+            EX(?any nat, ?ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, any nat, do_branch)) where do_branch == (check_val == mem[nat(check_loc)], ?any nat);
 	    if do_exch then
                mem[nat(check_loc)] := exch_val
             end if
@@ -201,18 +196,25 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       eventualCounter: nat
    in
       activeThread := 0;
+      eventualCounter := 0;
     loop sched_loop in
       select
 
         -- Only the active thread is guaranteed fair scheduling
-	EX(?tid, ?any Instruction, eventualCounter) where tid == activeThread or eventualCounter < 10
+	EX(?tid, ?any Instruction, eventualCounter) where tid == activeThread or eventualCounter < 10;
+	eventualCounter := eventualCounter + 1;
+	if tid == activeThread then
+	   eventualCounter := 0;
 
       []
 
         -- When activeThread terminates, provide fair scheduling to the next thread id
-        TERMINATE(activeThread);
-	activeThread := activeThread + 1;
-        if activeThread == numThread then
+        TERMINATE(?tid);
+	if tid == activeThread then
+	   activeThread := activeThread + 1;
+	   eventualCounter := 0;
+
+	if activeThread == numThread then
            break sched_loop
         end if
 
@@ -247,7 +249,7 @@ process SCHEDULER_HSA_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numC
       []
 
         -- a Thread already present in activeThreads can execute
-        EX(?tid, ?any Instruction, 0) where member(tid, activeThreads)
+v        EX(?tid, ?any Instruction, 0) where member(tid, activeThreads)
 
       []
 
@@ -282,6 +284,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThreads: nat,
       tid: nat,
+      numCUL nat,
       highestID: nat
    in
       doneThreads := 0;
