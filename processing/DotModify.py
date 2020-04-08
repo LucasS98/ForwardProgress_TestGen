@@ -137,21 +137,21 @@ def InstructionString(path, operationName):
 
             if op_code == operationName:
                 if (nextPo == branch_target): 
-                    return thd + '\nMem['+ chkLoc + '] =' + exchVal
+                    return thd + '\nMem['+ chkLoc + '] =' + exchVal + ';'
                 else:
                     if branch_target == "":
                         if (exchVal == ""):
-                            return thd + '\nIf Mem['+ chkLoc + '] ==' + chkVal + ': \n goto END)'
+                            return thd + '\nif (Mem['+ chkLoc + '] ==' + chkVal + ')\n goto END;'
                         else:
-                            return thd + '\nIf Exch(Mem['+ chkLoc + '], '+ exchVal + ') == ' + chkVal + ':\n goto END'
+                            return thd + '\nif (Exch(Mem['+ chkLoc + '], '+ exchVal + ') == ' + chkVal + ')\n goto END;'
                     else:
                         nInst = 0
                         while operations[nInst] != branch_target:
                             nInst +=1
                         if (exchVal == ""):
-                            return thd + '\nIf Mem['+ chkLoc + '] ==' + chkVal + ': \n goto ' + str(nInst)
+                            return thd + '\nif (Mem['+ chkLoc + '] ==' + chkVal + ')\n goto ' + str(nInst) + ';'
                         else:
-                            return thd + '\nIf Exch(Mem['+ chkLoc + '], '+ exchVal + ') == ' + chkVal + ':\n goto '+ str(nInst)
+                            return thd + '\nif (Exch(Mem['+ chkLoc + '], '+ exchVal + ') == ' + chkVal + ')\n goto '+ str(nInst) + ';'
 
             operation = nextPo
     return ""

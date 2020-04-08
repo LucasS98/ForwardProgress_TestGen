@@ -86,6 +86,7 @@ def convertXML(filename, folderName):
 
         # Check if there is another instruction after it
         # Break if last instruction
+        nInst = 0
         operation = operations[0]
         while operation != "":
             chkLoc = ""
@@ -141,27 +142,28 @@ def convertXML(filename, folderName):
 
             if (nextPo == branch_target): 
                 f.write('atomic_store('+ chkLoc + ',' + exchVal + ')\n')
-                f2.write('Mem['+ chkLoc + '] = ' + exchVal + '\n')
+                f2.write(nInst + ': Mem['+ chkLoc + '] = ' + exchVal + ';')
             else:
                 if branch_target == "":
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ',END)\n')
-                        f2.write('If Mem['+ chkLoc + '] == ' + chkVal + ': goto END\n')
+                        f2.write(nInst + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto END;')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ',END)\n')
-                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ': goto END\n')
+                        f2.write(nInst + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto END;')
                 else:
                     nInst = 0
                     while operations[nInst] != branch_target:
                         nInst +=1
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ','+ str(nInst) +  ')\n')
-                        f2.write('If Mem['+ chkLoc + '] == ' + chkVal + ': goto ' + str(nInst) +'\n')
+                        f2.write(nInst + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto ' + str(nInst) + ';')
                     else:
                         f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ','+ str(nInst) +  ')\n')
-                        f2.write('If Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ': goto ' + str(nInst) +'\n')
+                        f2.write(nInst + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto ' + str(nInst) + ';')
 
             operation = nextPo
+            nInst += 1
             f.write('\n')
             f2.write('\n')
 
