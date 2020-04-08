@@ -205,7 +205,7 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
         -- Only the active thread is guaranteed fair scheduling
-	EX(?any nat, ?any Instruction, threadSet);
+	EX(?any nat, ?any Instruction, threadSet)
 
       []
 
@@ -290,11 +290,11 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numCU: 
       doneThreads := 0;
       highestID := numCU;
 
-      threadSet = {};
       i := 0;
+      threadSet := {};
       while i < highestID loop
 	      threadSet := insert(i, threadSet)
-	   end loop
+	   end loop;
 
     loop sched_loop in
       select
