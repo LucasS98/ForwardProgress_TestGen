@@ -41,8 +41,8 @@ channel NatChan is
 end channel
 
 channel ExChan is
-  -- tid, instruction, number of steps since fairly scheduled thread
-  (nat, Instruction, nat)
+  -- tid, instruction, do_branch
+  (nat, Instruction, int)
 end channel
 
 -------------------------------------------------------------------------------
@@ -100,7 +100,7 @@ process SHARED_MEMORY [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       -- main loop
       loop mem_loop in
          select
-            EX(?any nat, ?ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, any nat, do_branch)) where do_branch == (check_val == mem[nat(check_loc)], ?any nat);
+            EX(?any nat, ?ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, any nat, do_branch), ?any nat) where do_branch == (check_val == mem[nat(check_loc)]);
 	    if do_exch then
                mem[nat(check_loc)] := exch_val
             end if
@@ -121,14 +121,17 @@ end process
 -- This process specifies a "no scheduler", which always allows any process to execute
 process SCHEDULER_NONE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
-      doneThread: nat
+      doneThread: nat,
+      value: nat
    in
       doneThread := 0;
+      value := 0;
+
       loop sched_loop in
          select
 
             -- Execution step of a thread
-            EX(?any nat, ?any Instruction, 0)
+            EX(?any nat, ?any Instruction, value)
 
          []
 
@@ -155,20 +158,20 @@ process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       numCU: nat
    in
       doneThread := 0;
-      numCU := any nat where numCU <= numThread;
+      numCU := numThread;
       activeThreads := {};
 
     loop sched_loop in
       select
 
         -- First execution step of a thread
-	EX(?tid, ?any Instruction, 0) where length(activeThreads) < numCU and not(member(tid, activeThreads));
+	EX(?tid, ?any Instruction, numThread) where length(activeThreads) < numCU and not(member(tid, activeThreads));
         activeThreads := insert(tid, activeThreads)
 
       []
 
         -- a Thread already present in activeThreads can execute
-        EX(?tid, ?any Instruction, 0) where member(tid, activeThreads)
+        EX(?tid, ?any Instruction, numThread) where member(tid, activeThreads)
 
       []
 
@@ -192,29 +195,21 @@ end process
 -- increasing by 1 every time the active thread terminates.
 process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
-      activeThread: nat,
-      eventualCounter: nat
+      activeThread: nat
    in
       activeThread := 0;
-      eventualCounter := 0;
     loop sched_loop in
       select
 
         -- Only the active thread is guaranteed fair scheduling
-	EX(?tid, ?any Instruction, eventualCounter) where tid == activeThread or eventualCounter < 10;
-	eventualCounter := eventualCounter + 1;
-	if tid == activeThread then
-	   eventualCounter := 0;
+	EX(?any nat, ?any Instruction, activeThread)
 
       []
 
         -- When activeThread terminates, provide fair scheduling to the next thread id
-        TERMINATE(?tid);
-	if tid == activeThread then
-	   activeThread := activeThread + 1;
-	   eventualCounter := 0;
-
-	if activeThread == numThread then
+        TERMINATE(activeThread);
+	activeThread := activeThread + 1;
+        if activeThread == numThread then
            break sched_loop
         end if
 
@@ -243,13 +238,13 @@ process SCHEDULER_HSA_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numC
       select
 
         -- First execution step of a thread
-	EX(?tid, ?any Instruction, 0) where length(activeThreads) < numCU and not(member(tid, activeThreads));
+	EX(?tid, ?any Instruction, numThread) where length(activeThreads) < numCU and not(member(tid, activeThreads));
         activeThreads := insert(tid, activeThreads)
 
       []
 
         -- a Thread already present in activeThreads can execute
-v        EX(?tid, ?any Instruction, 0) where member(tid, activeThreads)
+        EX(?tid, ?any Instruction, numThread) where member(tid, activeThreads)
 
       []
 
@@ -280,22 +275,20 @@ end process
 -- This process specifies the scheduler for the Linear OBE model,
 -- where threads are guaranteed fair scheduling as soon as any thread
 -- ID greater or equal to theirs has made a first execution step.
-process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
+process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numCU: nat) is
    var
       doneThreads: nat,
       tid: nat,
-      numCUL nat,
       highestID: nat
    in
       doneThreads := 0;
-      numCU := any nat where numCU <= numThread;
       highestID := numCU;
 
     loop sched_loop in
       select
 
         -- any Thread up to highestID is guaranteed fairly scheduling
-        EX(?tid, ?any Instruction, 0) where tid < highestID
+        EX(?tid, ?any Instruction, numThread) where tid < highestID
 
       []
 
