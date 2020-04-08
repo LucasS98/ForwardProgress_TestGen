@@ -34,6 +34,11 @@ type Program is
    with "access", "length"
 end type
 
+type InactivityCounter is
+   list of (nat, nat)
+   with "access", "length"
+end type
+
 -- A channel is a way to type the interactions between processes
 
 channel NatChan is
