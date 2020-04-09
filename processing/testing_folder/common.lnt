@@ -224,7 +224,7 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
         tokenSet := remove(tid, tokenSet);
         if tid == activeThread then
            activeThread := activeThread + 1;
-           schedSet := {activeThread}
+           schedSet := {activeThread};
            tokenSet := insert(activeThread, tokenSet)
         end if
 
