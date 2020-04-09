@@ -198,9 +198,11 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       activeThread: nat,
       tid: nat,
       schedSet: NatSet,
-      tokenSet: NatSet
+      tokenSet: NatSet,
+      numCU: nat
    in
       activeThread := 0;
+      numCU := any nat where numCU <= numThread;
       schedSet := {activeThread};
       tokenSet := {activeThread};
     loop sched_loop in
@@ -226,7 +228,7 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
            activeThread := activeThread + 1;
            schedSet := {activeThread};
            tokenSet := insert(activeThread, tokenSet)
-        end if
+        end if;
 
         if activeThread == numThread then
            break sched_loop
