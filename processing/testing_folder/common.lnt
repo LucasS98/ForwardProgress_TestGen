@@ -158,7 +158,7 @@ process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       numCU: nat
    in
       doneThread := 0;
-      numCU := numThread;
+      numCU := any nat where numCU <= numThread;
       activeThreads := {};
 
     loop sched_loop in
@@ -197,22 +197,37 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       activeThread: nat,
       tid: nat,
-      threadSet: NatSet
+      schedSet: NatSet,
+      tokenSet: NatSet
    in
       activeThread := 0;
-      threadSet := {activeThread};
+      schedSet := {activeThread};
+      tokenSet := {activeThread};
     loop sched_loop in
       select
 
-        -- Only the active thread is guaranteed fair scheduling
-	EX(?any nat, ?any Instruction, threadSet)
+        -- First execution step of a thread
+	   EX(?tid, ?any Instruction, schedSet) where length(tokenSet) < numCU and not(member(tid, tokenSet));
+      tokenSet := insert(tid, tokenSet)
+
+      []
+
+        -- a Thread already present in activeThreads can execute
+        EX(?tid, ?any Instruction, schedSet) where member(tid, tokenSet)
 
       []
 
         -- When activeThread terminates, provide fair scheduling to the next thread id
-        TERMINATE(activeThread);
-	activeThread := activeThread + 1;
-   threadSet := {activeThread};
+        TERMINATE(?tid);
+
+       -- Return token. If first id thread, give token to next fair sched thread
+        tokenSet := remove(tid, tokenSet);
+        if tid == activeThread then
+           activeThread := activeThread + 1;
+           schedSet := {activeThread}
+           tokenSet := insert(activeThread, tokenSet)
+        end if
+
         if activeThread == numThread then
            break sched_loop
         end if
@@ -279,7 +294,7 @@ end process
 -- This process specifies the scheduler for the Linear OBE model,
 -- where threads are guaranteed fair scheduling as soon as any thread
 -- ID greater or equal to theirs has made a first execution step.
-process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numCU: nat) is
+process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThreads: nat,
       tid: nat,
@@ -288,12 +303,14 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat, numCU: 
       i: nat
    in
       doneThreads := 0;
+      numCU := any nat where numCU <= numThread;
       highestID := numCU;
 
       i := 0;
       threadSet := {};
       while i < highestID loop
-	      threadSet := insert(i, threadSet)
+	      threadSet := insert(i, threadSet);
+         i := i + 1
 	   end loop;
 
     loop sched_loop in
