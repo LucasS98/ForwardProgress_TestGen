@@ -302,6 +302,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       tid: nat,
       highestID: nat,
       threadSet: NatSet,
+      numCU: nat,
       i: nat
    in
       doneThreads := 0;
