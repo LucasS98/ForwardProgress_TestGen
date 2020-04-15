@@ -262,6 +262,7 @@ def convertDot(path):
 
             exc_str = all_content[find_loc:end_loc]
             exc_str = exc_str.replace("X$", "Mem[")
+            exc_str = exc_str.replace("X", "Mem[")
             exc_str = exc_str.replace("$0", "")
             exc_str = exc_str.replace("->", "] = ")
             exc_str = exc_str.replace("ZERO", "0")
