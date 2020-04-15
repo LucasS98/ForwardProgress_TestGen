@@ -3,7 +3,7 @@ import os
 import time
 import xml.etree.ElementTree as ET
 import filecmp
-
+import datetime
 
 # MANUAL COMPARISON
 #def compareFiles(fn1, fn2):
@@ -27,6 +27,11 @@ def main(argv):
                 print(1)
                 break
     if not delete:
+        # If file is not duplicate, add record that we found a new test
+        f = open("../"+ folderName+ "/timestamps.txt", "a+")
+        now = datetime.datetime.now()
+        f.write(now.strftime("%Y-%m-%d %H:%M:%S") + "\n")
+        f.close()
         print(0)
                
       
