@@ -1,0 +1,21 @@
+In specification TEST_106_LOBE [3]
+
+   - process SCHEDULER_NONE [COMMON:312] is never reached
+
+   - process LOOP__1 [COMMON:318] is never reached
+
+   - process SCHEDULER_OBE [COMMON:335] is never reached
+
+   - process LOOP__1 [COMMON:348] is never reached
+
+   - process SCHEDULER_HSA [COMMON:374] is never reached
+
+   - process LOOP__1 [COMMON:380] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:397] is never reached
+
+   - process LOOP__1 [COMMON:409] is never reached
+
+   - process COND__2 [COMMON:434] is never reached
+
+   - process LOOP__2 [COMMON:443] is never reached

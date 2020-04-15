@@ -1,0 +1,64 @@
+
+svl clean info: [persistent] test_74_none.bcg
+
+"test_74_none.bcg" = generation of "test_74_none.lnt"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] test_74_none.o
+
+svl clean info: [temporary] test_74_none.err
+
+% lnt.open   "test_74_none.lnt"  generator  "test_74_none.bcg"
+
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_AUOQj9/COMMON.lib'' ...
+/tmp/ls24_lnt.open_AUOQj9/common.lnt:293: warning: value stored in variable TID is not used later
+
+lnt.open: translating ``test_74_none.lnt'' to ``/tmp/ls24_lnt.open_AUOQj9/test_74_none.lotos'' ...
+
+lnt.open: calling lotos.open for ``test_74_none.lotos'' ...
+lotos.open: using ``(direct) caesar''
+lotos.open: calling ``caesar.adt -debug -silent test_74_none''
+cadp_indent: cannot find ``indent''
+             file ``test_74_none.h'' will not be formatted
+lotos.open: calling ``lnt_check'' for ``test_74_none.h''
+lotos.open: calling ``caesar -silent test_74_none''
+#109 warning during restriction:
+     detection of unreachable processes
+In specification TEST_74_NONE [3]
+
+   - process SCHEDULER_OBE [COMMON:335] is never reached
+
+   - process LOOP__1 [COMMON:348] is never reached
+
+   - process SCHEDULER_HSA [COMMON:374] is never reached
+
+   - process LOOP__1 [COMMON:380] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:397] is never reached
+
+   - process LOOP__1 [COMMON:409] is never reached
+
+   - process COND__2 [COMMON:434] is never reached
+
+   - process LOOP__2 [COMMON:443] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:456] is never reached
+
+   - process LOOP__1 [COMMON:465] is never reached
+
+   - process COND__2 [COMMON:481] is never reached
+#275 error in file ``.h'' :
+     unexpected case (not defined by the equations)
+     in operation MEMLOC [COMMON:31]
+     implemented by function ADT_RANGE_CAST__MEMLOC__GENERATED [./test_74_none.h:2053]
+         argument 1 = 2
+
+#248 system error during simulation:
+     termination on SOFTWARE_TERMINATION signal (files completed)
+     quit
+command exit with status 1
+
+svl: ERROR command failed

@@ -6,18 +6,22 @@ In specification PROD_CONS_HSA [3]
 
    - process SCHEDULER_OBE [COMMON:338] is never reached
 
-   - process LOOP__1 [COMMON:350] is never reached
+   - process LOOP__1 [COMMON:351] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:411] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:434] is never reached
 
-   - process LOOP__1 [COMMON:423] is never reached
+   - process LOOP__1 [COMMON:446] is never reached
 
-   - process COND__2 [COMMON:448] is never reached
+   - process COND__2 [COMMON:471] is never reached
 
-   - process LOOP__2 [COMMON:457] is never reached
+   - process LOOP__2 [COMMON:480] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:470] is never reached
+   - process SCHEDULER_LOBE [COMMON:493] is never reached
 
-   - process LOOP__1 [COMMON:479] is never reached
+   - process LOOP__1 [COMMON:512] is never reached
 
-   - process COND__2 [COMMON:495] is never reached
+   - process WHILE_CONT__1 [COMMON:527] is never reached
+
+   - process LOOP__2 [COMMON:532] is never reached
+
+   - process COND__2 [COMMON:548] is never reached
