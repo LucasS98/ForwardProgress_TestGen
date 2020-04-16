@@ -5,20 +5,20 @@ import xml.etree.ElementTree as ET
     
 def RecursiveAddClauses(index, condition, nThreads, myList):
     if (index == nThreads):
-        if myList.count == 0:
+        if len(myList) == 0:
             return condition
 
         setStr = "{"
-        for i in range(myList.count - 1):
+        for i in range(len(myList) - 1):
             setStr += str(myList[i]) + ", "
-        setStr += str(myList[myList.count]-1) + "}"
+        setStr += str(myList[len(myList)-1]) + "}"
 
-        toAppend = "( <true*> < 
-        for i in range(myList.count - 1):
-            toAppend += " \'EX !" str(myList[i]) + " .* !" + setStr + "\' . true* ."
-        toAppend += " \'EX !" str(myList[i]) + " .* !" + setStr + "\' . true* )"
+        toAppend = "( <true*> < "
+        for i in range(len(myList) - 1):
+            toAppend += " \'EX !" + str(myList[i]) + " .* !" + setStr + "\' . true* ."
+        toAppend += " \'EX !" + str(myList[len(myList)-1]) + " .* !" + setStr + "\' . true* )"
 
-        if myList.count == nThreads:
+        if len(myList) == nThreads:
             toAppend = toAppend + ";"
         else:
             toAppend = toAppend + " or "
@@ -26,13 +26,13 @@ def RecursiveAddClauses(index, condition, nThreads, myList):
         return condition + toAppend           
     else:
         condition = RecursiveAddClauses(index+1, condition, nThreads, myList)
-        myList.append()
+        myList.append(index)
         condition = RecursiveAddClauses(index+1, condition, nThreads, myList)
         myList.pop()
         return condition
 
 def generateSVLCondition(nThreads):
-    return = RecursiveAddClauses(0, "", nThreads, [])
+    return RecursiveAddClauses(0, "", nThreads, [])
 
 def createCADPString(filename): 
     # create element tree object and get root
@@ -209,7 +209,7 @@ def main(argv):
     CADPfolder = argv[2]
 
     replace, threads = createCADPString(folderName + "/"+ str(index)+".xml")
-    condition = generateSVLCondition(threads)
+    condition = generateSVLCondition(int(threads))
 
     try:
         os.mkdir(folderName +"checker")
