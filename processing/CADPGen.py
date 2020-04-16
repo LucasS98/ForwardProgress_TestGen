@@ -2,7 +2,38 @@ import sys
 import os.path
 import time
 import xml.etree.ElementTree as ET 
-     
+    
+def RecursiveAddClauses(index, condition, nThreads, myList):
+    if (index == nThreads):
+        if myList.count == 0:
+            return condition
+
+        setStr = "{"
+        for i in range(myList.count - 1):
+            setStr += str(myList[i]) + ", "
+        setStr += str(myList[myList.count]-1) + "}"
+
+        toAppend = "( <true*> < 
+        for i in range(myList.count - 1):
+            toAppend += " \'EX !" str(myList[i]) + " .* !" + setStr + "\' . true* ."
+        toAppend += " \'EX !" str(myList[i]) + " .* !" + setStr + "\' . true* )"
+
+        if myList.count == nThreads:
+            toAppend = toAppend + ";"
+        else:
+            toAppend = toAppend + " or "
+
+        return condition + toAppend           
+    else:
+        condition = RecursiveAddClauses(index+1, condition, nThreads, myList)
+        myList.append()
+        condition = RecursiveAddClauses(index+1, condition, nThreads, myList)
+        myList.pop()
+        return condition
+
+def generateSVLCondition(nThreads):
+    return = RecursiveAddClauses(0, "", nThreads, [])
+
 def createCADPString(filename): 
     # create element tree object and get root
     tree = ET.parse(filename)  
@@ -157,12 +188,13 @@ def createCADPString(filename):
 
     return output, str(nItems)
 
-def writeCADPFile(CADPfolder, folder, index, filename, replace, threads):
+def writeCADPFile(CADPfolder, folder, index, filename, replace, threads, condition = ""):
     f = open(CADPfolder + "checker/" + filename, "r")
     s = f.read()
     s = s.replace("prod_cons", "test_" + str(index))   
     s = s.replace("$REPLACE$", replace)
     s = s.replace("$N_THREADS$", threads)
+    s = s.replace("$FORMULA$", condition)
     f.close()
     
     filename = filename.replace("prod_cons", "test_" + str(index))
@@ -177,6 +209,7 @@ def main(argv):
     CADPfolder = argv[2]
 
     replace, threads = createCADPString(folderName + "/"+ str(index)+".xml")
+    condition = generateSVLCondition(threads)
 
     try:
         os.mkdir(folderName +"checker")
@@ -189,7 +222,7 @@ def main(argv):
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_obe.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_none.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "common.lnt", replace, threads)
-    writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace, threads)              
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace, threads, condition)              
       
 if __name__ == "__main__": 
   
