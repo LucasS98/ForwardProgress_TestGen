@@ -215,7 +215,7 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
             -- a Thread may stop at any time
             TERMINATE(?any nat);
             doneThread := doneThread + 1;
-            fairSched := {doneThread}
+            fairSched := {doneThread};
             if doneThread == numThread then
                break sched_loop
             end if

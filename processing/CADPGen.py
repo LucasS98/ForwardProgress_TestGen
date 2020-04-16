@@ -13,13 +13,13 @@ def RecursiveAddClauses(index, condition, nThreads, myList):
             setStr += str(myList[i]) + ", "
         setStr += str(myList[len(myList)-1]) + "}"
 
-        toAppend = "( <true*> < "
+        toAppend = "( < "
         for i in range(len(myList) - 1):
             toAppend += " \'EX !" + str(myList[i]) + " .* !" + setStr + "\' . true* ."
-        toAppend += " \'EX !" + str(myList[len(myList)-1]) + " .* !" + setStr + "\' . true* ) > @"
+        toAppend += " \'EX !" + str(myList[len(myList)-1]) + " .* !" + setStr + "\' . true* > @ )"
 
         if len(myList) == nThreads:
-            toAppend = toAppend + ";"
+            toAppend = toAppend + ");"
         else:
             toAppend = toAppend + " or "
 
@@ -32,7 +32,7 @@ def RecursiveAddClauses(index, condition, nThreads, myList):
         return condition
 
 def generateSVLCondition(nThreads):
-    return RecursiveAddClauses(0, "", nThreads, [])
+    return "<true*> (" + RecursiveAddClauses(0, "", nThreads, [])
 
 def createCADPString(filename): 
     # create element tree object and get root
