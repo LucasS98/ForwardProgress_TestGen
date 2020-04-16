@@ -16,7 +16,7 @@ def RecursiveAddClauses(index, condition, nThreads, myList):
         toAppend = "( <true*> < "
         for i in range(len(myList) - 1):
             toAppend += " \'EX !" + str(myList[i]) + " .* !" + setStr + "\' . true* ."
-        toAppend += " \'EX !" + str(myList[len(myList)-1]) + " .* !" + setStr + "\' . true* )"
+        toAppend += " \'EX !" + str(myList[len(myList)-1]) + " .* !" + setStr + "\' . true* ) > @"
 
         if len(myList) == nThreads:
             toAppend = toAppend + ";"
