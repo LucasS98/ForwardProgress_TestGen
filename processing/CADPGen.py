@@ -15,8 +15,8 @@ def RecursiveAddClauses(index, condition, nThreads, myList):
 
         toAppend = "( < "
         for i in range(len(myList) - 1):
-            toAppend += " \'EX !" + str(myList[i]) + " .* !" + setStr + " !" + str(len(myList)) + "\' . true* ."
-        toAppend += " \'EX !" + str(myList[len(myList)-1]) + " .* !" + setStr + " !" + str(len(myList)) + "\' . true* > @ )"
+            toAppend += " \'EX !" + str(myList[i]) + " .* !" + setStr + "\' . true* ."
+        toAppend += " \'EX !" + str(myList[len(myList)-1]) + " .* !" + setStr + "\' . true* > @ )"
 
         if len(myList) == nThreads:
             toAppend = toAppend + ");"
@@ -220,6 +220,7 @@ def main(argv):
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_obe.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_lobe.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_obe.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_priority.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_none.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "common.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace, threads, condition)              

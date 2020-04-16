@@ -14,6 +14,7 @@ newname="$1$str"
 
 rm -r $newname
 cp -r $1 $newname
+mkdir $newname/../checker_files
 
 
 source="${BASH_SOURCE%/*}/"
@@ -45,7 +46,7 @@ do
 		(cd $folderN/checker && svl test_${index}.svl > labels_${index}.txt)
 		python $source/ProcessLabels.py $folderN/checker/labels_${index}.txt
 		(cd $folderN/checker && cp labels_${index}.txt ../label_${index}.txt)
-		(cd $folderN && rm -rf checker)
+		(cd $folderN && mv checker ../../checker_files/$index)
 
 		python $source/amber_test_generation.py $v2.txt $v2
 

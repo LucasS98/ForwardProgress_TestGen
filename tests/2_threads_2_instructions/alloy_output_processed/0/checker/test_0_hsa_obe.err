@@ -1,0 +1,29 @@
+In specification TEST_0_HSA_OBE [3]
+
+   - process SCHEDULER_NONE [COMMON:325] is never reached
+
+   - process LOOP__1 [COMMON:337] is never reached
+
+   - process SCHEDULER_OBE [COMMON:354] is never reached
+
+   - process LOOP__1 [COMMON:367] is never reached
+
+   - process SCHEDULER_HSA [COMMON:393] is never reached
+
+   - process LOOP__1 [COMMON:405] is never reached
+
+   - process SCHEDULER_HSA_COMPLETE [COMMON:425] is never reached
+
+   - process LOOP__1 [COMMON:444] is never reached
+
+   - process COND__2 [COMMON:475] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:544] is never reached
+
+   - process LOOP__1 [COMMON:563] is never reached
+
+   - process WHILE_CONT__1 [COMMON:578] is never reached
+
+   - process LOOP__2 [COMMON:583] is never reached
+
+   - process COND__2 [COMMON:599] is never reached

@@ -44,5 +44,8 @@ check FreeFromDeadlockLasso(prod_cons_hsa);
 "prod_cons_hsa_obe.bcg" = generation of "prod_cons_hsa_obe.lnt";
 check FreeFromDeadlockLasso(prod_cons_hsa_obe);
 
+"prod_cons_hsa_priority.bcg" = generation of "prod_cons_hsa_priority.lnt";
+check FreeFromDeadlockLasso(prod_cons_hsa_priority);
+
 "prod_cons_lobe.bcg" = generation of "prod_cons_lobe.lnt";
 check FreeFromDeadlockLasso(prod_cons_lobe);
