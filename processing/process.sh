@@ -12,8 +12,9 @@ shopt -s nullglob
 str="_processed"
 newname="$1$str"
 
-rm -r $newname
+rm -rf $newname
 cp -r $1 $newname
+rm -rf $newname/../checker_files
 mkdir $newname/../checker_files
 
 
