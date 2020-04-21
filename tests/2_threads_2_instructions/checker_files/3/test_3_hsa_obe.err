@@ -1,0 +1,38 @@
+In process SCHEDULER_LOBE [COMMON:595]
+
+   - conversion ``of NAT [X_NATURAL:3]'' is applied to value:
+        NIL
+     whereas the sort of this value is:
+        PROGRAM [COMMON:9] | NATSET [COMMON:5]
+
+In process LOOP__1 [COMMON:613]
+
+   - variable or constant operation ACTIVETHREADS was not declared
+
+   - variable or constant operation ACTIVETHREADS was not declared
+
+   - operation INSERT used in value:
+        INSERT (LOCAL__TID__1, LOCAL__DONESET__1) of NAT
+     the profile of which is
+        NAT [X_NATURAL:3], NAT [X_NATURAL:3] -> ?
+     was not declared; some operations exist with the same name
+     but with incompatible profiles:
+        INSERT [COMMON:15] : NAT [X_NATURAL:3], NATSET [COMMON:5] -> NATSET [COMMON:5]
+
+In process LOOP__2 [COMMON:638]
+
+   - operation MEMBER used in guard:
+        NOT (MEMBER (LOCAL__I__1, LOCAL__THREADSET__1)) AND NOT (MEMBER (LOCAL__I__1, LOCAL__DONESET__1)) = TRUE of BOOL
+     the profile of which is
+        NAT [X_NATURAL:3], NAT [X_NATURAL:3] -> ?
+     was not declared; some operations exist with the same name
+     but with incompatible profiles:
+        MEMBER [COMMON:18] : NAT [X_NATURAL:3], NATSET [COMMON:5] -> BOOL [X_BOOLEAN:3]
+
+   - operation MEMBER used in guard:
+        NOT (NOT (MEMBER (LOCAL__I__1, LOCAL__THREADSET__1)) AND NOT (MEMBER (LOCAL__I__1, LOCAL__DONESET__1))) = TRUE of BOOL
+     the profile of which is
+        NAT [X_NATURAL:3], NAT [X_NATURAL:3] -> ?
+     was not declared; some operations exist with the same name
+     but with incompatible profiles:
+        MEMBER [COMMON:18] : NAT [X_NATURAL:3], NATSET [COMMON:5] -> BOOL [X_BOOLEAN:3]

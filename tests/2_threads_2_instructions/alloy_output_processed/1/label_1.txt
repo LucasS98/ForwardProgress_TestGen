@@ -1,5 +1,5 @@
-Unfair - At least one lasso: PASS
-Unfair - Can reach termination: PASS
+Unfair - At least one lasso: FAIL
+Unfair - Can reach termination: FAIL
 OBE - Termination: FAIL
 HSA - Termination: FAIL
 HSA_OBE - Termination: FAIL
