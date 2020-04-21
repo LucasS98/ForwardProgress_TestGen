@@ -1,5 +1,5 @@
 #!/bin/bash
-# Script to process tests and generate png/pdf
+# Script to process tests, generate png/pdfs and process labels
 
 if [ $# -eq 0 ]
 then
@@ -24,7 +24,7 @@ for f in $newname/*/
 do
 	for f2 in $f/*.dot
 	do
-	if [[ $f =~ "_small" ]]
+	if [[ $f2 =~ *_simple* ]]
 	then
 		:
 	else
@@ -46,6 +46,9 @@ do
 		(cd $folderN/checker && lnt.open test_${index}_hsa_obe.lnt generator test_${index}_hsa_obe.bcg > /dev/null)
 		(cd $folderN/checker && svl test_${index}.svl > labels_${index}.txt)
 		python $source/ProcessLabels.py $folderN/checker/labels_${index}.txt
+
+		(cd $folderN/checker && for i in *bcg ; do bcg_io $i -graphviz `basename $i .bcg`.dot ; done )
+
 		(cd $folderN/checker && cp labels_${index}.txt ../label_${index}.txt)
 		(cd $folderN && mv checker ../../checker_files/$index)
 

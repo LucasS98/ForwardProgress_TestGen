@@ -49,3 +49,6 @@ check FreeFromDeadlockLasso(prod_cons_hsa_priority);
 
 "prod_cons_lobe.bcg" = generation of "prod_cons_lobe.lnt";
 check FreeFromDeadlockLasso(prod_cons_lobe);
+
+"prod_cons_weak.bcg" = generation of "prod_cons_weak.lnt";
+check FreeFromDeadlockLasso(prod_cons_weak);
