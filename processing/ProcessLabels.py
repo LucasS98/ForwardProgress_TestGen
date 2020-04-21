@@ -19,14 +19,19 @@ def main(argv):
     f.close()
 
     f = open(txtFile, "w")
+    f.write("SANITY CHECK ---------------------\n")
     f.write("Unfair - At least one lasso: " + results[0] + "\n")
     f.write("Unfair - Can reach termination: " + results[1] + "\n")
+    f.write("\n")
+    f.write("SCHEDULER RESULTS ---------------------\n")
     f.write("OBE - Termination: " + results[2] + "\n")
     f.write("HSA - Termination: " + results[3] + "\n")
     f.write("HSA_OBE - Termination: " + results[4] + "\n")
     f.write("LOBE - Termination: " + results[6] + "\n")
     f.write("WEAK_FAIR - Termination: " + results[6] + "\n")
-    f.write("HSA_PRIORITY (Experimental) - Termination: " + results[5] + "\n")    
+    f.write("\n")
+    f.write("EXPERIMENTAL SCHEDULER ---------------------\n")
+    f.write("HSA_PRIORITY - Termination: " + results[5] + "\n")    
     
     return 0
                
