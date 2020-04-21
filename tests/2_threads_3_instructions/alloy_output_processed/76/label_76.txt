@@ -3,5 +3,6 @@ Unfair - Can reach termination: PASS
 OBE - Termination: FAIL
 HSA - Termination: FAIL
 HSA_OBE - Termination: FAIL
-HSA_PRIORITY - Termination: FAIL
 LOBE - Termination: FAIL
+WEAK_FAIR - Termination: FAIL
+HSA_PRIORITY (Experimental) - Termination: FAIL

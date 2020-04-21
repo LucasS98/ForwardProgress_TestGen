@@ -49,3 +49,6 @@ check FreeFromDeadlockLasso(test_91_hsa_priority);
 
 "test_91_lobe.bcg" = generation of "test_91_lobe.lnt";
 check FreeFromDeadlockLasso(test_91_lobe);
+
+"test_91_weak.bcg" = generation of "test_91_weak.lnt";
+check FreeFromDeadlockLasso(test_91_weak);

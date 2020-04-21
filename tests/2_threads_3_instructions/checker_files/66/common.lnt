@@ -147,6 +147,43 @@ process SCHEDULER_NONE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    end var
 end process
 
+process SCHEDULER_WEAK_FAIR [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
+   var
+      doneThread: nat,
+      ts: NatSet,
+      tid:nat,
+      i:nat
+   in
+      doneThread := 0;
+      ts := {};
+      i := 0;
+
+      while i < numThread loop
+	      ts := insert(i, ts);
+         i := i + 1
+	   end loop;
+
+      loop sched_loop in
+         select
+
+            -- Execution step of a thread
+            EX(?any nat, ?any Instruction, ts)
+
+         []
+
+            -- a Thread may stop at any time
+            TERMINATE(?tid);
+            ts := remove(tid, ts);
+
+            doneThread := doneThread + 1;
+            if doneThread == numThread then
+               break sched_loop
+            end if
+
+         end select
+      end loop
+   end var
+end process
 
 -- This process specifies the scheduler for Occupancy Bound Execution model,
 -- where a thread is fairly scheduled if it has performed at least one operation
@@ -304,7 +341,7 @@ process SCHEDULER_HSA_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
 
         -- Termination of a thread
         TERMINATE(?tid); 
-	activeThreads := remove(tid, activeThreads);
+	     activeThreads := remove(tid, activeThreads);
 
         doneThreads := insert(tid, doneThreads);
 
@@ -358,22 +395,24 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
         -- any Thread up to highestID is guaranteed fairly scheduling
-        EX(?tid, ?any Instruction, threadSet) where tid < highestID
+        EX(?tid, ?any Instruction, threadSet) where member(tid, threadSet)
 
       []
 
         -- Termination of a thread
         TERMINATE(?tid);
-	doneThreads := doneThreads + 1;
-	if doneThreads == numThread then
+	     doneThreads := doneThreads + 1;
+	     if doneThreads == numThread then
            break sched_loop
         end if;
 
         -- a Thread just terminated, we bump highestID to allow a new thread to be scheduled.
-   threadSet := insert(highestID, threadSet);
-   threadSet := remove(tid, threadSet);
+        if highestID < numThread then
+           threadSet := insert(highestID, threadSet)
+        end if;
+        threadSet := remove(tid, threadSet);
 
-   highestID := highestID + 1
+        highestID := highestID + 1
 
       end select
     end loop
