@@ -374,7 +374,7 @@ end process
 process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThreads: nat,
-      doneSet: nat,
+      doneSet: NatSet,
       tid: nat,
       highestID: nat,
       threadSet: NatSet,
@@ -392,7 +392,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
       -- First execution step of a thread
-	      EX(?tid, ?any Instruction, activeThreads) where tid < highestID and not(member(tid, threadSet));
+	      EX(?tid, ?any Instruction, threadSet) where tid < highestID and not(member(tid, threadSet));
          
          -- We guarantee all smaller id threads
          i := 0;

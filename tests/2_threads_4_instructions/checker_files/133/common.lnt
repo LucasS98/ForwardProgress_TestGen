@@ -374,6 +374,7 @@ end process
 process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThreads: nat,
+      doneSet: NatSet,
       tid: nat,
       highestID: nat,
       threadSet: NatSet,
@@ -384,15 +385,26 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       numCU := numThread;
       highestID := numCU;
 
-      i := 0;
       threadSet := {};
-      while i < highestID loop
-	      threadSet := insert(i, threadSet);
-         i := i + 1
-	   end loop;
+      doneSet := {};
 
     loop sched_loop in
       select
+
+      -- First execution step of a thread
+	      EX(?tid, ?any Instruction, threadSet) where tid < highestID and not(member(tid, threadSet));
+         
+         -- We guarantee all smaller id threads
+         i := 0;
+         while i < tid loop
+            if not(member(i, threadSet)) and not(member(i, doneSet)) then
+	            threadSet := insert(i, threadSet)
+            end if;
+            i := i + 1
+	      end loop;
+         threadSet := insert(tid, threadSet)
+
+      []
 
         -- any Thread up to highestID is guaranteed fairly scheduling
         EX(?tid, ?any Instruction, threadSet) where member(tid, threadSet)
@@ -402,6 +414,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
         -- Termination of a thread
         TERMINATE(?tid);
 	     doneThreads := doneThreads + 1;
+        doneSet := insert(tid, doneSet);
 	     if doneThreads == numThread then
            break sched_loop
         end if;

@@ -13,9 +13,9 @@ svl clean info: [temporary] test_16_none.err
 
 % lnt.open   "test_16_none.lnt"  generator  "test_16_none.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Nes0KD/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Yu52Kr/COMMON.lib'' ...
 
-lnt.open: translating ``test_16_none.lnt'' to ``/tmp/ls24_lnt.open_Nes0KD/test_16_none.lotos'' ...
+lnt.open: translating ``test_16_none.lnt'' to ``/tmp/ls24_lnt.open_Yu52Kr/test_16_none.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_16_none.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -62,13 +62,15 @@ In specification TEST_16_NONE [3]
 
    - process LOOP__1 [COMMON:613] is never reached
 
-   - process WHILE_CONT__1 [COMMON:628] is never reached
+   - process LOOP__2 [COMMON:638] is never reached
 
-   - process LOOP__2 [COMMON:633] is never reached
+   - process COND__4 [COMMON:656] is never reached
 
-   - process COND__2 [COMMON:649] is never reached
+   - process WHILE_CONT__2 [COMMON:662] is never reached
 
-   - process COND__3 [COMMON:661] is never reached
+   - process COND__2 [COMMON:668] is never reached
+
+   - process COND__3 [COMMON:680] is never reached
 command exit with status 0
 
 info about test_16_none.bcg:
@@ -164,9 +166,9 @@ svl clean info: [temporary] test_16_obe.err
 
 % lnt.open   "test_16_obe.lnt"  generator  "test_16_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Shd4bT/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_nquNAE/COMMON.lib'' ...
 
-lnt.open: translating ``test_16_obe.lnt'' to ``/tmp/ls24_lnt.open_Shd4bT/test_16_obe.lotos'' ...
+lnt.open: translating ``test_16_obe.lnt'' to ``/tmp/ls24_lnt.open_nquNAE/test_16_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_16_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -213,13 +215,15 @@ In specification TEST_16_OBE [3]
 
    - process LOOP__1 [COMMON:613] is never reached
 
-   - process WHILE_CONT__1 [COMMON:628] is never reached
+   - process LOOP__2 [COMMON:638] is never reached
 
-   - process LOOP__2 [COMMON:633] is never reached
+   - process COND__4 [COMMON:656] is never reached
 
-   - process COND__2 [COMMON:649] is never reached
+   - process WHILE_CONT__2 [COMMON:662] is never reached
 
-   - process COND__3 [COMMON:661] is never reached
+   - process COND__2 [COMMON:668] is never reached
+
+   - process COND__3 [COMMON:680] is never reached
 command exit with status 0
 
 info about test_16_obe.bcg:
@@ -278,9 +282,9 @@ svl clean info: [temporary] test_16_hsa.err
 
 % lnt.open   "test_16_hsa.lnt"  generator  "test_16_hsa.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_YgiB7X/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_LGC097/COMMON.lib'' ...
 
-lnt.open: translating ``test_16_hsa.lnt'' to ``/tmp/ls24_lnt.open_YgiB7X/test_16_hsa.lotos'' ...
+lnt.open: translating ``test_16_hsa.lnt'' to ``/tmp/ls24_lnt.open_LGC097/test_16_hsa.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_16_hsa.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -327,13 +331,15 @@ In specification TEST_16_HSA [3]
 
    - process LOOP__1 [COMMON:613] is never reached
 
-   - process WHILE_CONT__1 [COMMON:628] is never reached
+   - process LOOP__2 [COMMON:638] is never reached
 
-   - process LOOP__2 [COMMON:633] is never reached
+   - process COND__4 [COMMON:656] is never reached
 
-   - process COND__2 [COMMON:649] is never reached
+   - process WHILE_CONT__2 [COMMON:662] is never reached
 
-   - process COND__3 [COMMON:661] is never reached
+   - process COND__2 [COMMON:668] is never reached
+
+   - process COND__3 [COMMON:680] is never reached
 command exit with status 0
 
 info about test_16_hsa.bcg:
@@ -392,9 +398,9 @@ svl clean info: [temporary] test_16_hsa_obe.err
 
 % lnt.open   "test_16_hsa_obe.lnt"  generator  "test_16_hsa_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_n3CpSx/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_PzQjSP/COMMON.lib'' ...
 
-lnt.open: translating ``test_16_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_n3CpSx/test_16_hsa_obe.lotos'' ...
+lnt.open: translating ``test_16_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_PzQjSP/test_16_hsa_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_16_hsa_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -437,13 +443,15 @@ In specification TEST_16_HSA_OBE [3]
 
    - process LOOP__1 [COMMON:613] is never reached
 
-   - process WHILE_CONT__1 [COMMON:628] is never reached
+   - process LOOP__2 [COMMON:638] is never reached
 
-   - process LOOP__2 [COMMON:633] is never reached
+   - process COND__4 [COMMON:656] is never reached
 
-   - process COND__2 [COMMON:649] is never reached
+   - process WHILE_CONT__2 [COMMON:662] is never reached
 
-   - process COND__3 [COMMON:661] is never reached
+   - process COND__2 [COMMON:668] is never reached
+
+   - process COND__3 [COMMON:680] is never reached
 command exit with status 0
 
 info about test_16_hsa_obe.bcg:
@@ -502,9 +510,9 @@ svl clean info: [temporary] test_16_hsa_priority.err
 
 % lnt.open   "test_16_hsa_priority.lnt"  generator  "test_16_hsa_priority.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_S8M4xv/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_7AMYSt/COMMON.lib'' ...
 
-lnt.open: translating ``test_16_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_S8M4xv/test_16_hsa_priority.lotos'' ...
+lnt.open: translating ``test_16_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_7AMYSt/test_16_hsa_priority.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_16_hsa_priority.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -549,13 +557,15 @@ In specification TEST_16_HSA_PRIORITY [3]
 
    - process LOOP__1 [COMMON:613] is never reached
 
-   - process WHILE_CONT__1 [COMMON:628] is never reached
+   - process LOOP__2 [COMMON:638] is never reached
 
-   - process LOOP__2 [COMMON:633] is never reached
+   - process COND__4 [COMMON:656] is never reached
 
-   - process COND__2 [COMMON:649] is never reached
+   - process WHILE_CONT__2 [COMMON:662] is never reached
 
-   - process COND__3 [COMMON:661] is never reached
+   - process COND__2 [COMMON:668] is never reached
+
+   - process COND__3 [COMMON:680] is never reached
 command exit with status 0
 
 info about test_16_hsa_priority.bcg:
@@ -614,9 +624,9 @@ svl clean info: [temporary] test_16_lobe.err
 
 % lnt.open   "test_16_lobe.lnt"  generator  "test_16_lobe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_mIVH29/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_1Ws7pE/COMMON.lib'' ...
 
-lnt.open: translating ``test_16_lobe.lnt'' to ``/tmp/ls24_lnt.open_mIVH29/test_16_lobe.lotos'' ...
+lnt.open: translating ``test_16_lobe.lnt'' to ``/tmp/ls24_lnt.open_1Ws7pE/test_16_lobe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_16_lobe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -665,7 +675,7 @@ In specification TEST_16_LOBE [3]
 command exit with status 0
 
 info about test_16_lobe.bcg:
-    (* 20 states, 32 transitions, 2.9 Kbytes *)
+    (* 24 states, 40 transitions, 3.2 Kbytes *)
 
 property FreeFromDeadlockLasso (test_16_lobe)
  | There are no deadlock lassos in test_16_lobe
@@ -720,9 +730,9 @@ svl clean info: [temporary] test_16_weak.err
 
 % lnt.open   "test_16_weak.lnt"  generator  "test_16_weak.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_YwKvxp/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_XKWjTv/COMMON.lib'' ...
 
-lnt.open: translating ``test_16_weak.lnt'' to ``/tmp/ls24_lnt.open_YwKvxp/test_16_weak.lotos'' ...
+lnt.open: translating ``test_16_weak.lnt'' to ``/tmp/ls24_lnt.open_XKWjTv/test_16_weak.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_16_weak.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -765,13 +775,15 @@ In specification TEST_16_WEAK [3]
 
    - process LOOP__1 [COMMON:613] is never reached
 
-   - process WHILE_CONT__1 [COMMON:628] is never reached
+   - process LOOP__2 [COMMON:638] is never reached
 
-   - process LOOP__2 [COMMON:633] is never reached
+   - process COND__4 [COMMON:656] is never reached
 
-   - process COND__2 [COMMON:649] is never reached
+   - process WHILE_CONT__2 [COMMON:662] is never reached
 
-   - process COND__3 [COMMON:661] is never reached
+   - process COND__2 [COMMON:668] is never reached
+
+   - process COND__3 [COMMON:680] is never reached
 command exit with status 0
 
 info about test_16_weak.bcg:
