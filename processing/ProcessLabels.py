@@ -9,7 +9,7 @@ def main(argv):
     f = open(txtFile, "r")
     text = f.read()
     index = 0
-    for i in range(7):
+    for i in range(8):
         if ((text.find("FAIL", index) < text.find("PASS", index) and text.find("FAIL", index) != -1) or text.find("PASS", index) == -1):
             results.append("FAIL")
             index = text.find("FAIL", index) + 4
@@ -28,7 +28,7 @@ def main(argv):
     f.write("HSA - Termination: " + results[3] + "\n")
     f.write("HSA_OBE - Termination: " + results[4] + "\n")
     f.write("LOBE - Termination: " + results[6] + "\n")
-    f.write("WEAK_FAIR - Termination: " + results[6] + "\n")
+    f.write("WEAK_FAIR - Termination: " + results[7] + "\n")
     f.write("\n")
     f.write("EXPERIMENTAL SCHEDULER ---------------------\n")
     f.write("HSA_PRIORITY - Termination: " + results[5] + "\n")    
