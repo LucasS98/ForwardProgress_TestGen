@@ -7,7 +7,7 @@ OBE - Termination: FAIL
 HSA - Termination: FAIL
 HSA_OBE - Termination: FAIL
 LOBE - Termination: FAIL
-WEAK_FAIR - Termination: FAIL
+WEAK_FAIR - Termination: PASS
 
 EXPERIMENTAL SCHEDULER ---------------------
 HSA_PRIORITY - Termination: FAIL
