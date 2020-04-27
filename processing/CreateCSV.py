@@ -25,7 +25,7 @@ def main(argv):
     folder = argv[0]
     scheduler = argv[1]
 
-    csv = open(folder + "/" + scheduler + "_results.csv ", "w")
+    csv = open(folder + "/" + scheduler + "_results.csv", "w")
     csv.write("Test File Name,No saturation Result,Round Robin Saturation Result,Chunking Saturation Result,All Passed\n")
 
     i = 0
