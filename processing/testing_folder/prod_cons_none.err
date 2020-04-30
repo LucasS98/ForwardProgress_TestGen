@@ -1,0 +1,29 @@
+In specification PROD_CONS_NONE [3]
+
+   - process SCHEDULER_OBE [COMMON:338] is never reached
+
+   - process LOOP__1 [COMMON:351] is never reached
+
+   - process SCHEDULER_HSA [COMMON:377] is never reached
+
+   - process LOOP__1 [COMMON:393] is never reached
+
+   - process COND__2 [COMMON:424] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:434] is never reached
+
+   - process LOOP__1 [COMMON:446] is never reached
+
+   - process COND__2 [COMMON:471] is never reached
+
+   - process LOOP__2 [COMMON:480] is never reached
+
+   - process SCHEDULER_LOBE [COMMON:493] is never reached
+
+   - process LOOP__1 [COMMON:512] is never reached
+
+   - process WHILE_CONT__1 [COMMON:527] is never reached
+
+   - process LOOP__2 [COMMON:532] is never reached
+
+   - process COND__2 [COMMON:548] is never reached

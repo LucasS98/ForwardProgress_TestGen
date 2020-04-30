@@ -31,7 +31,11 @@ property FreeFromDeadlockLasso (model)
     "There are no deadlock lassos in ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
-        < true* > < 'EX .*' > @;
+        [ (not exit) * ]
+	  < ( { EX ?tid:Nat ... ?fairlyScheduled:NatSet where tid isin fairlyScheduled } or { TERMINATE ... } ) *
+	      . ( exit or { EX ... ?f:NatSet where empty f } )
+	        > true;
+		
     expected FALSE;
 end property
 
