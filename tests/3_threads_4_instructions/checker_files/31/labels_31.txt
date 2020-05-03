@@ -1,13 +1,13 @@
 SANITY CHECK ---------------------
-Unfair - At least one lasso: PASS
-Unfair - Can reach termination: PASS
+Unfair - At least one lasso: FAIL
+Unfair - Can reach termination: FAIL
 
 SCHEDULER RESULTS ---------------------
 OBE - Termination: FAIL
 HSA - Termination: FAIL
-HSA_OBE - Termination: PASS
-LOBE - Termination: PASS
-WEAK_FAIR - Termination: PASS
+HSA_OBE - Termination: FAIL
+LOBE - Termination: FAIL
+WEAK_FAIR - Termination: FAIL
 
 EXPERIMENTAL SCHEDULER ---------------------
 HSA_PRIORITY - Termination: FAIL

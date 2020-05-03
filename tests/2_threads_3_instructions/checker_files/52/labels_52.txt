@@ -1,6 +1,6 @@
 SANITY CHECK ---------------------
-Unfair - At least one lasso: PASS
-Unfair - Can reach termination: PASS
+Unfair - At least one lasso: FAIL
+Unfair - Can reach termination: FAIL
 
 SCHEDULER RESULTS ---------------------
 OBE - Termination: FAIL
