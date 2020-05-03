@@ -1,10 +1,5 @@
 -- This is an SVL script, see http://cadp.inria.fr/man/svl-lang.html
 
--- Macro to abstract finding integer in string converted NatSet
-macro is_in (t, f) =
-  index (f, concat (concat (":", string (t)), ":")) <> 0
-end_macro
-
 -- Sanity check: an interesting test, under no scheduler ("none"),
 -- should have at least one cycle of EX-ecution steps property
 -- NOTE: this is only expected on "<test>_none.lnt" which use SCHEDULER_NONE
@@ -36,6 +31,10 @@ property FreeFromWeakDeadlockLasso (model)
     "There are no deadlock lassos in Weak ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
+        -- Macro to abstract finding integer in string converted NatSet
+        macro is_in (t, f) =
+          index (f, concat (concat (":", string (t)), ":")) <> 0
+        end_macro
         < true* . { EX ... ?fairlyScheduled:String } >
         <
             for tid:Nat from 0 to 4 do
@@ -52,6 +51,10 @@ property FreeFromStrongDeadlockLasso (model)
     "There are no deadlock lassos in Strong ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
+      -- Macro to abstract finding integer in string converted NatSet
+      macro is_in (t, f) =
+        index (f, concat (concat (":", string (t)), ":")) <> 0
+      end_macro
         [ (not "exit") * ]
         < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
       fairlyScheduled) } or { TERMINATE ... } ) *
