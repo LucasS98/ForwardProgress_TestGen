@@ -1,5 +1,10 @@
 -- This is an SVL script, see http://cadp.inria.fr/man/svl-lang.html
 
+-- Macro to abstract finding integer in string converted NatSet
+macro is_in (t, f) =
+  index (f, concat (concat (":", string (t)), ":")) <> 0
+end_macro
+
 -- Sanity check: an interesting test, under no scheduler ("none"),
 -- should have at least one cycle of EX-ecution steps property
 -- NOTE: this is only expected on "<test>_none.lnt" which use SCHEDULER_NONE
@@ -26,29 +31,55 @@ check AtLeastOneLassoUnderNoScheduler(prod_cons_none);
 check CanAlwaysReachTermination(prod_cons_none);
 
 ------------------------------------------------------------------------
--- Look for loops of thread execution steps.
-property FreeFromDeadlockLasso (model)
-    "There are no deadlock lassos in ${model}"
+-- Look for loops of thread execution steps under weak variants.
+property FreeFromWeakDeadlockLasso (model)
+    "There are no deadlock lassos in Weak ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
-        $FORMULA$
+        < true* . { EX ... ?fairlyScheduled:String } >
+        <
+            for tid:Nat from 0 to 4 do
+                if is_in (tid, fairlyScheduled) then
+                    true* . { EX !tid ... }
+                end if
+            end for
+        > @
     expected FALSE;
 end property
 
+-- Look for loops of thread execution steps under strong variants.
+property FreeFromStrongDeadlockLasso (model)
+    "There are no deadlock lassos in Strong ${model}"
+is
+    "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
+        [ (not "exit") * ]
+        < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+      fairlyScheduled) } or { TERMINATE ... } ) *
+          . ( "exit" or { EX ... ?f:String where f = "::" } )
+        > true
+    expected TRUE;
+end property
+
 "prod_cons_obe.bcg" = generation of "prod_cons_obe.lnt";
-check FreeFromDeadlockLasso(prod_cons_obe);
+check FreeFromWeakDeadlockLasso(prod_cons_obe);
+check FreeFromStrongDeadlockLasso(prod_cons_obe);
 
 "prod_cons_hsa.bcg" = generation of "prod_cons_hsa.lnt";
-check FreeFromDeadlockLasso(prod_cons_hsa);
+check FreeFromWeakDeadlockLasso(prod_cons_hsa);
+check FreeFromStrongDeadlockLasso(prod_cons_hsa);
 
 "prod_cons_hsa_obe.bcg" = generation of "prod_cons_hsa_obe.lnt";
-check FreeFromDeadlockLasso(prod_cons_hsa_obe);
+check FreeFromWeakDeadlockLasso(prod_cons_hsa_obe);
+check FreeFromStrongDeadlockLasso(prod_cons_hsa_obe);
 
 "prod_cons_hsa_priority.bcg" = generation of "prod_cons_hsa_priority.lnt";
-check FreeFromDeadlockLasso(prod_cons_hsa_priority);
+check FreeFromWeakDeadlockLasso(prod_cons_hsa_priority);
+check FreeFromStrongDeadlockLasso(prod_cons_hsa_priority);
 
 "prod_cons_lobe.bcg" = generation of "prod_cons_lobe.lnt";
-check FreeFromDeadlockLasso(prod_cons_lobe);
+check FreeFromWeakDeadlockLasso(prod_cons_lobe);
+check FreeFromStrongDeadlockLasso(prod_cons_lobe);
 
 "prod_cons_weak.bcg" = generation of "prod_cons_weak.lnt";
-check FreeFromDeadlockLasso(prod_cons_weak);
+check FreeFromWeakDeadlockLasso(prod_cons_weak);
+check FreeFromStrongDeadlockLasso(prod_cons_weak);

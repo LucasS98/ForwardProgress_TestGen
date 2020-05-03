@@ -73,5 +73,12 @@ python $source/CreateCSV.py $newname HSA_OBE
 python $source/CreateCSV.py $newname LOBE
 python $source/CreateCSV.py $newname WEAK_FAIR
 
+python $source/CreateCSV.py $newname OBE_STRONG
+python $source/CreateCSV.py $newname HSA_STRONG
+python $source/CreateCSV.py $newname HSA_OBE_STRONG
+python $source/CreateCSV.py $newname LOBE_STRONG
+python $source/CreateCSV.py $newname STRONG_FAIR
+
+
 # Copy HTML (with appropriate changes) to test folder
 python $source/HTMLGen.py $source/testExplorer.html $newname/testExplorer.html $count

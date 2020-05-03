@@ -9,7 +9,7 @@ def main(argv):
     f = open(txtFile, "r")
     text = f.read()
     index = 0
-    for i in range(8):
+    for i in range(14):
         if ((text.find("FAIL", index) < text.find("PASS", index) and text.find("FAIL", index) != -1) or text.find("PASS", index) == -1):
             results.append("FAIL")
             index = text.find("FAIL", index) + 4
@@ -24,14 +24,20 @@ def main(argv):
     f.write("Unfair - Can reach termination: " + results[1] + "\n")
     f.write("\n")
     f.write("SCHEDULER RESULTS ---------------------\n")
+    f.write("WEAK VARIANTS ---------------------\n")
     f.write("OBE - Termination: " + results[2] + "\n")
-    f.write("HSA - Termination: " + results[3] + "\n")
-    f.write("HSA_OBE - Termination: " + results[4] + "\n")
-    f.write("LOBE - Termination: " + results[6] + "\n")
-    f.write("WEAK_FAIR - Termination: " + results[7] + "\n")
+    f.write("HSA - Termination: " + results[4] + "\n")
+    f.write("HSA_OBE - Termination: " + results[6] + "\n")
+    f.write("LOBE - Termination: " + results[10] + "\n")
+    f.write("WEAK_FAIR - Termination: " + results[12] + "\n")
     f.write("\n")
-    f.write("EXPERIMENTAL SCHEDULER ---------------------\n")
-    f.write("HSA_PRIORITY - Termination: " + results[5] + "\n")    
+    f.write("STRONG VARIANTS ---------------------\n")
+    f.write("OBE_STRONG - Termination: " + results[3] + "\n")
+    f.write("HSA_STRONG - Termination: " + results[5] + "\n")
+    f.write("HSA_OBE_STRONG - Termination: " + results[7] + "\n")
+    f.write("LOBE_STRONG - Termination: " + results[11] + "\n")
+    f.write("STRONG_FAIR - Termination: " + results[13] + "\n")
+    f.write("\n")   
     
     return 0
                
