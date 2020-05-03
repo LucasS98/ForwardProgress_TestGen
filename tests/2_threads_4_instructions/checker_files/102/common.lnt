@@ -252,7 +252,7 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
 
             if doneThread == numThread then
                break sched_loop
-            end if
+            end if;
 
             if member(tid, fairSched) then
                fairSched := {doneThread}
