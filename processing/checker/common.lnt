@@ -54,8 +54,10 @@ function print_natset(nset: NatSet): String is
       return "::"
     else
       s := ":";
-      for n := 0 while n < length() by n := n + 1 loop
-        s := s + String(access(nset, n)) + ":"
+      for n := 0 while n < 4 by n := n + 1 loop
+        if member(n, nset) then
+          s := s + String(access(nset, n)) + ":"
+        end if
       end loop;
       return s
     end if
@@ -185,7 +187,7 @@ process SCHEDULER_WEAK_FAIR [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
          select
 
             -- Execution step of a thread
-            EX(?any nat, ?any Instruction, ts)
+            EX(?any nat, ?any Instruction, print_natset(ts))
 
          []
 
@@ -250,7 +252,8 @@ end process
 process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThread: nat,
-      fairSched: NatSet
+      fairSched: NatSet,
+      tid:nat
    in
       doneThread := 0;
       fairSched := {doneThread};
@@ -259,12 +262,12 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
          select
 
             -- Execution step of a thread
-            EX(?any nat, ?any Instruction, fairSched)
+            EX(?any nat, ?any Instruction, print_natset(fairSched))
 
          []
 
             -- a Thread may stop at any time
-            TERMINATE(?any nat);
+            TERMINATE(?tid);
             doneThread := doneThread + 1;
             if doneThread == numThread then
                break sched_loop
@@ -316,7 +319,9 @@ process SCHEDULER_HSA_PRIORITY [EX: ExChan, TERMINATE: NatChan] (numThread: nat)
         if tid == activeThread then
            activeThread := activeThread + 1;
            schedSet := {activeThread};
-           tokenSet := insert(activeThread, tokenSet)
+           if not(member(activeThread, tokenSet)) then
+            tokenSet := insert(activeThread, tokenSet)
+           end if
         end if;
 
         if activeThread == numThread then
@@ -413,7 +418,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
       -- First execution step of a thread
-	      EX(?tid, ?any Instruction, threadSet) where tid < highestID and not(member(tid, threadSet));
+	      EX(?tid, ?any Instruction, print_natset(threadSet)) where tid < highestID and not(member(tid, threadSet));
          
          -- We guarantee all smaller id threads
          i := 0;

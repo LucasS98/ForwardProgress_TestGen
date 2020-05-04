@@ -31,9 +31,8 @@ property FreeFromWeakDeadlockLasso (model)
     "There are no deadlock lassos in Weak ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
-        -- Macro to abstract finding integer in string converted NatSet
         macro is_in (t, f) =
-          index (f, concat (concat (":", string (t)), ":")) <> 0
+          ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
         end_macro
         < true* . { EX ... ?fairlyScheduled:String } >
         <
@@ -42,7 +41,7 @@ is
                     true* . { EX !tid ... }
                 end if
             end for
-        > @
+        > @;
     expected FALSE;
 end property
 
@@ -51,15 +50,14 @@ property FreeFromStrongDeadlockLasso (model)
     "There are no deadlock lassos in Strong ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
-      -- Macro to abstract finding integer in string converted NatSet
       macro is_in (t, f) =
-        index (f, concat (concat (":", string (t)), ":")) <> 0
+        ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
       end_macro
         [ (not "exit") * ]
         < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
       fairlyScheduled) } or { TERMINATE ... } ) *
           . ( "exit" or { EX ... ?f:String where f = "::" } )
-        > true
+        > true;
     expected TRUE;
 end property
 
