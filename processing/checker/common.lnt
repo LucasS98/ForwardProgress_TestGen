@@ -8,7 +8,7 @@ module common is
 
 type NatSet is
   sorted set of nat
-  with "length", "remove", "member", "access"
+  with "length", "remove", "member"
 end type
 
 -- Shared memory
@@ -56,7 +56,7 @@ function print_natset(nset: NatSet): String is
       s := ":";
       for n := 0 while n < 4 by n := n + 1 loop
         if member(n, nset) then
-          s := s + String(access(nset, n)) + ":"
+          s := s + String(n) + ":"
         end if
       end loop;
       return s
