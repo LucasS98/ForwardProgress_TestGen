@@ -13,9 +13,9 @@ svl clean info: [temporary] test_21_none.err
 
 % lnt.open   "test_21_none.lnt"  generator  "test_21_none.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Vu4K0S/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_WVfaSg/COMMON.lib'' ...
 
-lnt.open: translating ``test_21_none.lnt'' to ``/tmp/ls24_lnt.open_Vu4K0S/test_21_none.lotos'' ...
+lnt.open: translating ``test_21_none.lnt'' to ``/tmp/ls24_lnt.open_WVfaSg/test_21_none.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_21_none.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -28,55 +28,55 @@ lotos.open: calling ``caesar -silent test_21_none''
      detection of unreachable processes
 In specification TEST_21_NONE [3]
 
-   - process SCHEDULER_WEAK_FAIR [COMMON:351] is never reached
+   - process SCHEDULER_WEAK_FAIR [COMMON:364] is never reached
 
-   - process LOOP__1 [COMMON:363] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process WHILE_CONT__1 [COMMON:378] is never reached
+   - process WHILE_CONT__1 [COMMON:391] is never reached
 
-   - process LOOP__2 [COMMON:383] is never reached
+   - process LOOP__2 [COMMON:396] is never reached
 
-   - process SCHEDULER_OBE [COMMON:403] is never reached
+   - process SCHEDULER_OBE [COMMON:416] is never reached
 
-   - process LOOP__1 [COMMON:415] is never reached
+   - process LOOP__1 [COMMON:428] is never reached
 
-   - process SCHEDULER_HSA [COMMON:441] is never reached
+   - process SCHEDULER_HSA [COMMON:454] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:463] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:479] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:494] is never reached
+   - process LOOP__1 [COMMON:507] is never reached
 
-   - process COND__2 [COMMON:525] is never reached
+   - process COND__2 [COMMON:542] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:535] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
 
-   - process LOOP__1 [COMMON:550] is never reached
+   - process LOOP__1 [COMMON:567] is never reached
 
-   - process COND__2 [COMMON:575] is never reached
+   - process COND__2 [COMMON:592] is never reached
 
-   - process LOOP__2 [COMMON:584] is never reached
+   - process LOOP__2 [COMMON:601] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:604] is never reached
+   - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:622] is never reached
+   - process LOOP__1 [COMMON:639] is never reached
 
-   - process LOOP__2 [COMMON:647] is never reached
+   - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:665] is never reached
+   - process COND__4 [COMMON:682] is never reached
 
-   - process WHILE_CONT__2 [COMMON:671] is never reached
+   - process WHILE_CONT__2 [COMMON:688] is never reached
 
-   - process COND__2 [COMMON:677] is never reached
+   - process COND__2 [COMMON:694] is never reached
 
-   - process COND__3 [COMMON:689] is never reached
+   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_21_none.bcg:
-    (* 60 states, 132 transitions, 3.1 Kbytes *)
+    (* 60 states, 132 transitions, 3.2 Kbytes *)
 
 property AtLeastOneLassoUnderNoScheduler (test_21_none)
 
@@ -168,9 +168,9 @@ svl clean info: [temporary] test_21_obe.err
 
 % lnt.open   "test_21_obe.lnt"  generator  "test_21_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_YBrMu0/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_q2f1x5/COMMON.lib'' ...
 
-lnt.open: translating ``test_21_obe.lnt'' to ``/tmp/ls24_lnt.open_YBrMu0/test_21_obe.lotos'' ...
+lnt.open: translating ``test_21_obe.lnt'' to ``/tmp/ls24_lnt.open_q2f1x5/test_21_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_21_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -183,58 +183,58 @@ lotos.open: calling ``caesar -silent test_21_obe''
      detection of unreachable processes
 In specification TEST_21_OBE [3]
 
-   - process SCHEDULER_NONE [COMMON:325] is never reached
+   - process SCHEDULER_NONE [COMMON:338] is never reached
 
-   - process LOOP__1 [COMMON:334] is never reached
+   - process LOOP__1 [COMMON:347] is never reached
 
-   - process SCHEDULER_WEAK_FAIR [COMMON:351] is never reached
+   - process SCHEDULER_WEAK_FAIR [COMMON:364] is never reached
 
-   - process LOOP__1 [COMMON:363] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process WHILE_CONT__1 [COMMON:378] is never reached
+   - process WHILE_CONT__1 [COMMON:391] is never reached
 
-   - process LOOP__2 [COMMON:383] is never reached
+   - process LOOP__2 [COMMON:396] is never reached
 
-   - process SCHEDULER_HSA [COMMON:441] is never reached
+   - process SCHEDULER_HSA [COMMON:454] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:463] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:479] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:494] is never reached
+   - process LOOP__1 [COMMON:507] is never reached
 
-   - process COND__2 [COMMON:525] is never reached
+   - process COND__2 [COMMON:542] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:535] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
 
-   - process LOOP__1 [COMMON:550] is never reached
+   - process LOOP__1 [COMMON:567] is never reached
 
-   - process COND__2 [COMMON:575] is never reached
+   - process COND__2 [COMMON:592] is never reached
 
-   - process LOOP__2 [COMMON:584] is never reached
+   - process LOOP__2 [COMMON:601] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:604] is never reached
+   - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:622] is never reached
+   - process LOOP__1 [COMMON:639] is never reached
 
-   - process LOOP__2 [COMMON:647] is never reached
+   - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:665] is never reached
+   - process COND__4 [COMMON:682] is never reached
 
-   - process WHILE_CONT__2 [COMMON:671] is never reached
+   - process WHILE_CONT__2 [COMMON:688] is never reached
 
-   - process COND__2 [COMMON:677] is never reached
+   - process COND__2 [COMMON:694] is never reached
 
-   - process COND__3 [COMMON:689] is never reached
+   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_21_obe.bcg:
     (* 60 states, 132 transitions, 5.3 Kbytes *)
 
-property FreeFromDeadlockLasso (test_21_obe)
- | There are no deadlock lassos in test_21_obe
+property FreeFromWeakDeadlockLasso (test_21_obe)
+ | There are no deadlock lassos in Weak test_21_obe
 
 svl clean info: [temporary] svl000_display.txt
 
@@ -247,7 +247,17 @@ svl clean info: [temporary] svl003_formula_inline.mcl
 svl clean info: [temporary] svl003_formula_inline.xm
 
 "svl003_formula_inline.mcl" =
-    <true*> (( <  'EX !2 .* !{2}' . true* > @ ) or ( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !1 .* !{1, 2}' . true* . 'EX !2 .* !{1, 2}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 2}' . true* . 'EX !2 .* !{0, 2}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ) or ( <  'EX !0 .* !{0, 1, 2}' . true* . 'EX !1 .* !{0, 1, 2}' . true* . 'EX !2 .* !{0, 1, 2}' . true* > @ ))
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+    < true* . { EX ... ?fairlyScheduled:String } >
+    <
+        for tid:Nat from 0 to 4 do
+            if is_in (tid, fairlyScheduled) then
+                true* . { EX !tid ... }
+            end if
+        end for
+    > @
 
 "test_21_obe_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_21_obe.bcg"
 
@@ -264,6 +274,56 @@ bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
 bcg_open: running ``evaluator4 -source test_21.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_21_obe.bcg''
 
 TRUE
+*** diagnostic sequence found at depth 1
+
+<initial state>
+"EX !0 !ATOMIC_EXCH_BRANCH (1, +1, TRUE, +1, 1, FALSE) !"::""
+<goal state>
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_21_obe_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
+property FreeFromStrongDeadlockLasso (test_21_obe)
+ | There are no deadlock lassos in Strong test_21_obe
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl004_formula_inline
+
+svl clean info: [persistent] test_21_obe_deadlock.bcg
+
+svl clean info: [temporary] svl004_formula_inline.mcl
+
+svl clean info: [temporary] svl004_formula_inline.xm
+
+"svl004_formula_inline.mcl" =
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+      [ (not "exit") * ]
+      < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+    fairlyScheduled) } or { TERMINATE ... } ) *
+        . ( "exit" or { EX ... ?f:String where f = "::" } )
+      > true
+
+"test_21_obe_deadlock.bcg" = verify "svl004_formula_inline.mcl" in "test_21_obe.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_21_obe.bcg"  evaluator4 -source "test_21.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_21.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_21_obe.bcg''
+
+FALSE
 (consult diagnostic in file ``svl000_output.bcg'')
 command exit with status 0
 
@@ -286,9 +346,9 @@ svl clean info: [temporary] test_21_hsa.err
 
 % lnt.open   "test_21_hsa.lnt"  generator  "test_21_hsa.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_QubPIo/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_DEuzVP/COMMON.lib'' ...
 
-lnt.open: translating ``test_21_hsa.lnt'' to ``/tmp/ls24_lnt.open_QubPIo/test_21_hsa.lotos'' ...
+lnt.open: translating ``test_21_hsa.lnt'' to ``/tmp/ls24_lnt.open_DEuzVP/test_21_hsa.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_21_hsa.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -301,56 +361,56 @@ lotos.open: calling ``caesar -silent test_21_hsa''
      detection of unreachable processes
 In specification TEST_21_HSA [3]
 
-   - process SCHEDULER_NONE [COMMON:325] is never reached
+   - process SCHEDULER_NONE [COMMON:338] is never reached
 
-   - process LOOP__1 [COMMON:334] is never reached
+   - process LOOP__1 [COMMON:347] is never reached
 
-   - process SCHEDULER_WEAK_FAIR [COMMON:351] is never reached
+   - process SCHEDULER_WEAK_FAIR [COMMON:364] is never reached
 
-   - process LOOP__1 [COMMON:363] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process WHILE_CONT__1 [COMMON:378] is never reached
+   - process WHILE_CONT__1 [COMMON:391] is never reached
 
-   - process LOOP__2 [COMMON:383] is never reached
+   - process LOOP__2 [COMMON:396] is never reached
 
-   - process SCHEDULER_OBE [COMMON:403] is never reached
+   - process SCHEDULER_OBE [COMMON:416] is never reached
 
-   - process LOOP__1 [COMMON:415] is never reached
+   - process LOOP__1 [COMMON:428] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:494] is never reached
+   - process LOOP__1 [COMMON:507] is never reached
 
-   - process COND__2 [COMMON:525] is never reached
+   - process COND__2 [COMMON:542] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:535] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
 
-   - process LOOP__1 [COMMON:550] is never reached
+   - process LOOP__1 [COMMON:567] is never reached
 
-   - process COND__2 [COMMON:575] is never reached
+   - process COND__2 [COMMON:592] is never reached
 
-   - process LOOP__2 [COMMON:584] is never reached
+   - process LOOP__2 [COMMON:601] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:604] is never reached
+   - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:622] is never reached
+   - process LOOP__1 [COMMON:639] is never reached
 
-   - process LOOP__2 [COMMON:647] is never reached
+   - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:665] is never reached
+   - process COND__4 [COMMON:682] is never reached
 
-   - process WHILE_CONT__2 [COMMON:671] is never reached
+   - process WHILE_CONT__2 [COMMON:688] is never reached
 
-   - process COND__2 [COMMON:677] is never reached
+   - process COND__2 [COMMON:694] is never reached
 
-   - process COND__3 [COMMON:689] is never reached
+   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_21_hsa.bcg:
     (* 68 states, 140 transitions, 3.5 Kbytes *)
 
-property FreeFromDeadlockLasso (test_21_hsa)
- | There are no deadlock lassos in test_21_hsa
+property FreeFromWeakDeadlockLasso (test_21_hsa)
+ | There are no deadlock lassos in Weak test_21_hsa
 
 svl clean info: [temporary] svl000_display.txt
 
@@ -363,7 +423,17 @@ svl clean info: [temporary] svl003_formula_inline.mcl
 svl clean info: [temporary] svl003_formula_inline.xm
 
 "svl003_formula_inline.mcl" =
-    <true*> (( <  'EX !2 .* !{2}' . true* > @ ) or ( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !1 .* !{1, 2}' . true* . 'EX !2 .* !{1, 2}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 2}' . true* . 'EX !2 .* !{0, 2}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ) or ( <  'EX !0 .* !{0, 1, 2}' . true* . 'EX !1 .* !{0, 1, 2}' . true* . 'EX !2 .* !{0, 1, 2}' . true* > @ ))
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+    < true* . { EX ... ?fairlyScheduled:String } >
+    <
+        for tid:Nat from 0 to 4 do
+            if is_in (tid, fairlyScheduled) then
+                true* . { EX !tid ... }
+            end if
+        end for
+    > @
 
 "test_21_hsa_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_21_hsa.bcg"
 
@@ -388,6 +458,52 @@ command exit with status 0
 
 FAIL
 
+property FreeFromStrongDeadlockLasso (test_21_hsa)
+ | There are no deadlock lassos in Strong test_21_hsa
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl004_formula_inline
+
+svl clean info: [persistent] test_21_hsa_deadlock.bcg
+
+svl clean info: [temporary] svl004_formula_inline.mcl
+
+svl clean info: [temporary] svl004_formula_inline.xm
+
+"svl004_formula_inline.mcl" =
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+      [ (not "exit") * ]
+      < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+    fairlyScheduled) } or { TERMINATE ... } ) *
+        . ( "exit" or { EX ... ?f:String where f = "::" } )
+      > true
+
+"test_21_hsa_deadlock.bcg" = verify "svl004_formula_inline.mcl" in "test_21_hsa.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_21_hsa.bcg"  evaluator4 -source "test_21.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_21.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_21_hsa.bcg''
+
+FALSE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_21_hsa_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
 svl clean info: [persistent] test_21_hsa_obe.bcg
 
 "test_21_hsa_obe.bcg" = generation of "test_21_hsa_obe.lnt"
@@ -402,9 +518,9 @@ svl clean info: [temporary] test_21_hsa_obe.err
 
 % lnt.open   "test_21_hsa_obe.lnt"  generator  "test_21_hsa_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_qdUOWK/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_cUPJhj/COMMON.lib'' ...
 
-lnt.open: translating ``test_21_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_qdUOWK/test_21_hsa_obe.lotos'' ...
+lnt.open: translating ``test_21_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_cUPJhj/test_21_hsa_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_21_hsa_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -417,54 +533,54 @@ lotos.open: calling ``caesar -silent test_21_hsa_obe''
      detection of unreachable processes
 In specification TEST_21_HSA_OBE [3]
 
-   - process SCHEDULER_NONE [COMMON:325] is never reached
+   - process SCHEDULER_NONE [COMMON:338] is never reached
 
-   - process LOOP__1 [COMMON:334] is never reached
+   - process LOOP__1 [COMMON:347] is never reached
 
-   - process SCHEDULER_WEAK_FAIR [COMMON:351] is never reached
+   - process SCHEDULER_WEAK_FAIR [COMMON:364] is never reached
 
-   - process LOOP__1 [COMMON:363] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process WHILE_CONT__1 [COMMON:378] is never reached
+   - process WHILE_CONT__1 [COMMON:391] is never reached
 
-   - process LOOP__2 [COMMON:383] is never reached
+   - process LOOP__2 [COMMON:396] is never reached
 
-   - process SCHEDULER_OBE [COMMON:403] is never reached
+   - process SCHEDULER_OBE [COMMON:416] is never reached
 
-   - process LOOP__1 [COMMON:415] is never reached
+   - process LOOP__1 [COMMON:428] is never reached
 
-   - process SCHEDULER_HSA [COMMON:441] is never reached
+   - process SCHEDULER_HSA [COMMON:454] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:463] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:479] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:494] is never reached
+   - process LOOP__1 [COMMON:507] is never reached
 
-   - process COND__2 [COMMON:525] is never reached
+   - process COND__2 [COMMON:542] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:604] is never reached
+   - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:622] is never reached
+   - process LOOP__1 [COMMON:639] is never reached
 
-   - process LOOP__2 [COMMON:647] is never reached
+   - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:665] is never reached
+   - process COND__4 [COMMON:682] is never reached
 
-   - process WHILE_CONT__2 [COMMON:671] is never reached
+   - process WHILE_CONT__2 [COMMON:688] is never reached
 
-   - process COND__2 [COMMON:677] is never reached
+   - process COND__2 [COMMON:694] is never reached
 
-   - process COND__3 [COMMON:689] is never reached
+   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_21_hsa_obe.bcg:
     (* 67 states, 139 transitions, 4.8 Kbytes *)
 
-property FreeFromDeadlockLasso (test_21_hsa_obe)
- | There are no deadlock lassos in test_21_hsa_obe
+property FreeFromWeakDeadlockLasso (test_21_hsa_obe)
+ | There are no deadlock lassos in Weak test_21_hsa_obe
 
 svl clean info: [temporary] svl000_display.txt
 
@@ -477,7 +593,17 @@ svl clean info: [temporary] svl003_formula_inline.mcl
 svl clean info: [temporary] svl003_formula_inline.xm
 
 "svl003_formula_inline.mcl" =
-    <true*> (( <  'EX !2 .* !{2}' . true* > @ ) or ( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !1 .* !{1, 2}' . true* . 'EX !2 .* !{1, 2}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 2}' . true* . 'EX !2 .* !{0, 2}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ) or ( <  'EX !0 .* !{0, 1, 2}' . true* . 'EX !1 .* !{0, 1, 2}' . true* . 'EX !2 .* !{0, 1, 2}' . true* > @ ))
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+    < true* . { EX ... ?fairlyScheduled:String } >
+    <
+        for tid:Nat from 0 to 4 do
+            if is_in (tid, fairlyScheduled) then
+                true* . { EX !tid ... }
+            end if
+        end for
+    > @
 
 "test_21_hsa_obe_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_21_hsa_obe.bcg"
 
@@ -502,6 +628,52 @@ command exit with status 0
 
 FAIL
 
+property FreeFromStrongDeadlockLasso (test_21_hsa_obe)
+ | There are no deadlock lassos in Strong test_21_hsa_obe
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl004_formula_inline
+
+svl clean info: [persistent] test_21_hsa_obe_deadlock.bcg
+
+svl clean info: [temporary] svl004_formula_inline.mcl
+
+svl clean info: [temporary] svl004_formula_inline.xm
+
+"svl004_formula_inline.mcl" =
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+      [ (not "exit") * ]
+      < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+    fairlyScheduled) } or { TERMINATE ... } ) *
+        . ( "exit" or { EX ... ?f:String where f = "::" } )
+      > true
+
+"test_21_hsa_obe_deadlock.bcg" = verify "svl004_formula_inline.mcl" in "test_21_hsa_obe.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_21_hsa_obe.bcg"  evaluator4 -source "test_21.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_21.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_21_hsa_obe.bcg''
+
+FALSE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_21_hsa_obe_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
 svl clean info: [persistent] test_21_hsa_priority.bcg
 
 "test_21_hsa_priority.bcg" = generation of "test_21_hsa_priority.lnt"
@@ -516,9 +688,9 @@ svl clean info: [temporary] test_21_hsa_priority.err
 
 % lnt.open   "test_21_hsa_priority.lnt"  generator  "test_21_hsa_priority.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_g9E9n4/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_WnBKil/COMMON.lib'' ...
 
-lnt.open: translating ``test_21_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_g9E9n4/test_21_hsa_priority.lotos'' ...
+lnt.open: translating ``test_21_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_WnBKil/test_21_hsa_priority.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_21_hsa_priority.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -531,56 +703,56 @@ lotos.open: calling ``caesar -silent test_21_hsa_priority''
      detection of unreachable processes
 In specification TEST_21_HSA_PRIORITY [3]
 
-   - process SCHEDULER_NONE [COMMON:325] is never reached
+   - process SCHEDULER_NONE [COMMON:338] is never reached
 
-   - process LOOP__1 [COMMON:334] is never reached
+   - process LOOP__1 [COMMON:347] is never reached
 
-   - process SCHEDULER_WEAK_FAIR [COMMON:351] is never reached
+   - process SCHEDULER_WEAK_FAIR [COMMON:364] is never reached
 
-   - process LOOP__1 [COMMON:363] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process WHILE_CONT__1 [COMMON:378] is never reached
+   - process WHILE_CONT__1 [COMMON:391] is never reached
 
-   - process LOOP__2 [COMMON:383] is never reached
+   - process LOOP__2 [COMMON:396] is never reached
 
-   - process SCHEDULER_OBE [COMMON:403] is never reached
+   - process SCHEDULER_OBE [COMMON:416] is never reached
 
-   - process LOOP__1 [COMMON:415] is never reached
+   - process LOOP__1 [COMMON:428] is never reached
 
-   - process SCHEDULER_HSA [COMMON:441] is never reached
+   - process SCHEDULER_HSA [COMMON:454] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:463] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:479] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:535] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
 
-   - process LOOP__1 [COMMON:550] is never reached
+   - process LOOP__1 [COMMON:567] is never reached
 
-   - process COND__2 [COMMON:575] is never reached
+   - process COND__2 [COMMON:592] is never reached
 
-   - process LOOP__2 [COMMON:584] is never reached
+   - process LOOP__2 [COMMON:601] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:604] is never reached
+   - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:622] is never reached
+   - process LOOP__1 [COMMON:639] is never reached
 
-   - process LOOP__2 [COMMON:647] is never reached
+   - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:665] is never reached
+   - process COND__4 [COMMON:682] is never reached
 
-   - process WHILE_CONT__2 [COMMON:671] is never reached
+   - process WHILE_CONT__2 [COMMON:688] is never reached
 
-   - process COND__2 [COMMON:677] is never reached
+   - process COND__2 [COMMON:694] is never reached
 
-   - process COND__3 [COMMON:689] is never reached
+   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_21_hsa_priority.bcg:
-    (* 67 states, 136 transitions, 3.4 Kbytes *)
+    (* 67 states, 136 transitions, 3.5 Kbytes *)
 
-property FreeFromDeadlockLasso (test_21_hsa_priority)
- | There are no deadlock lassos in test_21_hsa_priority
+property FreeFromWeakDeadlockLasso (test_21_hsa_priority)
+ | There are no deadlock lassos in Weak test_21_hsa_priority
 
 svl clean info: [temporary] svl000_display.txt
 
@@ -593,7 +765,17 @@ svl clean info: [temporary] svl003_formula_inline.mcl
 svl clean info: [temporary] svl003_formula_inline.xm
 
 "svl003_formula_inline.mcl" =
-    <true*> (( <  'EX !2 .* !{2}' . true* > @ ) or ( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !1 .* !{1, 2}' . true* . 'EX !2 .* !{1, 2}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 2}' . true* . 'EX !2 .* !{0, 2}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ) or ( <  'EX !0 .* !{0, 1, 2}' . true* . 'EX !1 .* !{0, 1, 2}' . true* . 'EX !2 .* !{0, 1, 2}' . true* > @ ))
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+    < true* . { EX ... ?fairlyScheduled:String } >
+    <
+        for tid:Nat from 0 to 4 do
+            if is_in (tid, fairlyScheduled) then
+                true* . { EX !tid ... }
+            end if
+        end for
+    > @
 
 "test_21_hsa_priority_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_21_hsa_priority.bcg"
 
@@ -618,6 +800,52 @@ command exit with status 0
 
 FAIL
 
+property FreeFromStrongDeadlockLasso (test_21_hsa_priority)
+ | There are no deadlock lassos in Strong test_21_hsa_priority
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl004_formula_inline
+
+svl clean info: [persistent] test_21_hsa_priority_deadlock.bcg
+
+svl clean info: [temporary] svl004_formula_inline.mcl
+
+svl clean info: [temporary] svl004_formula_inline.xm
+
+"svl004_formula_inline.mcl" =
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+      [ (not "exit") * ]
+      < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+    fairlyScheduled) } or { TERMINATE ... } ) *
+        . ( "exit" or { EX ... ?f:String where f = "::" } )
+      > true
+
+"test_21_hsa_priority_deadlock.bcg" = verify "svl004_formula_inline.mcl" in "test_21_hsa_priority.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_21_hsa_priority.bcg"  evaluator4 -source "test_21.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_21.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_21_hsa_priority.bcg''
+
+FALSE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_21_hsa_priority_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
 svl clean info: [persistent] test_21_lobe.bcg
 
 "test_21_lobe.bcg" = generation of "test_21_lobe.lnt"
@@ -632,9 +860,9 @@ svl clean info: [temporary] test_21_lobe.err
 
 % lnt.open   "test_21_lobe.lnt"  generator  "test_21_lobe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Xz9mrE/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_ZdrxHP/COMMON.lib'' ...
 
-lnt.open: translating ``test_21_lobe.lnt'' to ``/tmp/ls24_lnt.open_Xz9mrE/test_21_lobe.lotos'' ...
+lnt.open: translating ``test_21_lobe.lnt'' to ``/tmp/ls24_lnt.open_ZdrxHP/test_21_lobe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_21_lobe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -647,48 +875,48 @@ lotos.open: calling ``caesar -silent test_21_lobe''
      detection of unreachable processes
 In specification TEST_21_LOBE [3]
 
-   - process SCHEDULER_NONE [COMMON:325] is never reached
+   - process SCHEDULER_NONE [COMMON:338] is never reached
 
-   - process LOOP__1 [COMMON:334] is never reached
+   - process LOOP__1 [COMMON:347] is never reached
 
-   - process SCHEDULER_WEAK_FAIR [COMMON:351] is never reached
+   - process SCHEDULER_WEAK_FAIR [COMMON:364] is never reached
 
-   - process LOOP__1 [COMMON:363] is never reached
+   - process LOOP__1 [COMMON:376] is never reached
 
-   - process WHILE_CONT__1 [COMMON:378] is never reached
+   - process WHILE_CONT__1 [COMMON:391] is never reached
 
-   - process LOOP__2 [COMMON:383] is never reached
+   - process LOOP__2 [COMMON:396] is never reached
 
-   - process SCHEDULER_OBE [COMMON:403] is never reached
+   - process SCHEDULER_OBE [COMMON:416] is never reached
 
-   - process LOOP__1 [COMMON:415] is never reached
+   - process LOOP__1 [COMMON:428] is never reached
 
-   - process SCHEDULER_HSA [COMMON:441] is never reached
+   - process SCHEDULER_HSA [COMMON:454] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:463] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:479] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:494] is never reached
+   - process LOOP__1 [COMMON:507] is never reached
 
-   - process COND__2 [COMMON:525] is never reached
+   - process COND__2 [COMMON:542] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:535] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
 
-   - process LOOP__1 [COMMON:550] is never reached
+   - process LOOP__1 [COMMON:567] is never reached
 
-   - process COND__2 [COMMON:575] is never reached
+   - process COND__2 [COMMON:592] is never reached
 
-   - process LOOP__2 [COMMON:584] is never reached
+   - process LOOP__2 [COMMON:601] is never reached
 command exit with status 0
 
 info about test_21_lobe.bcg:
-    (* 75 states, 161 transitions, 4.7 Kbytes *)
+    (* 248 states, 725 transitions, 6.3 Kbytes *)
 
-property FreeFromDeadlockLasso (test_21_lobe)
- | There are no deadlock lassos in test_21_lobe
+property FreeFromWeakDeadlockLasso (test_21_lobe)
+ | There are no deadlock lassos in Weak test_21_lobe
 
 svl clean info: [temporary] svl000_display.txt
 
@@ -701,7 +929,17 @@ svl clean info: [temporary] svl003_formula_inline.mcl
 svl clean info: [temporary] svl003_formula_inline.xm
 
 "svl003_formula_inline.mcl" =
-    <true*> (( <  'EX !2 .* !{2}' . true* > @ ) or ( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !1 .* !{1, 2}' . true* . 'EX !2 .* !{1, 2}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 2}' . true* . 'EX !2 .* !{0, 2}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ) or ( <  'EX !0 .* !{0, 1, 2}' . true* . 'EX !1 .* !{0, 1, 2}' . true* . 'EX !2 .* !{0, 1, 2}' . true* > @ ))
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+    < true* . { EX ... ?fairlyScheduled:String } >
+    <
+        for tid:Nat from 0 to 4 do
+            if is_in (tid, fairlyScheduled) then
+                true* . { EX !tid ... }
+            end if
+        end for
+    > @
 
 "test_21_lobe_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_21_lobe.bcg"
 
@@ -718,6 +956,56 @@ bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
 bcg_open: running ``evaluator4 -source test_21.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_21_lobe.bcg''
 
 TRUE
+*** diagnostic sequence found at depth 1
+
+<initial state>
+"EX !0 !ATOMIC_EXCH_BRANCH (1, +1, TRUE, +1, 1, FALSE) !"::""
+<goal state>
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_21_lobe_deadlock.bcg"
+command exit with status 0
+
+FAIL
+
+property FreeFromStrongDeadlockLasso (test_21_lobe)
+ | There are no deadlock lassos in Strong test_21_lobe
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl004_formula_inline
+
+svl clean info: [persistent] test_21_lobe_deadlock.bcg
+
+svl clean info: [temporary] svl004_formula_inline.mcl
+
+svl clean info: [temporary] svl004_formula_inline.xm
+
+"svl004_formula_inline.mcl" =
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+      [ (not "exit") * ]
+      < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+    fairlyScheduled) } or { TERMINATE ... } ) *
+        . ( "exit" or { EX ... ?f:String where f = "::" } )
+      > true
+
+"test_21_lobe_deadlock.bcg" = verify "svl004_formula_inline.mcl" in "test_21_lobe.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_21_lobe.bcg"  evaluator4 -source "test_21.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_21.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_21_lobe.bcg''
+
+FALSE
 (consult diagnostic in file ``svl000_output.bcg'')
 command exit with status 0
 
@@ -740,9 +1028,9 @@ svl clean info: [temporary] test_21_weak.err
 
 % lnt.open   "test_21_weak.lnt"  generator  "test_21_weak.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_S2CLe0/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_segbTk/COMMON.lib'' ...
 
-lnt.open: translating ``test_21_weak.lnt'' to ``/tmp/ls24_lnt.open_S2CLe0/test_21_weak.lotos'' ...
+lnt.open: translating ``test_21_weak.lnt'' to ``/tmp/ls24_lnt.open_segbTk/test_21_weak.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_21_weak.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -755,54 +1043,54 @@ lotos.open: calling ``caesar -silent test_21_weak''
      detection of unreachable processes
 In specification TEST_21_WEAK [3]
 
-   - process SCHEDULER_NONE [COMMON:325] is never reached
+   - process SCHEDULER_NONE [COMMON:338] is never reached
 
-   - process LOOP__1 [COMMON:334] is never reached
+   - process LOOP__1 [COMMON:347] is never reached
 
-   - process SCHEDULER_OBE [COMMON:403] is never reached
+   - process SCHEDULER_OBE [COMMON:416] is never reached
 
-   - process LOOP__1 [COMMON:415] is never reached
+   - process LOOP__1 [COMMON:428] is never reached
 
-   - process SCHEDULER_HSA [COMMON:441] is never reached
+   - process SCHEDULER_HSA [COMMON:454] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:463] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:479] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:494] is never reached
+   - process LOOP__1 [COMMON:507] is never reached
 
-   - process COND__2 [COMMON:525] is never reached
+   - process COND__2 [COMMON:542] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:535] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
 
-   - process LOOP__1 [COMMON:550] is never reached
+   - process LOOP__1 [COMMON:567] is never reached
 
-   - process COND__2 [COMMON:575] is never reached
+   - process COND__2 [COMMON:592] is never reached
 
-   - process LOOP__2 [COMMON:584] is never reached
+   - process LOOP__2 [COMMON:601] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:604] is never reached
+   - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:622] is never reached
+   - process LOOP__1 [COMMON:639] is never reached
 
-   - process LOOP__2 [COMMON:647] is never reached
+   - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:665] is never reached
+   - process COND__4 [COMMON:682] is never reached
 
-   - process WHILE_CONT__2 [COMMON:671] is never reached
+   - process WHILE_CONT__2 [COMMON:688] is never reached
 
-   - process COND__2 [COMMON:677] is never reached
+   - process COND__2 [COMMON:694] is never reached
 
-   - process COND__3 [COMMON:689] is never reached
+   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_21_weak.bcg:
     (* 60 states, 132 transitions, 3.9 Kbytes *)
 
-property FreeFromDeadlockLasso (test_21_weak)
- | There are no deadlock lassos in test_21_weak
+property FreeFromWeakDeadlockLasso (test_21_weak)
+ | There are no deadlock lassos in Weak test_21_weak
 
 svl clean info: [temporary] svl000_display.txt
 
@@ -815,7 +1103,17 @@ svl clean info: [temporary] svl003_formula_inline.mcl
 svl clean info: [temporary] svl003_formula_inline.xm
 
 "svl003_formula_inline.mcl" =
-    <true*> (( <  'EX !2 .* !{2}' . true* > @ ) or ( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !1 .* !{1, 2}' . true* . 'EX !2 .* !{1, 2}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 2}' . true* . 'EX !2 .* !{0, 2}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ) or ( <  'EX !0 .* !{0, 1, 2}' . true* . 'EX !1 .* !{0, 1, 2}' . true* . 'EX !2 .* !{0, 1, 2}' . true* > @ ))
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+    < true* . { EX ... ?fairlyScheduled:String } >
+    <
+        for tid:Nat from 0 to 4 do
+            if is_in (tid, fairlyScheduled) then
+                true* . { EX !tid ... }
+            end if
+        end for
+    > @
 
 "test_21_weak_deadlock.bcg" = verify "svl003_formula_inline.mcl" in "test_21_weak.bcg"
 
@@ -832,6 +1130,52 @@ bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
 bcg_open: running ``evaluator4 -source test_21.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_21_weak.bcg''
 
 FALSE
+(consult diagnostic in file ``svl000_output.bcg'')
+command exit with status 0
+
+% bcg_io   "svl000_output.bcg"   "test_21_weak_deadlock.bcg"
+command exit with status 0
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_21_weak)
+ | There are no deadlock lassos in Strong test_21_weak
+
+svl clean info: [temporary] svl000_display.txt
+
+svl clean info: [temporary] svl004_formula_inline
+
+svl clean info: [persistent] test_21_weak_deadlock.bcg
+
+svl clean info: [temporary] svl004_formula_inline.mcl
+
+svl clean info: [temporary] svl004_formula_inline.xm
+
+"svl004_formula_inline.mcl" =
+    macro is_in (t, f) =
+      ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+    end_macro
+      [ (not "exit") * ]
+      < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+    fairlyScheduled) } or { TERMINATE ... } ) *
+        . ( "exit" or { EX ... ?f:String where f = "::" } )
+      > true
+
+"test_21_weak_deadlock.bcg" = verify "svl004_formula_inline.mcl" in "test_21_weak.bcg"
+
+svl clean info: [temporary] svl000_output.bcg
+
+svl clean info: [temporary] evaluator4
+
+svl clean info: [temporary] evaluator4.o
+
+% bcg_open   "test_21_weak.bcg"  evaluator4 -source "test_21.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+
+svl clean info: [temporary] svl000_stdout
+bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
+bcg_open: running ``evaluator4 -source test_21.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_21_weak.bcg''
+
+TRUE
 (consult diagnostic in file ``svl000_output.bcg'')
 command exit with status 0
 

@@ -26,29 +26,61 @@ check AtLeastOneLassoUnderNoScheduler(test_147_none);
 check CanAlwaysReachTermination(test_147_none);
 
 ------------------------------------------------------------------------
--- Look for loops of thread execution steps.
-property FreeFromDeadlockLasso (model)
-    "There are no deadlock lassos in ${model}"
+-- Look for loops of thread execution steps under weak variants.
+property FreeFromWeakDeadlockLasso (model)
+    "There are no deadlock lassos in Weak ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
-        <true*> (( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ));
+        macro is_in (t, f) =
+          ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+        end_macro
+        < true* . { EX ... ?fairlyScheduled:String } >
+        <
+            for tid:Nat from 0 to 4 do
+                if is_in (tid, fairlyScheduled) then
+                    true* . { EX !tid ... }
+                end if
+            end for
+        > @;
     expected FALSE;
 end property
 
+-- Look for loops of thread execution steps under strong variants.
+property FreeFromStrongDeadlockLasso (model)
+    "There are no deadlock lassos in Strong ${model}"
+is
+    "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
+      macro is_in (t, f) =
+        ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
+      end_macro
+        [ (not "exit") * ]
+        < ( { EX ?tid:Nat ... ?fairlyScheduled:String where is_in (tid,
+      fairlyScheduled) } or { TERMINATE ... } ) *
+          . ( "exit" or { EX ... ?f:String where f = "::" } )
+        > true;
+    expected TRUE;
+end property
+
 "test_147_obe.bcg" = generation of "test_147_obe.lnt";
-check FreeFromDeadlockLasso(test_147_obe);
+check FreeFromWeakDeadlockLasso(test_147_obe);
+check FreeFromStrongDeadlockLasso(test_147_obe);
 
 "test_147_hsa.bcg" = generation of "test_147_hsa.lnt";
-check FreeFromDeadlockLasso(test_147_hsa);
+check FreeFromWeakDeadlockLasso(test_147_hsa);
+check FreeFromStrongDeadlockLasso(test_147_hsa);
 
 "test_147_hsa_obe.bcg" = generation of "test_147_hsa_obe.lnt";
-check FreeFromDeadlockLasso(test_147_hsa_obe);
+check FreeFromWeakDeadlockLasso(test_147_hsa_obe);
+check FreeFromStrongDeadlockLasso(test_147_hsa_obe);
 
 "test_147_hsa_priority.bcg" = generation of "test_147_hsa_priority.lnt";
-check FreeFromDeadlockLasso(test_147_hsa_priority);
+check FreeFromWeakDeadlockLasso(test_147_hsa_priority);
+check FreeFromStrongDeadlockLasso(test_147_hsa_priority);
 
 "test_147_lobe.bcg" = generation of "test_147_lobe.lnt";
-check FreeFromDeadlockLasso(test_147_lobe);
+check FreeFromWeakDeadlockLasso(test_147_lobe);
+check FreeFromStrongDeadlockLasso(test_147_lobe);
 
 "test_147_weak.bcg" = generation of "test_147_weak.lnt";
-check FreeFromDeadlockLasso(test_147_weak);
+check FreeFromWeakDeadlockLasso(test_147_weak);
+check FreeFromStrongDeadlockLasso(test_147_weak);
