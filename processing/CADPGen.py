@@ -232,6 +232,7 @@ def main(argv):
 
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_none.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "common.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "common_strong.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace, threads, condition)              
       
 if __name__ == "__main__": 
