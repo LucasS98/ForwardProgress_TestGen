@@ -153,7 +153,7 @@ def convertXML(filename, folderName):
                         f2.write(str(nInst) + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto END;')
                 else:
                     nInst2 = 0
-                    while operations[nInst] != branch_target:
+                    while operations[nInst2] != branch_target:
                         nInst2 +=1
                     if (exchVal == ""):
                         f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ','+ str(nInst) +  ')\n')
