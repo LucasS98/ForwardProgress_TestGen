@@ -31,7 +31,7 @@ property FreeFromWeakDeadlockLasso (model)
     "There are no deadlock lassos in Weak ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
-        $REPLACE$
+        $FORMULA$
     expected FALSE;
 end property
 
