@@ -44,11 +44,6 @@ do
 		python $source/CADPGen.py $folderN $index $source
 
 		# Process CADP files into labels
-		(cd $folderN/checker && lnt.open test_${index}_none.lnt generator test_${index}_none.bcg > /dev/null)
-		(cd $folderN/checker && lnt.open test_${index}_obe.lnt generator test_${index}_obe.bcg > /dev/null)
-		(cd $folderN/checker && lnt.open test_${index}_hsa.lnt generator test_${index}_hsa.bcg > /dev/null)
-		(cd $folderN/checker && lnt.open test_${index}_lobe.lnt generator test_${index}_lobe.bcg > /dev/null)
-		(cd $folderN/checker && lnt.open test_${index}_hsa_obe.lnt generator test_${index}_hsa_obe.bcg > /dev/null)
 		(cd $folderN/checker && svl test_${index}.svl > labels_${index}_output.txt)
 		(cd $folderN/checker && python ../../../../../processing/ProcessLabels.py labels_${index}_output.txt $index)
 
