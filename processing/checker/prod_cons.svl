@@ -53,24 +53,36 @@ end property
 
 "prod_cons_obe.bcg" = generation of "prod_cons_obe.lnt";
 check FreeFromWeakDeadlockLasso(prod_cons_obe);
-check FreeFromStrongDeadlockLasso(prod_cons_obe);
+
+"prod_cons_obe_strong.bcg" = generation of "prod_cons_obe_strong.lnt";
+check FreeFromStrongDeadlockLasso(prod_cons_obe_strong);
 
 "prod_cons_hsa.bcg" = generation of "prod_cons_hsa.lnt";
 check FreeFromWeakDeadlockLasso(prod_cons_hsa);
-check FreeFromStrongDeadlockLasso(prod_cons_hsa);
+
+"prod_cons_hsa_strong.bcg" = generation of "prod_cons_hsa_strong.lnt";
+check FreeFromStrongDeadlockLasso(prod_cons_hsa_strong);
 
 "prod_cons_hsa_obe.bcg" = generation of "prod_cons_hsa_obe.lnt";
 check FreeFromWeakDeadlockLasso(prod_cons_hsa_obe);
-check FreeFromStrongDeadlockLasso(prod_cons_hsa_obe);
+
+"prod_cons_hsa_obe_strong.bcg" = generation of "prod_cons_hsa_obe_strong.lnt";
+check FreeFromStrongDeadlockLasso(prod_cons_hsa_obe_strong);
 
 "prod_cons_hsa_priority.bcg" = generation of "prod_cons_hsa_priority.lnt";
 check FreeFromWeakDeadlockLasso(prod_cons_hsa_priority);
-check FreeFromStrongDeadlockLasso(prod_cons_hsa_priority);
+
+"prod_cons_hsa_priority_strong.bcg" = generation of "prod_cons_hsa_priority_strong.lnt";
+check FreeFromStrongDeadlockLasso(prod_cons_hsa_priority_strong);
 
 "prod_cons_lobe.bcg" = generation of "prod_cons_lobe.lnt";
 check FreeFromWeakDeadlockLasso(prod_cons_lobe);
-check FreeFromStrongDeadlockLasso(prod_cons_lobe);
+
+"prod_cons_lobe_strong.bcg" = generation of "prod_cons_lobe_strong.lnt";
+check FreeFromStrongDeadlockLasso(prod_cons_lobe_strong);
 
 "prod_cons_weak.bcg" = generation of "prod_cons_weak.lnt";
 check FreeFromWeakDeadlockLasso(prod_cons_weak);
-check FreeFromStrongDeadlockLasso(prod_cons_weak);
+
+"prod_cons_strong.bcg" = generation of "prod_cons_strong.lnt";
+check FreeFromStrongDeadlockLasso(prod_cons_strong);

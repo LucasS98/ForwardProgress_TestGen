@@ -8,10 +8,10 @@ def RecursiveAddClauses(index, condition, nThreads, myList):
         if len(myList) == 0:
             return condition
 
-        setStr = ":"
+        setStr = "{"
         for i in range(len(myList) - 1):
-            setStr += str(myList[i]) + ":"
-        setStr += str(myList[len(myList)-1]) + ":"
+            setStr += str(myList[i]) + ", "
+        setStr += str(myList[len(myList)-1]) + "}"
 
         toAppend = "( < "
         for i in range(len(myList) - 1):
