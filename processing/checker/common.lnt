@@ -284,13 +284,13 @@ process SCHEDULER_HSA_PRIORITY [EX: ExChan, TERMINATE: NatChan] (numThread: nat)
       select
 
         -- First execution step of a thread
-	   EX(?tid, ?any Instruction, print_natset(schedSet)) where length(tokenSet) < numCU and not(member(tid, tokenSet));
+	   EX(?tid, ?any Instruction, schedSet) where length(tokenSet) < numCU and not(member(tid, tokenSet));
       tokenSet := insert(tid, tokenSet)
 
       []
 
         -- a Thread already present in activeThreads can execute
-        EX(?tid, ?any Instruction, print_natset(schedSet)) where member(tid, tokenSet)
+        EX(?tid, ?any Instruction, schedSet) where member(tid, tokenSet)
 
       []
 
