@@ -16,6 +16,7 @@ rm -rf $newname
 cp -r $1 $newname
 rm -rf $newname/../checker_files
 mkdir $newname/../checker_files
+mkdir $newname/distinguishing
 
 
 source="${BASH_SOURCE%/*}/"
@@ -48,11 +49,15 @@ do
 		(cd $folderN/checker && lnt.open test_${index}_hsa.lnt generator test_${index}_hsa.bcg > /dev/null)
 		(cd $folderN/checker && lnt.open test_${index}_lobe.lnt generator test_${index}_lobe.bcg > /dev/null)
 		(cd $folderN/checker && lnt.open test_${index}_hsa_obe.lnt generator test_${index}_hsa_obe.bcg > /dev/null)
-		(cd $folderN/checker && svl test_${index}.svl > labels_${index}.txt)
-		python $source/ProcessLabels.py $folderN/checker/labels_${index}.txt
+		(cd $folderN/checker && svl test_${index}.svl > labels_${index}_output.txt)
+		python $source/ProcessLabels.py $folderN/checker/labels_${index}_output.txt $folderN $index
 
 		# Make dot files from CADP graphs (convert to PDF manually as needed)
 		(cd $folderN/checker && for i in *bcg ; do bcg_io $i -graphviz `basename $i .bcg`.dot ; done )
+		for f3 in $folderN/checker/*.dot
+		do
+			python $source/fixDotSyntax.py $f3 #Remove extra "" from dot files so they can compile
+		done
 
 		# Move files to a different folder to clean test folder somewhat
 		(cd $folderN/checker && cp labels_${index}.txt ../label_${index}.txt)

@@ -433,7 +433,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       []
 
         -- any Thread up to highestID is guaranteed fairly scheduling
-        EX(?tid, ?any Instruction, print_natset(threadSet)) where tid < highestID
+        EX(?tid, ?any Instruction, print_natset(threadSet)) where member(tid, threadSet)
 
       []
 
