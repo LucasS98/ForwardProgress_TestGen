@@ -31,17 +31,7 @@ property FreeFromWeakDeadlockLasso (model)
     "There are no deadlock lassos in Weak ${model}"
 is
     "${model}_deadlock.bcg" = "${model}.bcg" |= with evaluator4
-        macro is_in (t, f) =
-          ( index (f, concat (concat (":", string (t)), ":")) <> 0 )
-        end_macro
-        < true* . { EX ... ?fairlyScheduled:String } >
-        <
-            for tid:Nat from 0 to 4 do
-                if is_in (tid, fairlyScheduled) then
-                    true* . { EX !tid ... }
-                end if
-            end for
-        > @;
+        <true*> (( <  'EX !1 .* !{1}' . true* > @ ) or ( <  'EX !0 .* !{0}' . true* > @ ) or ( <  'EX !0 .* !{0, 1}' . true* . 'EX !1 .* !{0, 1}' . true* > @ ));
     expected FALSE;
 end property
 
@@ -63,24 +53,36 @@ end property
 
 "test_40_obe.bcg" = generation of "test_40_obe.lnt";
 check FreeFromWeakDeadlockLasso(test_40_obe);
-check FreeFromStrongDeadlockLasso(test_40_obe);
+
+"test_40_obe_strong.bcg" = generation of "test_40_obe_strong.lnt";
+check FreeFromStrongDeadlockLasso(test_40_obe_strong);
 
 "test_40_hsa.bcg" = generation of "test_40_hsa.lnt";
 check FreeFromWeakDeadlockLasso(test_40_hsa);
-check FreeFromStrongDeadlockLasso(test_40_hsa);
+
+"test_40_hsa_strong.bcg" = generation of "test_40_hsa_strong.lnt";
+check FreeFromStrongDeadlockLasso(test_40_hsa_strong);
 
 "test_40_hsa_obe.bcg" = generation of "test_40_hsa_obe.lnt";
 check FreeFromWeakDeadlockLasso(test_40_hsa_obe);
-check FreeFromStrongDeadlockLasso(test_40_hsa_obe);
+
+"test_40_hsa_obe_strong.bcg" = generation of "test_40_hsa_obe_strong.lnt";
+check FreeFromStrongDeadlockLasso(test_40_hsa_obe_strong);
 
 "test_40_hsa_priority.bcg" = generation of "test_40_hsa_priority.lnt";
 check FreeFromWeakDeadlockLasso(test_40_hsa_priority);
-check FreeFromStrongDeadlockLasso(test_40_hsa_priority);
+
+"test_40_hsa_priority_strong.bcg" = generation of "test_40_hsa_priority_strong.lnt";
+check FreeFromStrongDeadlockLasso(test_40_hsa_priority_strong);
 
 "test_40_lobe.bcg" = generation of "test_40_lobe.lnt";
 check FreeFromWeakDeadlockLasso(test_40_lobe);
-check FreeFromStrongDeadlockLasso(test_40_lobe);
+
+"test_40_lobe_strong.bcg" = generation of "test_40_lobe_strong.lnt";
+check FreeFromStrongDeadlockLasso(test_40_lobe_strong);
 
 "test_40_weak.bcg" = generation of "test_40_weak.lnt";
 check FreeFromWeakDeadlockLasso(test_40_weak);
-check FreeFromStrongDeadlockLasso(test_40_weak);
+
+"test_40_strong.bcg" = generation of "test_40_strong.lnt";
+check FreeFromStrongDeadlockLasso(test_40_strong);

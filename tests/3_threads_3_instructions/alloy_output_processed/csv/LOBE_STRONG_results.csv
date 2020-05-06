@@ -6,7 +6,7 @@ Test File Name,No saturation Result,Round Robin Saturation Result,Chunking Satur
 4,F,F,F,F
 5,F,F,F,F
 6,F,F,F,F
-7,F,F,F,F
+7,P,P,P,P
 8,F,F,F,F
 9,F,F,F,F
 10,F,F,F,F
@@ -15,9 +15,9 @@ Test File Name,No saturation Result,Round Robin Saturation Result,Chunking Satur
 13,P,P,P,P
 14,F,F,F,F
 15,F,F,F,F
-16,F,F,F,F
+16,P,P,P,P
 17,F,F,F,F
 18,P,P,P,P
 19,F,F,F,F
 20,P,P,P,P
-Total failures:,16,16,16,16
+Total failures:,14,14,14,14

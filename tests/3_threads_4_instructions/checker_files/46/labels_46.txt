@@ -7,13 +7,13 @@ WEAK VARIANTS ---------------------
 OBE - Termination: FAIL
 HSA - Termination: FAIL
 HSA_OBE - Termination: FAIL
-LOBE - Termination: FAIL
+LOBE - Termination: PASS
 WEAK_FAIR - Termination: PASS
 
 STRONG VARIANTS ---------------------
 OBE_STRONG - Termination: FAIL
 HSA_STRONG - Termination: FAIL
 HSA_OBE_STRONG - Termination: FAIL
-LOBE_STRONG - Termination: FAIL
+LOBE_STRONG - Termination: PASS
 STRONG_FAIR - Termination: PASS
 

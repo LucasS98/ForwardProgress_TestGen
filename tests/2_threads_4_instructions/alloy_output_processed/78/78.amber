@@ -28,7 +28,7 @@ void main()
 
 	  case 0: 
 		if (atomicExchange(test.x, 1) ==  1) { 
-		   pc = 2;
+		   pc = 0;
 		}
 		else {
 		   pc = pc + 1;

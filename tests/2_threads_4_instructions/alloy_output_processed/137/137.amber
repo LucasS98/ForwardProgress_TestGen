@@ -50,7 +50,7 @@ void main()
 
 	  case 0: 
 		if (atomicAdd(test.x, 0) == 1 ) { 
-		   pc = 2;
+		   pc = 0;
 		}
 		else {
 		   pc = pc + 1;

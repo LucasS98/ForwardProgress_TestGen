@@ -4,10 +4,10 @@ Unfair - Can reach termination: PASS
 
 SCHEDULER RESULTS ---------------------
 WEAK VARIANTS ---------------------
-OBE - Termination: FAIL
+OBE - Termination: PASS
 HSA - Termination: PASS
 HSA_OBE - Termination: PASS
-LOBE - Termination: FAIL
+LOBE - Termination: PASS
 WEAK_FAIR - Termination: PASS
 
 STRONG VARIANTS ---------------------
