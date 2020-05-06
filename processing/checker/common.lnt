@@ -291,12 +291,14 @@ process SCHEDULER_HSA_PRIORITY [EX: ExChan, TERMINATE: NatChan] (numThread: nat)
       tid: nat,
       schedSet: NatSet,
       tokenSet: NatSet,
+      doneSet: NatSet,
       numCU: nat
    in
       activeThread := 0;
       numCU := numThread;
       schedSet := {activeThread};
       tokenSet := {activeThread};
+      doneSet := {};
     loop sched_loop in
       select
 
@@ -316,8 +318,13 @@ process SCHEDULER_HSA_PRIORITY [EX: ExChan, TERMINATE: NatChan] (numThread: nat)
 
        -- Return token. If first id thread, give token to next fair sched thread
         tokenSet := remove(tid, tokenSet);
+        doneSet := insert(tid, doneSet);
         if tid == activeThread then
            activeThread := activeThread + 1;
+            while member(activeThread, doneSet) loop
+               activeThread := activeThread + 1
+	         end loop;
+
            schedSet := {activeThread};
            if not(member(activeThread, tokenSet)) then
             tokenSet := insert(activeThread, tokenSet)

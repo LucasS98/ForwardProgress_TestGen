@@ -7,8 +7,8 @@ def main(argv):
 
     f = open(fileN, "r")
     text = f.read()
-    text.replace("\":", ":")
-    text.replace(":\"\"", ":\"")
+    text = text.replace("\":", ":")
+    text = text.replace(":\"\"", ":\"")
     f.close()
 
     f = open(fileN, "w+")
