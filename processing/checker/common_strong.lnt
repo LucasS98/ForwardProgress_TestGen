@@ -1,4 +1,4 @@
-module common is
+module common_strong is
 
 -- We define a simple programming language with the following instruction:
 -- ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, do_branch)
