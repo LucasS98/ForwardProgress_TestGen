@@ -141,7 +141,9 @@ node [shape = circle];
 65 -> 61 [label = "EX !0 !ATOMIC_EXCH_BRANCH (1, +0, FALSE, +0, 1, FALSE) !":0:""];
 66 -> 70 [label = "TERMINATE !0"];
 67 -> 72 [label = "TERMINATE !2"];
-68 -> 73 [label = "TERMINATE !2"];
+68 -> 72 [label = "TERMINATE !2"];
 69 -> 71 [label = "TERMINATE !1"];
-73 -> 74 [label = "exit"];
+70 -> 73 [label = "exit"];
+71 -> 73 [label = "exit"];
+72 -> 73 [label = "exit"];
 }

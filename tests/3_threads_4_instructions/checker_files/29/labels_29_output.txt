@@ -1,0 +1,90 @@
+
+"test_29_none.bcg" = generation of "test_29_none.lnt"
+    (* 82 states, 166 transitions, 3.2 Kbytes *)
+
+property AtLeastOneLassoUnderNoScheduler (test_29_none)
+
+PASS
+
+property CanAlwaysReachTermination (test_29_none)
+
+PASS
+
+"test_29_obe.bcg" = generation of "test_29_obe.lnt"
+    (* 82 states, 166 transitions, 5.3 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_29_obe)
+ | There are no deadlock lassos in Weak test_29_obe
+
+FAIL
+
+property FreeFromStrongDeadlockLasso (test_29_obe)
+ | There are no deadlock lassos in Strong test_29_obe
+
+FAIL
+
+"test_29_hsa.bcg" = generation of "test_29_hsa.lnt"
+    (* 101 states, 185 transitions, 3.8 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_29_hsa)
+ | There are no deadlock lassos in Weak test_29_hsa
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_29_hsa)
+ | There are no deadlock lassos in Strong test_29_hsa
+
+FAIL
+
+"test_29_hsa_obe.bcg" = generation of "test_29_hsa_obe.lnt"
+    (* 100 states, 184 transitions, 5.1 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_29_hsa_obe)
+ | There are no deadlock lassos in Weak test_29_hsa_obe
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_29_hsa_obe)
+ | There are no deadlock lassos in Strong test_29_hsa_obe
+
+PASS
+
+"test_29_hsa_priority.bcg" = generation of "test_29_hsa_priority.lnt"
+    (* 97 states, 181 transitions, 3.7 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_29_hsa_priority)
+ | There are no deadlock lassos in Weak test_29_hsa_priority
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_29_hsa_priority)
+ | There are no deadlock lassos in Strong test_29_hsa_priority
+
+PASS
+
+"test_29_lobe.bcg" = generation of "test_29_lobe.lnt"
+    (* 106 states, 208 transitions, 5.1 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_29_lobe)
+ | There are no deadlock lassos in Weak test_29_lobe
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_29_lobe)
+ | There are no deadlock lassos in Strong test_29_lobe
+
+PASS
+
+"test_29_weak.bcg" = generation of "test_29_weak.lnt"
+    (* 82 states, 166 transitions, 4.2 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_29_weak)
+ | There are no deadlock lassos in Weak test_29_weak
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_29_weak)
+ | There are no deadlock lassos in Strong test_29_weak
+
+PASS
+

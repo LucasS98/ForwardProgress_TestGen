@@ -1,0 +1,39 @@
+
+"test_128_none.bcg" = generation of "test_128_none.lnt"
+    (* 26 states, 37 transitions, 2.8 Kbytes *)
+
+property AtLeastOneLassoUnderNoScheduler (test_128_none)
+
+PASS
+
+property CanAlwaysReachTermination (test_128_none)
+
+PASS
+
+"test_128_obe.bcg" = generation of "test_128_obe.lnt"
+    (* 26 states, 37 transitions, 3.3 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_128_obe)
+ | There are no deadlock lassos in Weak test_128_obe
+
+FAIL
+
+property FreeFromStrongDeadlockLasso (test_128_obe)
+ | There are no deadlock lassos in Strong test_128_obe
+
+FAIL
+
+"test_128_hsa.bcg" = generation of "test_128_hsa.lnt"
+    (* 28 states, 39 transitions, 2.8 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_128_hsa)
+ | There are no deadlock lassos in Weak test_128_hsa
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_128_hsa)
+ | There are no deadlock lassos in Strong test_128_hsa
+
+PASS
+
+"test_128_hsa_obe.bcg" = generation of "test_128_hsa_obe.lnt"

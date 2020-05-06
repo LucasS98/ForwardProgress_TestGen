@@ -13,9 +13,9 @@ svl clean info: [temporary] test_101_none.err
 
 % lnt.open   "test_101_none.lnt"  generator  "test_101_none.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_HhHXoL/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_j0WsKV/COMMON.lib'' ...
 
-lnt.open: translating ``test_101_none.lnt'' to ``/tmp/ls24_lnt.open_HhHXoL/test_101_none.lotos'' ...
+lnt.open: translating ``test_101_none.lnt'' to ``/tmp/ls24_lnt.open_j0WsKV/test_101_none.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_101_none.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -48,31 +48,37 @@ In specification TEST_101_NONE [3]
 
    - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:507] is never reached
+   - process LOOP__1 [COMMON:510] is never reached
 
-   - process COND__2 [COMMON:542] is never reached
+   - process LOOP__2 [COMMON:538] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
+   - process WHILE_CONT__2 [COMMON:550] is never reached
 
-   - process LOOP__1 [COMMON:567] is never reached
+   - process COND__2 [COMMON:563] is never reached
 
-   - process COND__2 [COMMON:592] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:573] is never reached
 
-   - process LOOP__2 [COMMON:601] is never reached
+   - process LOOP__1 [COMMON:588] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:621] is never reached
+   - process COND__2 [COMMON:613] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__2 [COMMON:622] is never reached
 
-   - process LOOP__2 [COMMON:664] is never reached
+   - process SCHEDULER_LOBE [COMMON:642] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process LOOP__1 [COMMON:657] is never reached
 
-   - process WHILE_CONT__2 [COMMON:688] is never reached
+   - process LOOP__3 [COMMON:681] is never reached
 
-   - process COND__2 [COMMON:694] is never reached
+   - process COND__4 [COMMON:699] is never reached
 
-   - process COND__3 [COMMON:706] is never reached
+   - process WHILE_CONT__3 [COMMON:705] is never reached
+
+   - process LOOP__2 [COMMON:711] is never reached
+
+   - process WHILE_CONT__2 [COMMON:723] is never reached
+
+   - process COND__2 [COMMON:735] is never reached
 command exit with status 0
 
 info about test_101_none.bcg:
@@ -168,9 +174,9 @@ svl clean info: [temporary] test_101_obe.err
 
 % lnt.open   "test_101_obe.lnt"  generator  "test_101_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_o20tq9/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_AOZpgo/COMMON.lib'' ...
 
-lnt.open: translating ``test_101_obe.lnt'' to ``/tmp/ls24_lnt.open_o20tq9/test_101_obe.lotos'' ...
+lnt.open: translating ``test_101_obe.lnt'' to ``/tmp/ls24_lnt.open_AOZpgo/test_101_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_101_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -203,31 +209,37 @@ In specification TEST_101_OBE [3]
 
    - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:507] is never reached
+   - process LOOP__1 [COMMON:510] is never reached
 
-   - process COND__2 [COMMON:542] is never reached
+   - process LOOP__2 [COMMON:538] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
+   - process WHILE_CONT__2 [COMMON:550] is never reached
 
-   - process LOOP__1 [COMMON:567] is never reached
+   - process COND__2 [COMMON:563] is never reached
 
-   - process COND__2 [COMMON:592] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:573] is never reached
 
-   - process LOOP__2 [COMMON:601] is never reached
+   - process LOOP__1 [COMMON:588] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:621] is never reached
+   - process COND__2 [COMMON:613] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__2 [COMMON:622] is never reached
 
-   - process LOOP__2 [COMMON:664] is never reached
+   - process SCHEDULER_LOBE [COMMON:642] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process LOOP__1 [COMMON:657] is never reached
 
-   - process WHILE_CONT__2 [COMMON:688] is never reached
+   - process LOOP__3 [COMMON:681] is never reached
 
-   - process COND__2 [COMMON:694] is never reached
+   - process COND__4 [COMMON:699] is never reached
 
-   - process COND__3 [COMMON:706] is never reached
+   - process WHILE_CONT__3 [COMMON:705] is never reached
+
+   - process LOOP__2 [COMMON:711] is never reached
+
+   - process WHILE_CONT__2 [COMMON:723] is never reached
+
+   - process COND__2 [COMMON:735] is never reached
 command exit with status 0
 
 info about test_101_obe.bcg:
@@ -252,6 +264,8 @@ svl clean info: [temporary] svl003_formula_inline.xm
     end_macro
     < true* . { EX ... ?fairlyScheduled:String } >
     <
+        true .
+        
         for tid:Nat from 0 to 4 do
             if is_in (tid, fairlyScheduled) then
                 true* . { EX !tid ... }
@@ -274,11 +288,7 @@ bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
 bcg_open: running ``evaluator4 -source test_101.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_101_obe.bcg''
 
 TRUE
-*** diagnostic sequence found at depth 1
-
-<initial state>
-"EX !0 !ATOMIC_EXCH_BRANCH (1, +1, TRUE, +0, 2, TRUE) !"::""
-<goal state>
+(consult diagnostic in file ``svl000_output.bcg'')
 command exit with status 0
 
 % bcg_io   "svl000_output.bcg"   "test_101_obe_deadlock.bcg"
@@ -317,11 +327,11 @@ svl clean info: [temporary] evaluator4
 
 svl clean info: [temporary] evaluator4.o
 
-% bcg_open   "test_101_obe.bcg"  evaluator4 -source "test_101.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+% bcg_open   "test_101_obe.bcg"  evaluator4 -source "test_101.svl:53" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
 
 svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
-bcg_open: running ``evaluator4 -source test_101.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_obe.bcg''
+bcg_open: running ``evaluator4 -source test_101.svl:53 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_obe.bcg''
 
 FALSE
 (consult diagnostic in file ``svl000_output.bcg'')
@@ -346,9 +356,9 @@ svl clean info: [temporary] test_101_hsa.err
 
 % lnt.open   "test_101_hsa.lnt"  generator  "test_101_hsa.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_AK1pwi/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Z5RpxG/COMMON.lib'' ...
 
-lnt.open: translating ``test_101_hsa.lnt'' to ``/tmp/ls24_lnt.open_AK1pwi/test_101_hsa.lotos'' ...
+lnt.open: translating ``test_101_hsa.lnt'' to ``/tmp/ls24_lnt.open_Z5RpxG/test_101_hsa.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_101_hsa.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -379,31 +389,37 @@ In specification TEST_101_HSA [3]
 
    - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:507] is never reached
+   - process LOOP__1 [COMMON:510] is never reached
 
-   - process COND__2 [COMMON:542] is never reached
+   - process LOOP__2 [COMMON:538] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
+   - process WHILE_CONT__2 [COMMON:550] is never reached
 
-   - process LOOP__1 [COMMON:567] is never reached
+   - process COND__2 [COMMON:563] is never reached
 
-   - process COND__2 [COMMON:592] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:573] is never reached
 
-   - process LOOP__2 [COMMON:601] is never reached
+   - process LOOP__1 [COMMON:588] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:621] is never reached
+   - process COND__2 [COMMON:613] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__2 [COMMON:622] is never reached
 
-   - process LOOP__2 [COMMON:664] is never reached
+   - process SCHEDULER_LOBE [COMMON:642] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process LOOP__1 [COMMON:657] is never reached
 
-   - process WHILE_CONT__2 [COMMON:688] is never reached
+   - process LOOP__3 [COMMON:681] is never reached
 
-   - process COND__2 [COMMON:694] is never reached
+   - process COND__4 [COMMON:699] is never reached
 
-   - process COND__3 [COMMON:706] is never reached
+   - process WHILE_CONT__3 [COMMON:705] is never reached
+
+   - process LOOP__2 [COMMON:711] is never reached
+
+   - process WHILE_CONT__2 [COMMON:723] is never reached
+
+   - process COND__2 [COMMON:735] is never reached
 command exit with status 0
 
 info about test_101_hsa.bcg:
@@ -428,6 +444,8 @@ svl clean info: [temporary] svl003_formula_inline.xm
     end_macro
     < true* . { EX ... ?fairlyScheduled:String } >
     <
+        true .
+        
         for tid:Nat from 0 to 4 do
             if is_in (tid, fairlyScheduled) then
                 true* . { EX !tid ... }
@@ -489,11 +507,11 @@ svl clean info: [temporary] evaluator4
 
 svl clean info: [temporary] evaluator4.o
 
-% bcg_open   "test_101_hsa.bcg"  evaluator4 -source "test_101.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+% bcg_open   "test_101_hsa.bcg"  evaluator4 -source "test_101.svl:53" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
 
 svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
-bcg_open: running ``evaluator4 -source test_101.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_hsa.bcg''
+bcg_open: running ``evaluator4 -source test_101.svl:53 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_hsa.bcg''
 
 TRUE
 (consult diagnostic in file ``svl000_output.bcg'')
@@ -518,9 +536,9 @@ svl clean info: [temporary] test_101_hsa_obe.err
 
 % lnt.open   "test_101_hsa_obe.lnt"  generator  "test_101_hsa_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_PmBdeQ/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_J9UUGU/COMMON.lib'' ...
 
-lnt.open: translating ``test_101_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_PmBdeQ/test_101_hsa_obe.lotos'' ...
+lnt.open: translating ``test_101_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_J9UUGU/test_101_hsa_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_101_hsa_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -557,23 +575,29 @@ In specification TEST_101_HSA_OBE [3]
 
    - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:507] is never reached
+   - process LOOP__1 [COMMON:510] is never reached
 
-   - process COND__2 [COMMON:542] is never reached
+   - process LOOP__2 [COMMON:538] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:621] is never reached
+   - process WHILE_CONT__2 [COMMON:550] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process COND__2 [COMMON:563] is never reached
 
-   - process LOOP__2 [COMMON:664] is never reached
+   - process SCHEDULER_LOBE [COMMON:642] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process LOOP__1 [COMMON:657] is never reached
 
-   - process WHILE_CONT__2 [COMMON:688] is never reached
+   - process LOOP__3 [COMMON:681] is never reached
 
-   - process COND__2 [COMMON:694] is never reached
+   - process COND__4 [COMMON:699] is never reached
 
-   - process COND__3 [COMMON:706] is never reached
+   - process WHILE_CONT__3 [COMMON:705] is never reached
+
+   - process LOOP__2 [COMMON:711] is never reached
+
+   - process WHILE_CONT__2 [COMMON:723] is never reached
+
+   - process COND__2 [COMMON:735] is never reached
 command exit with status 0
 
 info about test_101_hsa_obe.bcg:
@@ -598,6 +622,8 @@ svl clean info: [temporary] svl003_formula_inline.xm
     end_macro
     < true* . { EX ... ?fairlyScheduled:String } >
     <
+        true .
+        
         for tid:Nat from 0 to 4 do
             if is_in (tid, fairlyScheduled) then
                 true* . { EX !tid ... }
@@ -659,11 +685,11 @@ svl clean info: [temporary] evaluator4
 
 svl clean info: [temporary] evaluator4.o
 
-% bcg_open   "test_101_hsa_obe.bcg"  evaluator4 -source "test_101.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+% bcg_open   "test_101_hsa_obe.bcg"  evaluator4 -source "test_101.svl:53" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
 
 svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
-bcg_open: running ``evaluator4 -source test_101.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_hsa_obe.bcg''
+bcg_open: running ``evaluator4 -source test_101.svl:53 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_hsa_obe.bcg''
 
 TRUE
 (consult diagnostic in file ``svl000_output.bcg'')
@@ -688,9 +714,9 @@ svl clean info: [temporary] test_101_hsa_priority.err
 
 % lnt.open   "test_101_hsa_priority.lnt"  generator  "test_101_hsa_priority.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_xEPe5n/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_fil1vv/COMMON.lib'' ...
 
-lnt.open: translating ``test_101_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_xEPe5n/test_101_hsa_priority.lotos'' ...
+lnt.open: translating ``test_101_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_fil1vv/test_101_hsa_priority.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_101_hsa_priority.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -725,31 +751,33 @@ In specification TEST_101_HSA_PRIORITY [3]
 
    - process COND__2 [COMMON:479] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:573] is never reached
 
-   - process LOOP__1 [COMMON:567] is never reached
+   - process LOOP__1 [COMMON:588] is never reached
 
-   - process COND__2 [COMMON:592] is never reached
+   - process COND__2 [COMMON:613] is never reached
 
-   - process LOOP__2 [COMMON:601] is never reached
+   - process LOOP__2 [COMMON:622] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:621] is never reached
+   - process SCHEDULER_LOBE [COMMON:642] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__1 [COMMON:657] is never reached
 
-   - process LOOP__2 [COMMON:664] is never reached
+   - process LOOP__3 [COMMON:681] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process COND__4 [COMMON:699] is never reached
 
-   - process WHILE_CONT__2 [COMMON:688] is never reached
+   - process WHILE_CONT__3 [COMMON:705] is never reached
 
-   - process COND__2 [COMMON:694] is never reached
+   - process LOOP__2 [COMMON:711] is never reached
 
-   - process COND__3 [COMMON:706] is never reached
+   - process WHILE_CONT__2 [COMMON:723] is never reached
+
+   - process COND__2 [COMMON:735] is never reached
 command exit with status 0
 
 info about test_101_hsa_priority.bcg:
-    (* 29 states, 37 transitions, 2.9 Kbytes *)
+    (* 29 states, 39 transitions, 2.9 Kbytes *)
 
 property FreeFromWeakDeadlockLasso (test_101_hsa_priority)
  | There are no deadlock lassos in Weak test_101_hsa_priority
@@ -770,6 +798,8 @@ svl clean info: [temporary] svl003_formula_inline.xm
     end_macro
     < true* . { EX ... ?fairlyScheduled:String } >
     <
+        true .
+        
         for tid:Nat from 0 to 4 do
             if is_in (tid, fairlyScheduled) then
                 true* . { EX !tid ... }
@@ -831,28 +861,20 @@ svl clean info: [temporary] evaluator4
 
 svl clean info: [temporary] evaluator4.o
 
-% bcg_open   "test_101_hsa_priority.bcg"  evaluator4 -source "test_101.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+% bcg_open   "test_101_hsa_priority.bcg"  evaluator4 -source "test_101.svl:53" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
 
 svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
-bcg_open: running ``evaluator4 -source test_101.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_hsa_priority.bcg''
+bcg_open: running ``evaluator4 -source test_101.svl:53 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_hsa_priority.bcg''
 
-FALSE
-*** diagnostic sequence found at depth 5
-
-<initial state>
-"EX !0 !ATOMIC_EXCH_BRANCH (1, +1, TRUE, +0, 2, TRUE) !":0:""
-"EX !0 !ATOMIC_EXCH_BRANCH (1, +1, TRUE, +0, 1, FALSE) !":0:""
-"EX !1 !ATOMIC_EXCH_BRANCH (1, +0, TRUE, +0, 1, FALSE) !":0:""
-"TERMINATE !1"
-"TERMINATE !0"
-<goal state>
+TRUE
+(consult diagnostic in file ``svl000_output.bcg'')
 command exit with status 0
 
 % bcg_io   "svl000_output.bcg"   "test_101_hsa_priority_deadlock.bcg"
 command exit with status 0
 
-FAIL
+PASS
 
 svl clean info: [persistent] test_101_lobe.bcg
 
@@ -868,9 +890,9 @@ svl clean info: [temporary] test_101_lobe.err
 
 % lnt.open   "test_101_lobe.lnt"  generator  "test_101_lobe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_SMHTu5/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_ye8eO0/COMMON.lib'' ...
 
-lnt.open: translating ``test_101_lobe.lnt'' to ``/tmp/ls24_lnt.open_SMHTu5/test_101_lobe.lotos'' ...
+lnt.open: translating ``test_101_lobe.lnt'' to ``/tmp/ls24_lnt.open_ye8eO0/test_101_lobe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_101_lobe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -907,21 +929,25 @@ In specification TEST_101_LOBE [3]
 
    - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:507] is never reached
+   - process LOOP__1 [COMMON:510] is never reached
 
-   - process COND__2 [COMMON:542] is never reached
+   - process LOOP__2 [COMMON:538] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
+   - process WHILE_CONT__2 [COMMON:550] is never reached
 
-   - process LOOP__1 [COMMON:567] is never reached
+   - process COND__2 [COMMON:563] is never reached
 
-   - process COND__2 [COMMON:592] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:573] is never reached
 
-   - process LOOP__2 [COMMON:601] is never reached
+   - process LOOP__1 [COMMON:588] is never reached
+
+   - process COND__2 [COMMON:613] is never reached
+
+   - process LOOP__2 [COMMON:622] is never reached
 command exit with status 0
 
 info about test_101_lobe.bcg:
-    (* 85 states, 150 transitions, 3.7 Kbytes *)
+    (* 32 states, 45 transitions, 3.3 Kbytes *)
 
 property FreeFromWeakDeadlockLasso (test_101_lobe)
  | There are no deadlock lassos in Weak test_101_lobe
@@ -942,6 +968,8 @@ svl clean info: [temporary] svl003_formula_inline.xm
     end_macro
     < true* . { EX ... ?fairlyScheduled:String } >
     <
+        true .
+        
         for tid:Nat from 0 to 4 do
             if is_in (tid, fairlyScheduled) then
                 true* . { EX !tid ... }
@@ -963,18 +991,14 @@ svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
 bcg_open: running ``evaluator4 -source test_101.svl:32 -dfs -diag svl000_output.bcg svl003_formula_inline.mcl'' for ``./test_101_lobe.bcg''
 
-TRUE
-*** diagnostic sequence found at depth 1
-
-<initial state>
-"EX !0 !ATOMIC_EXCH_BRANCH (1, +1, TRUE, +0, 2, TRUE) !"::""
-<goal state>
+FALSE
+(consult diagnostic in file ``svl000_output.bcg'')
 command exit with status 0
 
 % bcg_io   "svl000_output.bcg"   "test_101_lobe_deadlock.bcg"
 command exit with status 0
 
-FAIL
+PASS
 
 property FreeFromStrongDeadlockLasso (test_101_lobe)
  | There are no deadlock lassos in Strong test_101_lobe
@@ -1007,11 +1031,11 @@ svl clean info: [temporary] evaluator4
 
 svl clean info: [temporary] evaluator4.o
 
-% bcg_open   "test_101_lobe.bcg"  evaluator4 -source "test_101.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+% bcg_open   "test_101_lobe.bcg"  evaluator4 -source "test_101.svl:53" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
 
 svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
-bcg_open: running ``evaluator4 -source test_101.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_lobe.bcg''
+bcg_open: running ``evaluator4 -source test_101.svl:53 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_lobe.bcg''
 
 TRUE
 (consult diagnostic in file ``svl000_output.bcg'')
@@ -1036,9 +1060,9 @@ svl clean info: [temporary] test_101_weak.err
 
 % lnt.open   "test_101_weak.lnt"  generator  "test_101_weak.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_EUHgpe/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_BZgIqC/COMMON.lib'' ...
 
-lnt.open: translating ``test_101_weak.lnt'' to ``/tmp/ls24_lnt.open_EUHgpe/test_101_weak.lotos'' ...
+lnt.open: translating ``test_101_weak.lnt'' to ``/tmp/ls24_lnt.open_BZgIqC/test_101_weak.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_101_weak.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -1067,31 +1091,37 @@ In specification TEST_101_WEAK [3]
 
    - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
 
-   - process LOOP__1 [COMMON:507] is never reached
+   - process LOOP__1 [COMMON:510] is never reached
 
-   - process COND__2 [COMMON:542] is never reached
+   - process LOOP__2 [COMMON:538] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:552] is never reached
+   - process WHILE_CONT__2 [COMMON:550] is never reached
 
-   - process LOOP__1 [COMMON:567] is never reached
+   - process COND__2 [COMMON:563] is never reached
 
-   - process COND__2 [COMMON:592] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:573] is never reached
 
-   - process LOOP__2 [COMMON:601] is never reached
+   - process LOOP__1 [COMMON:588] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:621] is never reached
+   - process COND__2 [COMMON:613] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__2 [COMMON:622] is never reached
 
-   - process LOOP__2 [COMMON:664] is never reached
+   - process SCHEDULER_LOBE [COMMON:642] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process LOOP__1 [COMMON:657] is never reached
 
-   - process WHILE_CONT__2 [COMMON:688] is never reached
+   - process LOOP__3 [COMMON:681] is never reached
 
-   - process COND__2 [COMMON:694] is never reached
+   - process COND__4 [COMMON:699] is never reached
 
-   - process COND__3 [COMMON:706] is never reached
+   - process WHILE_CONT__3 [COMMON:705] is never reached
+
+   - process LOOP__2 [COMMON:711] is never reached
+
+   - process WHILE_CONT__2 [COMMON:723] is never reached
+
+   - process COND__2 [COMMON:735] is never reached
 command exit with status 0
 
 info about test_101_weak.bcg:
@@ -1116,6 +1146,8 @@ svl clean info: [temporary] svl003_formula_inline.xm
     end_macro
     < true* . { EX ... ?fairlyScheduled:String } >
     <
+        true .
+        
         for tid:Nat from 0 to 4 do
             if is_in (tid, fairlyScheduled) then
                 true* . { EX !tid ... }
@@ -1177,11 +1209,11 @@ svl clean info: [temporary] evaluator4
 
 svl clean info: [temporary] evaluator4.o
 
-% bcg_open   "test_101_weak.bcg"  evaluator4 -source "test_101.svl:51" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
+% bcg_open   "test_101_weak.bcg"  evaluator4 -source "test_101.svl:53" -dfs -diag "svl000_output.bcg"  "svl004_formula_inline.mcl"
 
 svl clean info: [temporary] svl000_stdout
 bcg_open: using ``/home/ts20/cadp/bin.x64/evaluator4.a''
-bcg_open: running ``evaluator4 -source test_101.svl:51 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_weak.bcg''
+bcg_open: running ``evaluator4 -source test_101.svl:53 -dfs -diag svl000_output.bcg svl004_formula_inline.mcl'' for ``./test_101_weak.bcg''
 
 TRUE
 (consult diagnostic in file ``svl000_output.bcg'')

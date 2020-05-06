@@ -98,9 +98,11 @@ node [shape = circle];
 44 -> 52 [label = "TERMINATE !1"];
 45 -> 51 [label = "TERMINATE !0"];
 46 -> 53 [label = "TERMINATE !2"];
-47 -> 54 [label = "TERMINATE !2"];
+47 -> 53 [label = "TERMINATE !2"];
 48 -> 52 [label = "TERMINATE !1"];
 49 -> 41 [label = "EX !0 !ATOMIC_EXCH_BRANCH (1, +0, FALSE, +0, 1, FALSE) !":0:""];
 50 -> 41 [label = "EX !0 !ATOMIC_EXCH_BRANCH (1, +0, FALSE, +0, 1, FALSE) !":0:""];
-54 -> 55 [label = "exit"];
+51 -> 54 [label = "exit"];
+52 -> 54 [label = "exit"];
+53 -> 54 [label = "exit"];
 }

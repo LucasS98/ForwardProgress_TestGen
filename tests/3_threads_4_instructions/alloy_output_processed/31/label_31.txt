@@ -14,6 +14,6 @@ STRONG VARIANTS ---------------------
 OBE_STRONG - Termination: FAIL
 HSA_STRONG - Termination: FAIL
 HSA_OBE_STRONG - Termination: PASS
-LOBE_STRONG - Termination: FAIL
+LOBE_STRONG - Termination: PASS
 STRONG_FAIR - Termination: PASS
 

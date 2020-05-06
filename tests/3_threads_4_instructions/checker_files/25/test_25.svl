@@ -36,6 +36,8 @@ is
         end_macro
         < true* . { EX ... ?fairlyScheduled:String } >
         <
+	    true .
+	    
             for tid:Nat from 0 to 4 do
                 if is_in (tid, fairlyScheduled) then
                     true* . { EX !tid ... }

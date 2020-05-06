@@ -31,5 +31,6 @@ node [shape = circle];
 15 -> 11 [label = "TERMINATE !1"];
 15 -> 12 [label = "TERMINATE !0"];
 16 -> 19 [label = "exit"];
+17 -> 19 [label = "exit"];
 18 -> 16 [label = "TERMINATE !1"];
 }

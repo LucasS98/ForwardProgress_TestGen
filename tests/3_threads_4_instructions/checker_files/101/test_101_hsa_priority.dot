@@ -116,6 +116,8 @@ node [shape = circle];
 52 -> 58 [label = "TERMINATE !2"];
 53 -> 56 [label = "TERMINATE !1"];
 54 -> 57 [label = "TERMINATE !0"];
-55 -> 59 [label = "TERMINATE !2"];
-58 -> 60 [label = "exit"];
+55 -> 58 [label = "TERMINATE !2"];
+56 -> 59 [label = "exit"];
+57 -> 59 [label = "exit"];
+58 -> 59 [label = "exit"];
 }

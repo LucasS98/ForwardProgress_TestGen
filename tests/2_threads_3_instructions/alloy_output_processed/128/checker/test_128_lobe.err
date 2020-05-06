@@ -1,0 +1,41 @@
+In specification TEST_128_LOBE [3]
+
+   - process SCHEDULER_NONE [COMMON:338] is never reached
+
+   - process LOOP__1 [COMMON:347] is never reached
+
+   - process SCHEDULER_WEAK_FAIR [COMMON:364] is never reached
+
+   - process LOOP__1 [COMMON:376] is never reached
+
+   - process WHILE_CONT__1 [COMMON:391] is never reached
+
+   - process LOOP__2 [COMMON:396] is never reached
+
+   - process SCHEDULER_OBE [COMMON:416] is never reached
+
+   - process LOOP__1 [COMMON:428] is never reached
+
+   - process SCHEDULER_HSA [COMMON:454] is never reached
+
+   - process LOOP__1 [COMMON:463] is never reached
+
+   - process COND__2 [COMMON:479] is never reached
+
+   - process SCHEDULER_HSA_PRIORITY [COMMON:492] is never reached
+
+   - process LOOP__1 [COMMON:510] is never reached
+
+   - process LOOP__2 [COMMON:538] is never reached
+
+   - process WHILE_CONT__2 [COMMON:550] is never reached
+
+   - process COND__2 [COMMON:563] is never reached
+
+   - process SCHEDULER_HSA_OBE [COMMON:573] is never reached
+
+   - process LOOP__1 [COMMON:588] is never reached
+
+   - process COND__2 [COMMON:613] is never reached
+
+   - process LOOP__2 [COMMON:622] is never reached

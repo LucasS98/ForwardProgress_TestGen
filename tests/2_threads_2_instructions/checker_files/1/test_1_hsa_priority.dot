@@ -37,10 +37,12 @@ node [shape = circle];
 20 -> 25 [label = "EX !1 !ATOMIC_EXCH_BRANCH (1, +0, TRUE, +1, 1, FALSE) !":1:""];
 21 -> 26 [label = "TERMINATE !1"];
 21 -> 27 [label = "TERMINATE !0"];
+22 -> 28 [label = "exit"];
 23 -> 28 [label = "exit"];
 24 -> 19 [label = "EX !1 !ATOMIC_EXCH_BRANCH (1, +0, TRUE, +1, 1, TRUE) !":1:""];
 25 -> 29 [label = "TERMINATE !1"];
 26 -> 30 [label = "TERMINATE !0"];
 27 -> 29 [label = "TERMINATE !1"];
 29 -> 28 [label = "exit"];
+30 -> 28 [label = "exit"];
 }

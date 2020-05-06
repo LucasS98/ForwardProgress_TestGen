@@ -291,10 +291,12 @@ process SCHEDULER_HSA_PRIORITY [EX: ExChan, TERMINATE: NatChan] (numThread: nat)
       tid: nat,
       schedSet: NatSet,
       tokenSet: NatSet,
+      doneSet: NatSet,
       numCU: nat
    in
       activeThread := 0;
       numCU := numThread;
+      doneSet := {};
       schedSet := {activeThread};
       tokenSet := {activeThread};
     loop sched_loop in
@@ -316,8 +318,13 @@ process SCHEDULER_HSA_PRIORITY [EX: ExChan, TERMINATE: NatChan] (numThread: nat)
 
        -- Return token. If first id thread, give token to next fair sched thread
         tokenSet := remove(tid, tokenSet);
+	doneSet := insert(tid, doneSet);
+	
         if tid == activeThread then
            activeThread := activeThread + 1;
+	   while member(activeThread, doneSet) loop
+	   	 activeThread := activeThread + 1
+	   end loop;
            schedSet := {activeThread};
            if not(member(activeThread, tokenSet)) then
             tokenSet := insert(activeThread, tokenSet)
@@ -402,14 +409,14 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       doneThreads: nat,
       doneSet: NatSet,
       tid: nat,
+      smallest: nat,
       threadSet: NatSet,
-      numCU: nat,
       i: nat
    in
       doneThreads := 0;
-      numCU := numThread;
+      smallest := 0;
 
-      threadSet := {};
+      threadSet := {smallest};
       doneSet := {};
 
     loop sched_loop in
@@ -440,6 +447,14 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
 	doneThreads := doneThreads + 1;
         doneSet := insert(tid, doneSet);
 	threadSet := remove(tid, threadSet);
+
+	while member(smallest, doneSet) loop
+	      smallest := smallest + 1
+	end loop;
+
+	if not(member(smallest, threadSet)) then
+	   threadSet := insert(smallest, threadSet)
+	end if;
 
 	if doneThreads == numThread then
            break sched_loop

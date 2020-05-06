@@ -1,0 +1,90 @@
+
+"test_102_none.bcg" = generation of "test_102_none.lnt"
+    (* 20 states, 30 transitions, 2.8 Kbytes *)
+
+property AtLeastOneLassoUnderNoScheduler (test_102_none)
+
+PASS
+
+property CanAlwaysReachTermination (test_102_none)
+
+PASS
+
+"test_102_obe.bcg" = generation of "test_102_obe.lnt"
+    (* 20 states, 30 transitions, 3.2 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_102_obe)
+ | There are no deadlock lassos in Weak test_102_obe
+
+FAIL
+
+property FreeFromStrongDeadlockLasso (test_102_obe)
+ | There are no deadlock lassos in Strong test_102_obe
+
+FAIL
+
+"test_102_hsa.bcg" = generation of "test_102_hsa.lnt"
+    (* 21 states, 31 transitions, 2.9 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_102_hsa)
+ | There are no deadlock lassos in Weak test_102_hsa
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_102_hsa)
+ | There are no deadlock lassos in Strong test_102_hsa
+
+PASS
+
+"test_102_hsa_obe.bcg" = generation of "test_102_hsa_obe.lnt"
+    (* 21 states, 31 transitions, 3.2 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_102_hsa_obe)
+ | There are no deadlock lassos in Weak test_102_hsa_obe
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_102_hsa_obe)
+ | There are no deadlock lassos in Strong test_102_hsa_obe
+
+PASS
+
+"test_102_hsa_priority.bcg" = generation of "test_102_hsa_priority.lnt"
+    (* 21 states, 31 transitions, 2.9 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_102_hsa_priority)
+ | There are no deadlock lassos in Weak test_102_hsa_priority
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_102_hsa_priority)
+ | There are no deadlock lassos in Strong test_102_hsa_priority
+
+PASS
+
+"test_102_lobe.bcg" = generation of "test_102_lobe.lnt"
+    (* 24 states, 37 transitions, 3.2 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_102_lobe)
+ | There are no deadlock lassos in Weak test_102_lobe
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_102_lobe)
+ | There are no deadlock lassos in Strong test_102_lobe
+
+PASS
+
+"test_102_weak.bcg" = generation of "test_102_weak.lnt"
+    (* 20 states, 30 transitions, 3.0 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_102_weak)
+ | There are no deadlock lassos in Weak test_102_weak
+
+PASS
+
+property FreeFromStrongDeadlockLasso (test_102_weak)
+ | There are no deadlock lassos in Strong test_102_weak
+
+PASS
+

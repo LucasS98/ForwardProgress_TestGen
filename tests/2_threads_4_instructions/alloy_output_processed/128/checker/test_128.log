@@ -1,0 +1,29 @@
+
+svl clean info: [persistent] test_128_none.bcg
+
+"test_128_none.bcg" = generation of "test_128_none.lnt"
+
+svl clean info: [temporary] generator
+
+svl clean info: [temporary] generator.o
+
+svl clean info: [temporary] test_128_none.o
+
+svl clean info: [temporary] test_128_none.err
+
+% lnt.open   "test_128_none.lnt"  generator  "test_128_none.bcg"
+
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_vdj4Yp/COMMON.lib'' ...
+
+lnt.open: translating ``test_128_none.lnt'' to ``/tmp/ls24_lnt.open_vdj4Yp/test_128_none.lotos'' ...
+
+lnt.open: calling lotos.open for ``test_128_none.lotos'' ...
+lotos.open: using ``(direct) caesar''
+lotos.open: calling ``caesar.adt -debug -silent test_128_none''
+cadp_indent: cannot find ``indent''
+             file ``test_128_none.h'' will not be formatted
+lotos.open: calling ``lnt_check'' for ``test_128_none.h''
+lotos.open: calling ``caesar -silent test_128_none''
+#109 warning during restriction:
+     detection of unreachable processes
+Terminated

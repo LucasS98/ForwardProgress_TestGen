@@ -50,7 +50,7 @@ property FreeFromStrongDeadlockLasso (test_6_hsa_obe)
 PASS
 
 "test_6_hsa_priority.bcg" = generation of "test_6_hsa_priority.lnt"
-    (* 19 states, 26 transitions, 2.8 Kbytes *)
+    (* 19 states, 27 transitions, 2.8 Kbytes *)
 
 property FreeFromWeakDeadlockLasso (test_6_hsa_priority)
  | There are no deadlock lassos in Weak test_6_hsa_priority
@@ -60,15 +60,15 @@ PASS
 property FreeFromStrongDeadlockLasso (test_6_hsa_priority)
  | There are no deadlock lassos in Strong test_6_hsa_priority
 
-FAIL
+PASS
 
 "test_6_lobe.bcg" = generation of "test_6_lobe.lnt"
-    (* 22 states, 33 transitions, 3.1 Kbytes *)
+    (* 22 states, 33 transitions, 3.0 Kbytes *)
 
 property FreeFromWeakDeadlockLasso (test_6_lobe)
  | There are no deadlock lassos in Weak test_6_lobe
 
-FAIL
+PASS
 
 property FreeFromStrongDeadlockLasso (test_6_lobe)
  | There are no deadlock lassos in Strong test_6_lobe

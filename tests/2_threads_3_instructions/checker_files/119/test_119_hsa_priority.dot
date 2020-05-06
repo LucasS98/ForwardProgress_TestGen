@@ -40,5 +40,6 @@ node [shape = circle];
 21 -> 24 [label = "TERMINATE !0"];
 22 -> 25 [label = "TERMINATE !1"];
 23 -> 25 [label = "TERMINATE !1"];
+24 -> 26 [label = "exit"];
 25 -> 26 [label = "exit"];
 }

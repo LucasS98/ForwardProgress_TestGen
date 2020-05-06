@@ -1,0 +1,30 @@
+
+"test_33_none.bcg" = generation of "test_33_none.lnt"
+    (* 89 states, 180 transitions, 3.3 Kbytes *)
+
+property AtLeastOneLassoUnderNoScheduler (test_33_none)
+
+PASS
+
+property CanAlwaysReachTermination (test_33_none)
+
+PASS
+
+"test_33_obe.bcg" = generation of "test_33_obe.lnt"
+    (* 89 states, 180 transitions, 5.8 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_33_obe)
+ | There are no deadlock lassos in Weak test_33_obe
+
+FAIL
+
+property FreeFromStrongDeadlockLasso (test_33_obe)
+ | There are no deadlock lassos in Strong test_33_obe
+
+FAIL
+
+"test_33_hsa.bcg" = generation of "test_33_hsa.lnt"
+    (* 109 states, 200 transitions, 3.7 Kbytes *)
+
+property FreeFromWeakDeadlockLasso (test_33_hsa)
+ | There are no deadlock lassos in Weak test_33_hsa

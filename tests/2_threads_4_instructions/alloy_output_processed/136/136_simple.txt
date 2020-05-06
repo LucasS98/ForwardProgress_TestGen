@@ -1,6 +1,6 @@
 THREAD 0
-2: if (Mem[0] == 1) goto 2;
-3: if (Mem[0] == 1) goto END;
+0: if (Mem[0] == 1) goto 0;
+1: if (Mem[0] == 1) goto END;
 2: if (Mem[0] == 0) goto 2;
 
 THREAD 1
