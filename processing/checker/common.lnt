@@ -42,30 +42,11 @@ end channel
 
 channel ExChan is
   -- tid, instruction, do_branch
-  (nat, Instruction, String)
+  (nat, Instruction, NatSet)
 end channel
 
 -------------------------------------------------------------------------------
--- Functions
 
-function print_natset(nset: NatSet): String is
-  var n: nat, s: String in
-    if length(nset) == 0 then
-      return "::"
-    else
-      s := ":";
-      for n := 0 while n < 4 by n := n + 1 loop
-        if member(n, nset) then
-          s := s + String(n) + ":"
-        end if
-      end loop;
-      return s
-    end if
-  end var
-end function
-
-
--------------------------------------------------------------------------------
 -- Processes
 
 -- This process is an interpretor for our simple programming language
@@ -151,7 +132,7 @@ process SCHEDULER_NONE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
          select
 
             -- Execution step of a thread
-            EX(?any nat, ?any Instruction, print_natset(ts))
+            EX(?any nat, ?any Instruction, ts)
 
          []
 
@@ -187,7 +168,7 @@ process SCHEDULER_WEAK_FAIR [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
          select
 
             -- Execution step of a thread
-            EX(?any nat, ?any Instruction, print_natset(ts))
+            EX(?any nat, ?any Instruction, ts)
 
          []
 
@@ -222,13 +203,13 @@ process SCHEDULER_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
         -- First execution step of a thread
-        EX(?tid, ?any Instruction, print_natset(activeThreads)) where length(activeThreads) < numCU and not(member(tid, activeThreads));
+        EX(?tid, ?any Instruction, activeThreads) where length(activeThreads) < numCU and not(member(tid, activeThreads));
         activeThreads := insert(tid, activeThreads)
 
       []
 
         -- a Thread already present in activeThreads can execute
-        EX(?tid, ?any Instruction, print_natset(activeThreads)) where member(tid, activeThreads)
+        EX(?tid, ?any Instruction, activeThreads) where member(tid, activeThreads)
 
       []
 
@@ -262,7 +243,7 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
          select
 
             -- Execution step of a thread
-            EX(?any nat, ?any Instruction, print_natset(fairSched))
+            EX(?any nat, ?any Instruction, fairSched)
 
          []
 
@@ -362,13 +343,13 @@ process SCHEDULER_HSA_OBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
         -- First execution step of a thread
-	EX(?tid, ?any Instruction, print_natset(activeThreads)) where length(activeThreads) < numCU and not(member(tid, activeThreads));
+	EX(?tid, ?any Instruction, activeThreads) where length(activeThreads) < numCU and not(member(tid, activeThreads));
         activeThreads := insert(tid, activeThreads)
 
       []
 
         -- a Thread already present in activeThreads can execute
-        EX(?tid, ?any Instruction, print_natset(activeThreads)) where member(tid, activeThreads)
+        EX(?tid, ?any Instruction, activeThreads) where member(tid, activeThreads)
 
       []
 
@@ -423,7 +404,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
       -- First execution step of a thread
-	      EX(?tid, ?any Instruction, print_natset(threadSet)) where not(member(tid, threadSet));
+	      EX(?tid, ?any Instruction, threadSet) where not(member(tid, threadSet));
          
          -- We guarantee all smaller id threads
          i := 0;
@@ -438,7 +419,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       []
 
         -- any Thread up to highestID is guaranteed fairly scheduling
-        EX(?tid, ?any Instruction, print_natset(threadSet)) where member(tid, threadSet)
+        EX(?tid, ?any Instruction, threadSet) where member(tid, threadSet)
 
       []
 

@@ -222,6 +222,14 @@ def main(argv):
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_obe.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_priority.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_weak.lnt", replace, threads)
+
+    writeCADPFile(CADPfolder, folderName, index,"prod_cons_hsa_strong.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_obe_strong.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_lobe_strong.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_obe_strong.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_hsa_priority_strong.lnt", replace, threads)
+    writeCADPFile(CADPfolder, folderName, index, "prod_cons_strong.lnt", replace, threads)
+
     writeCADPFile(CADPfolder, folderName, index, "prod_cons_none.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "common.lnt", replace, threads)
     writeCADPFile(CADPfolder, folderName, index, "prod_cons.svl", replace, threads, condition)              
