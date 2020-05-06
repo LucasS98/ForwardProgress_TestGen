@@ -22,24 +22,23 @@ class Sched(Enum):
 
 def main(argv):
     txtFile = argv[0]
-    folder = argv[1]
-    index = argv[2]
+    index = argv[1]
 
     results = []
     f = open(txtFile, "r")
     text = f.read()
-    index = 0
+    ind = 0
     for i in range(14):
-        if ((text.find("FAIL", index) < text.find("PASS", index) and text.find("FAIL", index) != -1) or text.find("PASS", index) == -1):
+        if ((text.find("FAIL", ind) < text.find("PASS", ind) and text.find("FAIL", ind) != -1) or text.find("PASS", ind) == -1):
             results.append("FAIL")
-            index = text.find("FAIL", index) + 4
+            ind = text.find("FAIL", ind) + 4
         else:
             results.append("PASS")
-            index = text.find("PASS", index) + 4
+            ind = text.find("PASS", ind) + 4
     f.close()
 
-    txtFile.replace("_output", "")
-    f = open(txtFile, "w")
+    txtFile = txtFile.replace("_output", "")
+    f = open(txtFile, "w+")
     f.write("SANITY CHECK ---------------------\n")
     f.write("Unfair - At least one lasso: " + results[0] + "\n")
     f.write("Unfair - Can reach termination: " + results[1] + "\n")
@@ -83,7 +82,7 @@ def main(argv):
         results[Sched.LOBE.value]>results[Sched.S_LOBE.value] or
         results[Sched.W_FAIR.value]>results[Sched.S_FAIR.value] ):
         
-        f = open(folder + "/../distinguishing/error.txt", "a+")
+        f = open("../../distinguishing/error.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
         return 0
@@ -91,13 +90,13 @@ def main(argv):
     # If we did not fail the hierarchy, we process the test to see if it is distinguishing
     if (results[Sched.OBE.value] < results[Sched.HSA.value] and
         results[Sched.S_OBE.value] < results[Sched.HSA.value]):
-        f = open(folder + "/../distinguishing/hsa.txt", "a+")
+        f = open("../../distinguishing/hsa.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 
     if (results[Sched.HSA.value] < results[Sched.OBE.value] and
         results[Sched.S_HSA.value] < results[Sched.OBE.value]):
-        f = open(folder + "/../distinguishing/obe.txt", "a+")
+        f = open("../../distinguishing/obe.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 
@@ -105,19 +104,19 @@ def main(argv):
         results[Sched.HSA.value] < results[Sched.HSA_OBE.value] and
         results[Sched.S_OBE.value] < results[Sched.HSA_OBE.value] and 
         results[Sched.S_HSA.value] < results[Sched.HSA_OBE.value]):
-        f = open(folder + "/../distinguishing/hsa_obe.txt", "a+")
+        f = open("../../distinguishing/hsa_obe.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 
     if (results[Sched.HSA_OBE.value] < results[Sched.LOBE.value] and 
         results[Sched.S_HSA_OBE.value] < results[Sched.LOBE.value]):
-        f = open(folder + "/../distinguishing/lobe.txt", "a+")
+        f = open("../../distinguishing/lobe.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 
     if (results[Sched.LOBE.value] < results[Sched.W_FAIR.value] and
         results[Sched.S_LOBE.value] < results[Sched.W_FAIR.value]):
-        f = open(folder + "/../distinguishing/w_fair.txt", "a+")
+        f = open("../../distinguishing/w_fair.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
     
@@ -125,32 +124,32 @@ def main(argv):
     # We do the same with strong fairness
     if (results[Sched.W_FAIR.value] < results[Sched.S_FAIR.value] and
         results[Sched.S_LOBE.value] < results[Sched.S_FAIR.value]):
-        f = open(folder + "/../distinguishing/strong_fair.txt", "a+")
+        f = open("../../distinguishing/strong_fair.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 
     if (results[Sched.W_FAIR.value] < results[Sched.S_LOBE.value] and
         results[Sched.S_HSA_OBE.value] < results[Sched.S_LOBE.value]):
-        f = open(folder + "/../distinguishing/strong_lobe.txt", "a+")
+        f = open("../../distinguishing/strong_lobe.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
     
     if (results[Sched.W_FAIR.value] < results[Sched.S_HSA_OBE.value] and
         results[Sched.HSA.value] < results[Sched.S_HSA_OBE.value] and
         results[Sched.OBE.value] < results[Sched.S_HSA_OBE.value]):
-        f = open(folder + "/../distinguishing/strong_hsa_obe.txt", "a+")
+        f = open("../../distinguishing/strong_hsa_obe.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 
     if (results[Sched.W_FAIR.value] < results[Sched.S_HSA.value] and
         results[Sched.S_OBE.value] < results[Sched.S_HSA.value]):
-        f = open(folder + "/../distinguishing/strong_hsa.txt", "a+")
+        f = open("../../distinguishing/strong_hsa.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 
     if (results[Sched.W_FAIR.value] < results[Sched.S_OBE.value] and
         results[Sched.S_HSA.value] < results[Sched.S_OBE.value]):
-        f = open(folder + "/../distinguishing/strong_hsa.txt", "a+")
+        f = open("../../distinguishing/strong_hsa.txt", "a+")
         f.write(str(index) + "\n")
         f.close()
 

@@ -13,9 +13,10 @@ svl clean info: [temporary] test_1_none.err
 
 % lnt.open   "test_1_none.lnt"  generator  "test_1_none.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_EHC6hl/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Sfovk2/COMMON.lib'' ...
+/tmp/ls24_lnt.open_Sfovk2/common.lnt:410: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_1_none.lnt'' to ``/tmp/ls24_lnt.open_EHC6hl/test_1_none.lotos'' ...
+lnt.open: translating ``test_1_none.lnt'' to ``/tmp/ls24_lnt.open_Sfovk2/test_1_none.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_1_none.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -62,17 +63,13 @@ In specification TEST_1_NONE [3]
 
    - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__1 [COMMON:636] is never reached
 
    - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process COND__3 [COMMON:682] is never reached
 
    - process WHILE_CONT__2 [COMMON:688] is never reached
-
-   - process COND__2 [COMMON:694] is never reached
-
-   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_1_none.bcg:
@@ -168,9 +165,10 @@ svl clean info: [temporary] test_1_obe.err
 
 % lnt.open   "test_1_obe.lnt"  generator  "test_1_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_CvyF4g/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_ZkXcrT/COMMON.lib'' ...
+/tmp/ls24_lnt.open_ZkXcrT/common.lnt:410: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_1_obe.lnt'' to ``/tmp/ls24_lnt.open_CvyF4g/test_1_obe.lotos'' ...
+lnt.open: translating ``test_1_obe.lnt'' to ``/tmp/ls24_lnt.open_ZkXcrT/test_1_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_1_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -217,17 +215,13 @@ In specification TEST_1_OBE [3]
 
    - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__1 [COMMON:636] is never reached
 
    - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process COND__3 [COMMON:682] is never reached
 
    - process WHILE_CONT__2 [COMMON:688] is never reached
-
-   - process COND__2 [COMMON:694] is never reached
-
-   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_1_obe.bcg:
@@ -346,9 +340,10 @@ svl clean info: [temporary] test_1_hsa.err
 
 % lnt.open   "test_1_hsa.lnt"  generator  "test_1_hsa.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_ZzRt1h/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_LugKRY/COMMON.lib'' ...
+/tmp/ls24_lnt.open_LugKRY/common.lnt:410: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_1_hsa.lnt'' to ``/tmp/ls24_lnt.open_ZzRt1h/test_1_hsa.lotos'' ...
+lnt.open: translating ``test_1_hsa.lnt'' to ``/tmp/ls24_lnt.open_LugKRY/test_1_hsa.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_1_hsa.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -393,17 +388,13 @@ In specification TEST_1_HSA [3]
 
    - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__1 [COMMON:636] is never reached
 
    - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process COND__3 [COMMON:682] is never reached
 
    - process WHILE_CONT__2 [COMMON:688] is never reached
-
-   - process COND__2 [COMMON:694] is never reached
-
-   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_1_hsa.bcg:
@@ -518,9 +509,10 @@ svl clean info: [temporary] test_1_hsa_obe.err
 
 % lnt.open   "test_1_hsa_obe.lnt"  generator  "test_1_hsa_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_aosLF7/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_ImZ45W/COMMON.lib'' ...
+/tmp/ls24_lnt.open_ImZ45W/common.lnt:410: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_1_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_aosLF7/test_1_hsa_obe.lotos'' ...
+lnt.open: translating ``test_1_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_ImZ45W/test_1_hsa_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_1_hsa_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -563,17 +555,13 @@ In specification TEST_1_HSA_OBE [3]
 
    - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__1 [COMMON:636] is never reached
 
    - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process COND__3 [COMMON:682] is never reached
 
    - process WHILE_CONT__2 [COMMON:688] is never reached
-
-   - process COND__2 [COMMON:694] is never reached
-
-   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_1_hsa_obe.bcg:
@@ -688,9 +676,10 @@ svl clean info: [temporary] test_1_hsa_priority.err
 
 % lnt.open   "test_1_hsa_priority.lnt"  generator  "test_1_hsa_priority.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_K1agwt/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Ndra9j/COMMON.lib'' ...
+/tmp/ls24_lnt.open_Ndra9j/common.lnt:410: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_1_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_K1agwt/test_1_hsa_priority.lotos'' ...
+lnt.open: translating ``test_1_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_Ndra9j/test_1_hsa_priority.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_1_hsa_priority.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -735,17 +724,13 @@ In specification TEST_1_HSA_PRIORITY [3]
 
    - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__1 [COMMON:636] is never reached
 
    - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process COND__3 [COMMON:682] is never reached
 
    - process WHILE_CONT__2 [COMMON:688] is never reached
-
-   - process COND__2 [COMMON:694] is never reached
-
-   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_1_hsa_priority.bcg:
@@ -869,9 +854,10 @@ svl clean info: [temporary] test_1_lobe.err
 
 % lnt.open   "test_1_lobe.lnt"  generator  "test_1_lobe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_sUyxkF/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_7i6D9e/COMMON.lib'' ...
+/tmp/ls24_lnt.open_7i6D9e/common.lnt:410: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_1_lobe.lnt'' to ``/tmp/ls24_lnt.open_sUyxkF/test_1_lobe.lotos'' ...
+lnt.open: translating ``test_1_lobe.lnt'' to ``/tmp/ls24_lnt.open_7i6D9e/test_1_lobe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_1_lobe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -922,7 +908,7 @@ In specification TEST_1_LOBE [3]
 command exit with status 0
 
 info about test_1_lobe.bcg:
-    (* 93 states, 170 transitions, 3.6 Kbytes *)
+    (* 32 states, 45 transitions, 3.2 Kbytes *)
 
 property FreeFromWeakDeadlockLasso (test_1_lobe)
  | There are no deadlock lassos in Weak test_1_lobe
@@ -1037,9 +1023,10 @@ svl clean info: [temporary] test_1_weak.err
 
 % lnt.open   "test_1_weak.lnt"  generator  "test_1_weak.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_L86n2o/COMMON.lib'' ...
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_0lAgtq/COMMON.lib'' ...
+/tmp/ls24_lnt.open_0lAgtq/common.lnt:410: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_1_weak.lnt'' to ``/tmp/ls24_lnt.open_L86n2o/test_1_weak.lotos'' ...
+lnt.open: translating ``test_1_weak.lnt'' to ``/tmp/ls24_lnt.open_0lAgtq/test_1_weak.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_1_weak.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -1082,17 +1069,13 @@ In specification TEST_1_WEAK [3]
 
    - process SCHEDULER_LOBE [COMMON:621] is never reached
 
-   - process LOOP__1 [COMMON:639] is never reached
+   - process LOOP__1 [COMMON:636] is never reached
 
    - process LOOP__2 [COMMON:664] is never reached
 
-   - process COND__4 [COMMON:682] is never reached
+   - process COND__3 [COMMON:682] is never reached
 
    - process WHILE_CONT__2 [COMMON:688] is never reached
-
-   - process COND__2 [COMMON:694] is never reached
-
-   - process COND__3 [COMMON:706] is never reached
 command exit with status 0
 
 info about test_1_weak.bcg:

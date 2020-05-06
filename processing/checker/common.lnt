@@ -402,14 +402,12 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       doneThreads: nat,
       doneSet: NatSet,
       tid: nat,
-      highestID: nat,
       threadSet: NatSet,
       numCU: nat,
       i: nat
    in
       doneThreads := 0;
       numCU := numThread;
-      highestID := numCU;
 
       threadSet := {};
       doneSet := {};
@@ -418,7 +416,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       select
 
       -- First execution step of a thread
-	      EX(?tid, ?any Instruction, print_natset(threadSet)) where tid < highestID and not(member(tid, threadSet));
+	      EX(?tid, ?any Instruction, print_natset(threadSet)) where not(member(tid, threadSet));
          
          -- We guarantee all smaller id threads
          i := 0;
@@ -427,7 +425,7 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
 	            threadSet := insert(i, threadSet)
             end if;
             i := i + 1
-	      end loop;
+	 end loop;
          threadSet := insert(tid, threadSet)
 
       []
@@ -439,19 +437,13 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
 
         -- Termination of a thread
         TERMINATE(?tid);
-	     doneThreads := doneThreads + 1;
+	doneThreads := doneThreads + 1;
         doneSet := insert(tid, doneSet);
-	     if doneThreads == numThread then
+	threadSet := remove(tid, threadSet);
+
+	if doneThreads == numThread then
            break sched_loop
-        end if;
-
-        -- a Thread just terminated, we bump highestID to allow a new thread to be scheduled.
-        if highestID < numThread then
-           threadSet := insert(highestID, threadSet)
-        end if;
-        threadSet := remove(tid, threadSet);
-
-        highestID := highestID + 1
+        end if
 
       end select
     end loop

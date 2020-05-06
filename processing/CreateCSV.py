@@ -25,8 +25,7 @@ def processFile(folder, i, scheduler, output):
 def main(argv):
     folder = argv[0]
     scheduler = argv[1]
-
-    os.mkdir(folder + "/csv")
+    
     csv = open(folder + "/csv/" + scheduler + "_results.csv", "w")
     csv.write("Test File Name,No saturation Result,Round Robin Saturation Result,Chunking Saturation Result,All Passed\n")
 
