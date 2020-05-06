@@ -67,10 +67,10 @@ process Thread [EX: ExChan, TERMINATE: NatChan] (tid: nat, prog: Program) is
       case access(prog, pc) of Instruction in
          ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, any bool) ->
             select
-               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, true), ?any String);
+               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, true), ?any NatSet);
                pc := branch_target
             []
-               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, false), ?any String);
+               EX(tid, ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, branch_target, false), ?any NatSet);
                pc := pc + 1
             end select
       end case;
@@ -101,7 +101,7 @@ process SHARED_MEMORY [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       -- main loop
       loop mem_loop in
          select
-            EX(?any nat, ?ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, any nat, do_branch), ?any String) where do_branch == (check_val == mem[nat(check_loc)]);
+            EX(?any nat, ?ATOMIC_EXCH_BRANCH(check_loc, exch_val, do_exch, check_val, any nat, do_branch), ?any NatSet) where do_branch == (check_val == mem[nat(check_loc)]);
 	    if do_exch then
                mem[nat(check_loc)] := exch_val
             end if
@@ -395,7 +395,6 @@ process SCHEDULER_LOBE [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
       i: nat
    in
       doneThreads := 0;
-      numCU := numThread;
 
       threadSet := {};
       doneSet := {};
