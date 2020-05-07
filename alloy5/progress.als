@@ -376,6 +376,6 @@ pred to_run {
 }
 
 // This is pretty small but it will show a producer/consumer example
-run to_run for 2 V,  exactly 4 Thread,  20 S, 25 A, 5 L_state, 4 G_memory, 2 X,  exactly 4 Instruction
+run to_run for 2 V,  exactly 3 Thread,  16 S, 20 A, 5 L_state, 4 G_memory, 2 X,  exactly 4 Instruction
 
 //run to_run for 2 V,   3 Thread,  7 S,  8 A, 5 L_state, 4 G_memory, 2 X,  4 Instruction

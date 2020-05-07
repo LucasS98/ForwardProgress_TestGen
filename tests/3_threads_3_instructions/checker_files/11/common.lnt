@@ -233,15 +233,11 @@ end process
 process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
    var
       doneThread: nat,
-      doneSet: NatSet,
-      smallest: nat,
       fairSched: NatSet,
       tid:nat
    in
       doneThread := 0;
-      smallest := 0;
-      fairSched := {smallest};
-      doneSet := {};
+      fairSched := {doneThread};
 
       loop sched_loop in
          select
@@ -254,17 +250,13 @@ process SCHEDULER_HSA [EX: ExChan, TERMINATE: NatChan] (numThread: nat) is
             -- a Thread may stop at any time
             TERMINATE(?tid);
             doneThread := doneThread + 1;
-            doneSet := insert(tid, doneSet);
-
             if doneThread == numThread then
                break sched_loop
             end if;
 
-            while member(smallest, doneSet) loop
-               smallest := smallest + 1
-            end loop;
-
-            fairSched := {smallest}
+            if member(tid, fairSched) then
+               fairSched := {doneThread}
+            end if
 
          end select
       end loop
