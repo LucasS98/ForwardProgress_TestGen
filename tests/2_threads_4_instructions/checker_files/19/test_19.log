@@ -13,10 +13,10 @@ svl clean info: [temporary] test_19_none.err
 
 % lnt.open   "test_19_none.lnt"  generator  "test_19_none.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_n4IttC/COMMON.lib'' ...
-/tmp/ls24_lnt.open_n4IttC/common.lnt:394: warning: variable NUMCU is declared but not used
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_nUpaLI/COMMON.lib'' ...
+/tmp/ls24_lnt.open_nUpaLI/common.lnt:401: warning: variable NUMCU is declared but not used
 
-lnt.open: translating ``test_19_none.lnt'' to ``/tmp/ls24_lnt.open_n4IttC/test_19_none.lotos'' ...
+lnt.open: translating ``test_19_none.lnt'' to ``/tmp/ls24_lnt.open_nUpaLI/test_19_none.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_none.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -43,37 +43,41 @@ In specification TEST_19_NONE [3]
 
    - process SCHEDULER_HSA [COMMON:441] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:456] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:475] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process LOOP__2 [COMMON:480] is never reached
 
-   - process LOOP__1 [COMMON:497] is never reached
+   - process WHILE_CONT__2 [COMMON:492] is never reached
 
-   - process LOOP__2 [COMMON:525] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:499] is never reached
 
-   - process WHILE_CONT__2 [COMMON:537] is never reached
+   - process LOOP__1 [COMMON:517] is never reached
 
-   - process COND__2 [COMMON:550] is never reached
+   - process LOOP__2 [COMMON:545] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:560] is never reached
+   - process WHILE_CONT__2 [COMMON:557] is never reached
 
-   - process LOOP__1 [COMMON:575] is never reached
+   - process COND__2 [COMMON:570] is never reached
 
-   - process COND__2 [COMMON:600] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:580] is never reached
 
-   - process LOOP__2 [COMMON:609] is never reached
+   - process LOOP__1 [COMMON:595] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:629] is never reached
+   - process COND__2 [COMMON:620] is never reached
 
-   - process LOOP__1 [COMMON:641] is never reached
+   - process LOOP__2 [COMMON:629] is never reached
 
-   - process LOOP__2 [COMMON:669] is never reached
+   - process SCHEDULER_LOBE [COMMON:649] is never reached
 
-   - process COND__3 [COMMON:687] is never reached
+   - process LOOP__1 [COMMON:661] is never reached
 
-   - process WHILE_CONT__2 [COMMON:693] is never reached
+   - process LOOP__2 [COMMON:689] is never reached
+
+   - process COND__3 [COMMON:707] is never reached
+
+   - process WHILE_CONT__2 [COMMON:713] is never reached
 command exit with status 0
 
 info about test_19_none.bcg:
@@ -169,10 +173,10 @@ svl clean info: [temporary] test_19_obe.err
 
 % lnt.open   "test_19_obe.lnt"  generator  "test_19_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_gQF3Sa/COMMON.lib'' ...
-/tmp/ls24_lnt.open_gQF3Sa/common.lnt:394: warning: variable NUMCU is declared but not used
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Ba9Qbv/COMMON.lib'' ...
+/tmp/ls24_lnt.open_Ba9Qbv/common.lnt:401: warning: variable NUMCU is declared but not used
 
-lnt.open: translating ``test_19_obe.lnt'' to ``/tmp/ls24_lnt.open_gQF3Sa/test_19_obe.lotos'' ...
+lnt.open: translating ``test_19_obe.lnt'' to ``/tmp/ls24_lnt.open_Ba9Qbv/test_19_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -199,37 +203,41 @@ In specification TEST_19_OBE [3]
 
    - process SCHEDULER_HSA [COMMON:441] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:456] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:475] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process LOOP__2 [COMMON:480] is never reached
 
-   - process LOOP__1 [COMMON:497] is never reached
+   - process WHILE_CONT__2 [COMMON:492] is never reached
 
-   - process LOOP__2 [COMMON:525] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:499] is never reached
 
-   - process WHILE_CONT__2 [COMMON:537] is never reached
+   - process LOOP__1 [COMMON:517] is never reached
 
-   - process COND__2 [COMMON:550] is never reached
+   - process LOOP__2 [COMMON:545] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:560] is never reached
+   - process WHILE_CONT__2 [COMMON:557] is never reached
 
-   - process LOOP__1 [COMMON:575] is never reached
+   - process COND__2 [COMMON:570] is never reached
 
-   - process COND__2 [COMMON:600] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:580] is never reached
 
-   - process LOOP__2 [COMMON:609] is never reached
+   - process LOOP__1 [COMMON:595] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:629] is never reached
+   - process COND__2 [COMMON:620] is never reached
 
-   - process LOOP__1 [COMMON:641] is never reached
+   - process LOOP__2 [COMMON:629] is never reached
 
-   - process LOOP__2 [COMMON:669] is never reached
+   - process SCHEDULER_LOBE [COMMON:649] is never reached
 
-   - process COND__3 [COMMON:687] is never reached
+   - process LOOP__1 [COMMON:661] is never reached
 
-   - process WHILE_CONT__2 [COMMON:693] is never reached
+   - process LOOP__2 [COMMON:689] is never reached
+
+   - process COND__3 [COMMON:707] is never reached
+
+   - process WHILE_CONT__2 [COMMON:713] is never reached
 command exit with status 0
 
 info about test_19_obe.bcg:
@@ -288,10 +296,10 @@ svl clean info: [temporary] test_19_obe_strong.err
 
 % lnt.open   "test_19_obe_strong.lnt"  generator  "test_19_obe_strong.bcg"
 
-lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_0M32VX/COMMON_STRONG.lib'' ...
-/tmp/ls24_lnt.open_0M32VX/common_strong.lnt:417: warning: value stored in variable NUMCU is not used later
+lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_Ymyi46/COMMON_STRONG.lib'' ...
+/tmp/ls24_lnt.open_Ymyi46/common_strong.lnt:424: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_19_obe_strong.lnt'' to ``/tmp/ls24_lnt.open_0M32VX/test_19_obe_strong.lotos'' ...
+lnt.open: translating ``test_19_obe_strong.lnt'' to ``/tmp/ls24_lnt.open_Ymyi46/test_19_obe_strong.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_obe_strong.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -318,37 +326,41 @@ In specification TEST_19_OBE_STRONG [3]
 
    - process SCHEDULER_HSA [COMMON_STRONG:454] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:463] is never reached
+   - process LOOP__1 [COMMON_STRONG:469] is never reached
 
-   - process COND__2 [COMMON_STRONG:479] is never reached
+   - process COND__2 [COMMON_STRONG:488] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:492] is never reached
+   - process LOOP__2 [COMMON_STRONG:493] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:510] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:505] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:538] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:512] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:550] is never reached
+   - process LOOP__1 [COMMON_STRONG:530] is never reached
 
-   - process COND__2 [COMMON_STRONG:563] is never reached
+   - process LOOP__2 [COMMON_STRONG:558] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON_STRONG:573] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:570] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:588] is never reached
+   - process COND__2 [COMMON_STRONG:583] is never reached
 
-   - process COND__2 [COMMON_STRONG:613] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON_STRONG:593] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:622] is never reached
+   - process LOOP__1 [COMMON_STRONG:608] is never reached
 
-   - process SCHEDULER_LOBE [COMMON_STRONG:642] is never reached
+   - process COND__2 [COMMON_STRONG:633] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:657] is never reached
+   - process LOOP__2 [COMMON_STRONG:642] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:685] is never reached
+   - process SCHEDULER_LOBE [COMMON_STRONG:662] is never reached
 
-   - process COND__3 [COMMON_STRONG:703] is never reached
+   - process LOOP__1 [COMMON_STRONG:677] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:709] is never reached
+   - process LOOP__2 [COMMON_STRONG:705] is never reached
+
+   - process COND__3 [COMMON_STRONG:723] is never reached
+
+   - process WHILE_CONT__2 [COMMON_STRONG:729] is never reached
 command exit with status 0
 
 info about test_19_obe_strong.bcg:
@@ -414,10 +426,10 @@ svl clean info: [temporary] test_19_hsa.err
 
 % lnt.open   "test_19_hsa.lnt"  generator  "test_19_hsa.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_kq73ia/COMMON.lib'' ...
-/tmp/ls24_lnt.open_kq73ia/common.lnt:394: warning: variable NUMCU is declared but not used
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_xkIXWB/COMMON.lib'' ...
+/tmp/ls24_lnt.open_xkIXWB/common.lnt:401: warning: variable NUMCU is declared but not used
 
-lnt.open: translating ``test_19_hsa.lnt'' to ``/tmp/ls24_lnt.open_kq73ia/test_19_hsa.lotos'' ...
+lnt.open: translating ``test_19_hsa.lnt'' to ``/tmp/ls24_lnt.open_xkIXWB/test_19_hsa.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_hsa.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -446,33 +458,33 @@ In specification TEST_19_HSA [3]
 
    - process LOOP__1 [COMMON:415] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:499] is never reached
 
-   - process LOOP__1 [COMMON:497] is never reached
+   - process LOOP__1 [COMMON:517] is never reached
 
-   - process LOOP__2 [COMMON:525] is never reached
+   - process LOOP__2 [COMMON:545] is never reached
 
-   - process WHILE_CONT__2 [COMMON:537] is never reached
+   - process WHILE_CONT__2 [COMMON:557] is never reached
 
-   - process COND__2 [COMMON:550] is never reached
+   - process COND__2 [COMMON:570] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:560] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:580] is never reached
 
-   - process LOOP__1 [COMMON:575] is never reached
+   - process LOOP__1 [COMMON:595] is never reached
 
-   - process COND__2 [COMMON:600] is never reached
+   - process COND__2 [COMMON:620] is never reached
 
-   - process LOOP__2 [COMMON:609] is never reached
+   - process LOOP__2 [COMMON:629] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:629] is never reached
+   - process SCHEDULER_LOBE [COMMON:649] is never reached
 
-   - process LOOP__1 [COMMON:641] is never reached
+   - process LOOP__1 [COMMON:661] is never reached
 
-   - process LOOP__2 [COMMON:669] is never reached
+   - process LOOP__2 [COMMON:689] is never reached
 
-   - process COND__3 [COMMON:687] is never reached
+   - process COND__3 [COMMON:707] is never reached
 
-   - process WHILE_CONT__2 [COMMON:693] is never reached
+   - process WHILE_CONT__2 [COMMON:713] is never reached
 command exit with status 0
 
 info about test_19_hsa.bcg:
@@ -531,10 +543,10 @@ svl clean info: [temporary] test_19_hsa_strong.err
 
 % lnt.open   "test_19_hsa_strong.lnt"  generator  "test_19_hsa_strong.bcg"
 
-lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_lU16f8/COMMON_STRONG.lib'' ...
-/tmp/ls24_lnt.open_lU16f8/common_strong.lnt:417: warning: value stored in variable NUMCU is not used later
+lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_XyEEiN/COMMON_STRONG.lib'' ...
+/tmp/ls24_lnt.open_XyEEiN/common_strong.lnt:424: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_19_hsa_strong.lnt'' to ``/tmp/ls24_lnt.open_lU16f8/test_19_hsa_strong.lotos'' ...
+lnt.open: translating ``test_19_hsa_strong.lnt'' to ``/tmp/ls24_lnt.open_XyEEiN/test_19_hsa_strong.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_hsa_strong.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -563,33 +575,33 @@ In specification TEST_19_HSA_STRONG [3]
 
    - process LOOP__1 [COMMON_STRONG:428] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:492] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:512] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:510] is never reached
+   - process LOOP__1 [COMMON_STRONG:530] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:538] is never reached
+   - process LOOP__2 [COMMON_STRONG:558] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:550] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:570] is never reached
 
-   - process COND__2 [COMMON_STRONG:563] is never reached
+   - process COND__2 [COMMON_STRONG:583] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON_STRONG:573] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON_STRONG:593] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:588] is never reached
+   - process LOOP__1 [COMMON_STRONG:608] is never reached
 
-   - process COND__2 [COMMON_STRONG:613] is never reached
+   - process COND__2 [COMMON_STRONG:633] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:622] is never reached
+   - process LOOP__2 [COMMON_STRONG:642] is never reached
 
-   - process SCHEDULER_LOBE [COMMON_STRONG:642] is never reached
+   - process SCHEDULER_LOBE [COMMON_STRONG:662] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:657] is never reached
+   - process LOOP__1 [COMMON_STRONG:677] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:685] is never reached
+   - process LOOP__2 [COMMON_STRONG:705] is never reached
 
-   - process COND__3 [COMMON_STRONG:703] is never reached
+   - process COND__3 [COMMON_STRONG:723] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:709] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:729] is never reached
 command exit with status 0
 
 info about test_19_hsa_strong.bcg:
@@ -655,10 +667,10 @@ svl clean info: [temporary] test_19_hsa_obe.err
 
 % lnt.open   "test_19_hsa_obe.lnt"  generator  "test_19_hsa_obe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_i9lvvP/COMMON.lib'' ...
-/tmp/ls24_lnt.open_i9lvvP/common.lnt:394: warning: variable NUMCU is declared but not used
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_V43WN4/COMMON.lib'' ...
+/tmp/ls24_lnt.open_V43WN4/common.lnt:401: warning: variable NUMCU is declared but not used
 
-lnt.open: translating ``test_19_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_i9lvvP/test_19_hsa_obe.lotos'' ...
+lnt.open: translating ``test_19_hsa_obe.lnt'' to ``/tmp/ls24_lnt.open_V43WN4/test_19_hsa_obe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_hsa_obe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -689,29 +701,33 @@ In specification TEST_19_HSA_OBE [3]
 
    - process SCHEDULER_HSA [COMMON:441] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:456] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:475] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process LOOP__2 [COMMON:480] is never reached
 
-   - process LOOP__1 [COMMON:497] is never reached
+   - process WHILE_CONT__2 [COMMON:492] is never reached
 
-   - process LOOP__2 [COMMON:525] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:499] is never reached
 
-   - process WHILE_CONT__2 [COMMON:537] is never reached
+   - process LOOP__1 [COMMON:517] is never reached
 
-   - process COND__2 [COMMON:550] is never reached
+   - process LOOP__2 [COMMON:545] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:629] is never reached
+   - process WHILE_CONT__2 [COMMON:557] is never reached
 
-   - process LOOP__1 [COMMON:641] is never reached
+   - process COND__2 [COMMON:570] is never reached
 
-   - process LOOP__2 [COMMON:669] is never reached
+   - process SCHEDULER_LOBE [COMMON:649] is never reached
 
-   - process COND__3 [COMMON:687] is never reached
+   - process LOOP__1 [COMMON:661] is never reached
 
-   - process WHILE_CONT__2 [COMMON:693] is never reached
+   - process LOOP__2 [COMMON:689] is never reached
+
+   - process COND__3 [COMMON:707] is never reached
+
+   - process WHILE_CONT__2 [COMMON:713] is never reached
 command exit with status 0
 
 info about test_19_hsa_obe.bcg:
@@ -770,10 +786,10 @@ svl clean info: [temporary] test_19_hsa_obe_strong.err
 
 % lnt.open   "test_19_hsa_obe_strong.lnt"  generator  "test_19_hsa_obe_strong.bcg"
 
-lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_NOn3W4/COMMON_STRONG.lib'' ...
-/tmp/ls24_lnt.open_NOn3W4/common_strong.lnt:417: warning: value stored in variable NUMCU is not used later
+lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_bxA5Yt/COMMON_STRONG.lib'' ...
+/tmp/ls24_lnt.open_bxA5Yt/common_strong.lnt:424: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_19_hsa_obe_strong.lnt'' to ``/tmp/ls24_lnt.open_NOn3W4/test_19_hsa_obe_strong.lotos'' ...
+lnt.open: translating ``test_19_hsa_obe_strong.lnt'' to ``/tmp/ls24_lnt.open_bxA5Yt/test_19_hsa_obe_strong.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_hsa_obe_strong.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -804,29 +820,33 @@ In specification TEST_19_HSA_OBE_STRONG [3]
 
    - process SCHEDULER_HSA [COMMON_STRONG:454] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:463] is never reached
+   - process LOOP__1 [COMMON_STRONG:469] is never reached
 
-   - process COND__2 [COMMON_STRONG:479] is never reached
+   - process COND__2 [COMMON_STRONG:488] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:492] is never reached
+   - process LOOP__2 [COMMON_STRONG:493] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:510] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:505] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:538] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:512] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:550] is never reached
+   - process LOOP__1 [COMMON_STRONG:530] is never reached
 
-   - process COND__2 [COMMON_STRONG:563] is never reached
+   - process LOOP__2 [COMMON_STRONG:558] is never reached
 
-   - process SCHEDULER_LOBE [COMMON_STRONG:642] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:570] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:657] is never reached
+   - process COND__2 [COMMON_STRONG:583] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:685] is never reached
+   - process SCHEDULER_LOBE [COMMON_STRONG:662] is never reached
 
-   - process COND__3 [COMMON_STRONG:703] is never reached
+   - process LOOP__1 [COMMON_STRONG:677] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:709] is never reached
+   - process LOOP__2 [COMMON_STRONG:705] is never reached
+
+   - process COND__3 [COMMON_STRONG:723] is never reached
+
+   - process WHILE_CONT__2 [COMMON_STRONG:729] is never reached
 command exit with status 0
 
 info about test_19_hsa_obe_strong.bcg:
@@ -892,10 +912,10 @@ svl clean info: [temporary] test_19_hsa_priority.err
 
 % lnt.open   "test_19_hsa_priority.lnt"  generator  "test_19_hsa_priority.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_WbP6TF/COMMON.lib'' ...
-/tmp/ls24_lnt.open_WbP6TF/common.lnt:394: warning: variable NUMCU is declared but not used
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_46ABeD/COMMON.lib'' ...
+/tmp/ls24_lnt.open_46ABeD/common.lnt:401: warning: variable NUMCU is declared but not used
 
-lnt.open: translating ``test_19_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_WbP6TF/test_19_hsa_priority.lotos'' ...
+lnt.open: translating ``test_19_hsa_priority.lnt'' to ``/tmp/ls24_lnt.open_46ABeD/test_19_hsa_priority.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_hsa_priority.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -926,27 +946,31 @@ In specification TEST_19_HSA_PRIORITY [3]
 
    - process SCHEDULER_HSA [COMMON:441] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:456] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:475] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:560] is never reached
+   - process LOOP__2 [COMMON:480] is never reached
 
-   - process LOOP__1 [COMMON:575] is never reached
+   - process WHILE_CONT__2 [COMMON:492] is never reached
 
-   - process COND__2 [COMMON:600] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:580] is never reached
 
-   - process LOOP__2 [COMMON:609] is never reached
+   - process LOOP__1 [COMMON:595] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:629] is never reached
+   - process COND__2 [COMMON:620] is never reached
 
-   - process LOOP__1 [COMMON:641] is never reached
+   - process LOOP__2 [COMMON:629] is never reached
 
-   - process LOOP__2 [COMMON:669] is never reached
+   - process SCHEDULER_LOBE [COMMON:649] is never reached
 
-   - process COND__3 [COMMON:687] is never reached
+   - process LOOP__1 [COMMON:661] is never reached
 
-   - process WHILE_CONT__2 [COMMON:693] is never reached
+   - process LOOP__2 [COMMON:689] is never reached
+
+   - process COND__3 [COMMON:707] is never reached
+
+   - process WHILE_CONT__2 [COMMON:713] is never reached
 command exit with status 0
 
 info about test_19_hsa_priority.bcg:
@@ -1005,10 +1029,10 @@ svl clean info: [temporary] test_19_hsa_priority_strong.err
 
 % lnt.open   "test_19_hsa_priority_strong.lnt"  generator  "test_19_hsa_priority_strong.bcg"
 
-lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_vzKAcG/COMMON_STRONG.lib'' ...
-/tmp/ls24_lnt.open_vzKAcG/common_strong.lnt:417: warning: value stored in variable NUMCU is not used later
+lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_ADzABF/COMMON_STRONG.lib'' ...
+/tmp/ls24_lnt.open_ADzABF/common_strong.lnt:424: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_19_hsa_priority_strong.lnt'' to ``/tmp/ls24_lnt.open_vzKAcG/test_19_hsa_priority_strong.lotos'' ...
+lnt.open: translating ``test_19_hsa_priority_strong.lnt'' to ``/tmp/ls24_lnt.open_ADzABF/test_19_hsa_priority_strong.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_hsa_priority_strong.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -1039,27 +1063,31 @@ In specification TEST_19_HSA_PRIORITY_STRONG [3]
 
    - process SCHEDULER_HSA [COMMON_STRONG:454] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:463] is never reached
+   - process LOOP__1 [COMMON_STRONG:469] is never reached
 
-   - process COND__2 [COMMON_STRONG:479] is never reached
+   - process COND__2 [COMMON_STRONG:488] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON_STRONG:573] is never reached
+   - process LOOP__2 [COMMON_STRONG:493] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:588] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:505] is never reached
 
-   - process COND__2 [COMMON_STRONG:613] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON_STRONG:593] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:622] is never reached
+   - process LOOP__1 [COMMON_STRONG:608] is never reached
 
-   - process SCHEDULER_LOBE [COMMON_STRONG:642] is never reached
+   - process COND__2 [COMMON_STRONG:633] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:657] is never reached
+   - process LOOP__2 [COMMON_STRONG:642] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:685] is never reached
+   - process SCHEDULER_LOBE [COMMON_STRONG:662] is never reached
 
-   - process COND__3 [COMMON_STRONG:703] is never reached
+   - process LOOP__1 [COMMON_STRONG:677] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:709] is never reached
+   - process LOOP__2 [COMMON_STRONG:705] is never reached
+
+   - process COND__3 [COMMON_STRONG:723] is never reached
+
+   - process WHILE_CONT__2 [COMMON_STRONG:729] is never reached
 command exit with status 0
 
 info about test_19_hsa_priority_strong.bcg:
@@ -1125,10 +1153,10 @@ svl clean info: [temporary] test_19_lobe.err
 
 % lnt.open   "test_19_lobe.lnt"  generator  "test_19_lobe.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_HPDgHw/COMMON.lib'' ...
-/tmp/ls24_lnt.open_HPDgHw/common.lnt:394: warning: variable NUMCU is declared but not used
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_186oez/COMMON.lib'' ...
+/tmp/ls24_lnt.open_186oez/common.lnt:401: warning: variable NUMCU is declared but not used
 
-lnt.open: translating ``test_19_lobe.lnt'' to ``/tmp/ls24_lnt.open_HPDgHw/test_19_lobe.lotos'' ...
+lnt.open: translating ``test_19_lobe.lnt'' to ``/tmp/ls24_lnt.open_186oez/test_19_lobe.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_lobe.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -1159,27 +1187,31 @@ In specification TEST_19_LOBE [3]
 
    - process SCHEDULER_HSA [COMMON:441] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:456] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:475] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process LOOP__2 [COMMON:480] is never reached
 
-   - process LOOP__1 [COMMON:497] is never reached
+   - process WHILE_CONT__2 [COMMON:492] is never reached
 
-   - process LOOP__2 [COMMON:525] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:499] is never reached
 
-   - process WHILE_CONT__2 [COMMON:537] is never reached
+   - process LOOP__1 [COMMON:517] is never reached
 
-   - process COND__2 [COMMON:550] is never reached
+   - process LOOP__2 [COMMON:545] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:560] is never reached
+   - process WHILE_CONT__2 [COMMON:557] is never reached
 
-   - process LOOP__1 [COMMON:575] is never reached
+   - process COND__2 [COMMON:570] is never reached
 
-   - process COND__2 [COMMON:600] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:580] is never reached
 
-   - process LOOP__2 [COMMON:609] is never reached
+   - process LOOP__1 [COMMON:595] is never reached
+
+   - process COND__2 [COMMON:620] is never reached
+
+   - process LOOP__2 [COMMON:629] is never reached
 command exit with status 0
 
 info about test_19_lobe.bcg:
@@ -1238,10 +1270,10 @@ svl clean info: [temporary] test_19_lobe_strong.err
 
 % lnt.open   "test_19_lobe_strong.lnt"  generator  "test_19_lobe_strong.bcg"
 
-lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_Ga4d4Z/COMMON_STRONG.lib'' ...
-/tmp/ls24_lnt.open_Ga4d4Z/common_strong.lnt:417: warning: value stored in variable NUMCU is not used later
+lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_O1Tyhp/COMMON_STRONG.lib'' ...
+/tmp/ls24_lnt.open_O1Tyhp/common_strong.lnt:424: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_19_lobe_strong.lnt'' to ``/tmp/ls24_lnt.open_Ga4d4Z/test_19_lobe_strong.lotos'' ...
+lnt.open: translating ``test_19_lobe_strong.lnt'' to ``/tmp/ls24_lnt.open_O1Tyhp/test_19_lobe_strong.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_lobe_strong.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -1272,27 +1304,31 @@ In specification TEST_19_LOBE_STRONG [3]
 
    - process SCHEDULER_HSA [COMMON_STRONG:454] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:463] is never reached
+   - process LOOP__1 [COMMON_STRONG:469] is never reached
 
-   - process COND__2 [COMMON_STRONG:479] is never reached
+   - process COND__2 [COMMON_STRONG:488] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:492] is never reached
+   - process LOOP__2 [COMMON_STRONG:493] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:510] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:505] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:538] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:512] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:550] is never reached
+   - process LOOP__1 [COMMON_STRONG:530] is never reached
 
-   - process COND__2 [COMMON_STRONG:563] is never reached
+   - process LOOP__2 [COMMON_STRONG:558] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON_STRONG:573] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:570] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:588] is never reached
+   - process COND__2 [COMMON_STRONG:583] is never reached
 
-   - process COND__2 [COMMON_STRONG:613] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON_STRONG:593] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:622] is never reached
+   - process LOOP__1 [COMMON_STRONG:608] is never reached
+
+   - process COND__2 [COMMON_STRONG:633] is never reached
+
+   - process LOOP__2 [COMMON_STRONG:642] is never reached
 command exit with status 0
 
 info about test_19_lobe_strong.bcg:
@@ -1358,10 +1394,10 @@ svl clean info: [temporary] test_19_weak.err
 
 % lnt.open   "test_19_weak.lnt"  generator  "test_19_weak.bcg"
 
-lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_4uDgLY/COMMON.lib'' ...
-/tmp/ls24_lnt.open_4uDgLY/common.lnt:394: warning: variable NUMCU is declared but not used
+lnt.open: translating ``common.lnt'' to ``/tmp/ls24_lnt.open_Rpl5l8/COMMON.lib'' ...
+/tmp/ls24_lnt.open_Rpl5l8/common.lnt:401: warning: variable NUMCU is declared but not used
 
-lnt.open: translating ``test_19_weak.lnt'' to ``/tmp/ls24_lnt.open_4uDgLY/test_19_weak.lotos'' ...
+lnt.open: translating ``test_19_weak.lnt'' to ``/tmp/ls24_lnt.open_Rpl5l8/test_19_weak.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_weak.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -1384,37 +1420,41 @@ In specification TEST_19_WEAK [3]
 
    - process SCHEDULER_HSA [COMMON:441] is never reached
 
-   - process LOOP__1 [COMMON:450] is never reached
+   - process LOOP__1 [COMMON:456] is never reached
 
-   - process COND__2 [COMMON:466] is never reached
+   - process COND__2 [COMMON:475] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON:479] is never reached
+   - process LOOP__2 [COMMON:480] is never reached
 
-   - process LOOP__1 [COMMON:497] is never reached
+   - process WHILE_CONT__2 [COMMON:492] is never reached
 
-   - process LOOP__2 [COMMON:525] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON:499] is never reached
 
-   - process WHILE_CONT__2 [COMMON:537] is never reached
+   - process LOOP__1 [COMMON:517] is never reached
 
-   - process COND__2 [COMMON:550] is never reached
+   - process LOOP__2 [COMMON:545] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON:560] is never reached
+   - process WHILE_CONT__2 [COMMON:557] is never reached
 
-   - process LOOP__1 [COMMON:575] is never reached
+   - process COND__2 [COMMON:570] is never reached
 
-   - process COND__2 [COMMON:600] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON:580] is never reached
 
-   - process LOOP__2 [COMMON:609] is never reached
+   - process LOOP__1 [COMMON:595] is never reached
 
-   - process SCHEDULER_LOBE [COMMON:629] is never reached
+   - process COND__2 [COMMON:620] is never reached
 
-   - process LOOP__1 [COMMON:641] is never reached
+   - process LOOP__2 [COMMON:629] is never reached
 
-   - process LOOP__2 [COMMON:669] is never reached
+   - process SCHEDULER_LOBE [COMMON:649] is never reached
 
-   - process COND__3 [COMMON:687] is never reached
+   - process LOOP__1 [COMMON:661] is never reached
 
-   - process WHILE_CONT__2 [COMMON:693] is never reached
+   - process LOOP__2 [COMMON:689] is never reached
+
+   - process COND__3 [COMMON:707] is never reached
+
+   - process WHILE_CONT__2 [COMMON:713] is never reached
 command exit with status 0
 
 info about test_19_weak.bcg:
@@ -1473,10 +1513,10 @@ svl clean info: [temporary] test_19_strong.err
 
 % lnt.open   "test_19_strong.lnt"  generator  "test_19_strong.bcg"
 
-lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_p2eYEA/COMMON_STRONG.lib'' ...
-/tmp/ls24_lnt.open_p2eYEA/common_strong.lnt:417: warning: value stored in variable NUMCU is not used later
+lnt.open: translating ``common_strong.lnt'' to ``/tmp/ls24_lnt.open_xqE7Ke/COMMON_STRONG.lib'' ...
+/tmp/ls24_lnt.open_xqE7Ke/common_strong.lnt:424: warning: value stored in variable NUMCU is not used later
 
-lnt.open: translating ``test_19_strong.lnt'' to ``/tmp/ls24_lnt.open_p2eYEA/test_19_strong.lotos'' ...
+lnt.open: translating ``test_19_strong.lnt'' to ``/tmp/ls24_lnt.open_xqE7Ke/test_19_strong.lotos'' ...
 
 lnt.open: calling lotos.open for ``test_19_strong.lotos'' ...
 lotos.open: using ``(direct) caesar''
@@ -1499,37 +1539,41 @@ In specification TEST_19_STRONG [3]
 
    - process SCHEDULER_HSA [COMMON_STRONG:454] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:463] is never reached
+   - process LOOP__1 [COMMON_STRONG:469] is never reached
 
-   - process COND__2 [COMMON_STRONG:479] is never reached
+   - process COND__2 [COMMON_STRONG:488] is never reached
 
-   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:492] is never reached
+   - process LOOP__2 [COMMON_STRONG:493] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:510] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:505] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:538] is never reached
+   - process SCHEDULER_HSA_PRIORITY [COMMON_STRONG:512] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:550] is never reached
+   - process LOOP__1 [COMMON_STRONG:530] is never reached
 
-   - process COND__2 [COMMON_STRONG:563] is never reached
+   - process LOOP__2 [COMMON_STRONG:558] is never reached
 
-   - process SCHEDULER_HSA_OBE [COMMON_STRONG:573] is never reached
+   - process WHILE_CONT__2 [COMMON_STRONG:570] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:588] is never reached
+   - process COND__2 [COMMON_STRONG:583] is never reached
 
-   - process COND__2 [COMMON_STRONG:613] is never reached
+   - process SCHEDULER_HSA_OBE [COMMON_STRONG:593] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:622] is never reached
+   - process LOOP__1 [COMMON_STRONG:608] is never reached
 
-   - process SCHEDULER_LOBE [COMMON_STRONG:642] is never reached
+   - process COND__2 [COMMON_STRONG:633] is never reached
 
-   - process LOOP__1 [COMMON_STRONG:657] is never reached
+   - process LOOP__2 [COMMON_STRONG:642] is never reached
 
-   - process LOOP__2 [COMMON_STRONG:685] is never reached
+   - process SCHEDULER_LOBE [COMMON_STRONG:662] is never reached
 
-   - process COND__3 [COMMON_STRONG:703] is never reached
+   - process LOOP__1 [COMMON_STRONG:677] is never reached
 
-   - process WHILE_CONT__2 [COMMON_STRONG:709] is never reached
+   - process LOOP__2 [COMMON_STRONG:705] is never reached
+
+   - process COND__3 [COMMON_STRONG:723] is never reached
+
+   - process WHILE_CONT__2 [COMMON_STRONG:729] is never reached
 command exit with status 0
 
 info about test_19_strong.bcg:

@@ -27,7 +27,7 @@ property FreeFromStrongDeadlockLasso (test_45_obe_strong)
 FAIL
 
 "test_45_hsa.bcg" = generation of "test_45_hsa.lnt"
-    (* 79 states, 151 transitions, 3.6 Kbytes *)
+    (* 74 states, 146 transitions, 3.5 Kbytes *)
 
 property FreeFromWeakDeadlockLasso (test_45_hsa)
  | There are no deadlock lassos in Weak test_45_hsa
@@ -35,7 +35,7 @@ property FreeFromWeakDeadlockLasso (test_45_hsa)
 FAIL
 
 "test_45_hsa_strong.bcg" = generation of "test_45_hsa_strong.lnt"
-    (* 79 states, 151 transitions, 3.6 Kbytes *)
+    (* 74 states, 146 transitions, 3.5 Kbytes *)
 
 property FreeFromStrongDeadlockLasso (test_45_hsa_strong)
  | There are no deadlock lassos in Strong test_45_hsa_strong
