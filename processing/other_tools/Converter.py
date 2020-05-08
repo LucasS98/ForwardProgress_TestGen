@@ -156,11 +156,11 @@ def convertXML(filename, folderName):
                     while operations[nInst2] != branch_target:
                         nInst2 +=1
                     if (exchVal == ""):
-                        f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ','+ str(nInst) +  ')\n')
-                        f2.write(str(nInst) + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto ' + str(nInst) + ';')
+                        f.write('atomic_chk_branch('+ chkLoc + ',' + chkVal + ','+ str(nInst2) +  ')\n')
+                        f2.write(str(nInst) + ': if (Mem['+ chkLoc + '] == ' + chkVal + ') goto ' + str(nInst2) + ';')
                     else:
-                        f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ','+ str(nInst) +  ')\n')
-                        f2.write(str(nInst) + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto ' + str(nInst) + ';')
+                        f.write('atomic_exch_branch('+ chkLoc + ',' + chkVal + ',' + exchVal + ','+ str(nInst2) +  ')\n')
+                        f2.write(str(nInst) + ': if (Exch(Mem['+ chkLoc + '],' + exchVal + ') == ' + chkVal + ') goto ' + str(nInst2) + ';')
 
             operation = nextPo
             nInst += 1
