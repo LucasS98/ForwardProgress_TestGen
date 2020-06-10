@@ -59,7 +59,7 @@ do
 		(cd $folderN && mv checker ../../checker_files/$index)
 
 		# Make Amber file (no saturation) for test (thanks Hari!)
-		python $source/amber_test_generation.py $v2.txt $v2
+		python3 $source/amber_test_generation.py $v2.txt $v2
 
 		count=`expr $count + 1`
 	fi

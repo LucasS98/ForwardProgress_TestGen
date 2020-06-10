@@ -7,6 +7,7 @@ SHADER compute test GLSL
 
 layout(set = 0, binding = 0) volatile buffer TEST {
 	uint x;
+	uint y;
 	uint counter;
 } test; 
 
@@ -27,7 +28,7 @@ void main()
 	switch(pc) {
 
 	  case 0: 
-		if (atomicExchange(test.x, 0) ==  0) { 
+		if (atomicExchange(test.x, 0) == 0) { 
 		   pc = 0;
 		}
 		else {
@@ -75,8 +76,8 @@ void main()
 	switch(pc) {
 
 	  case 0: 
-		if (atomicExchange(test.x, 0) ==  0) { 
-		   pc = 3;
+		if (atomicExchange(test.x, 0) == 0) { 
+		   pc = 2;
 		}
 		else {
 		   pc = pc + 1;
@@ -100,7 +101,7 @@ void main()
 }
 END
 
-BUFFER tester DATA_TYPE uint32 SIZE 2 FILL 0
+BUFFER tester DATA_TYPE uint32 SIZE 3 FILL 0
 
 PIPELINE compute test_pipe
   ATTACH test
@@ -108,5 +109,5 @@ PIPELINE compute test_pipe
 
 END
 
-RUN test_pipe 65535 1 1
-EXPECT tester IDX 4 EQ 65535
+RUN test_pipe 65532 1 1
+EXPECT tester IDX 8 EQ 65532
