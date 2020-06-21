@@ -50,16 +50,31 @@
     </style>
 
     <script>
+        function rememberOffset() { 
+            document.cookie = "offset="+ Math.round(document.getElementById("leftdiv").scrollTop);
+            console.log(document.cookie);
+        }
+        
         window.onload = function() {
             createFileDirectory();
 
-            urlParams = new URLSearchParams(window.location.search);
-            if (urlParams.has('test') && urlParams.has('threads') && urlParams.has('instructions'))
-                openTestCase(urlParams.get('test'),urlParams.get('threads'),urlParams.get('instructions'));
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('test') && urlParams.has('threads') && urlParams.has('instructions')){
+                var test = urlParams.get('test');
+                var threads = urlParams.get('threads');
+                var instructions = urlParams.get('instructions');
+            }
+
+            console.log(document.cookie);
+
+            if (!isNaN(document.cookie)){
+                document.getElementById("leftdiv").scrollTop = parseInt(document.cookie);
+            }
         };
 
         function createFileDirectory() {  
-            dirList = document.getElementById("directory22")
+            var dirList = document.getElementById("directory22")
+            var item, item2;
             for (i = 0; i < 8; i++){
                 item = document.createElement("li");
                 item2 = document.createElement("a");
@@ -111,16 +126,16 @@
         }
 
 	function openTestCase(i, th, ins) {
-	    t = document.getElementById("number");
+	    var t = document.getElementById("number");
 	    t.innerHTML = "Test Number " + i + " - " + th + " Threads " + ins + " Instructions"
 			    
-            image = document.getElementById("image");
+            var image = document.getElementById("image");
             image.src = th + '_threads_' + ins + '_instructions/' + i + '/' + i + '.png';
 
-            xml = document.getElementById("xml");
+            var xml = document.getElementById("xml");
             xml.src = th + '_threads_' + ins + '_instructions/' + i + '/' + i + '.amber';
 
-            txt = document.getElementById("text");
+            var txt = document.getElementById("text");
             txt.src = th + '_threads_' + ins + '_instructions/' + i + '/' + i + '_simple.txt';
 
             txt = document.getElementById("labels");
@@ -131,7 +146,7 @@
 </head>
 <body>
 
-    <div class="split left">
+    <div class="split left" id="leftdiv" onscroll="rememberOffset()">
         <div id="tests">
             <h3>2 Threads 2 Instructions</h3>
             <ul id = "directory22">
