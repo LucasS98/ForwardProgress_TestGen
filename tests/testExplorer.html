@@ -51,8 +51,7 @@
 
     <script>
         function rememberOffset() { 
-            document.cookie = "offset="+ Math.round(document.getElementById("leftdiv").scrollTop);
-            console.log(document.cookie);
+            document.cookie = "explorer_offset="+ Math.round(document.getElementById("leftdiv").scrollTop);
         }
         
         window.onload = function() {
@@ -65,10 +64,11 @@
                 var instructions = urlParams.get('instructions');
             }
 
-            console.log(document.cookie);
-
-            if (!isNaN(document.cookie)){
-                document.getElementById("leftdiv").scrollTop = parseInt(document.cookie);
+            var pos = str.indexOf("explorer_offset");
+            if (pos != -1){
+                var posEnd = str.indexOf(";", pos);
+                offset = parseInt(document.cookie.substring(pos+16, posEnd));
+                document.getElementById("leftdiv").scrollTop = offset;
             }
         };
 
