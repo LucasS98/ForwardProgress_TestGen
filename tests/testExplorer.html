@@ -64,10 +64,11 @@
                 var instructions = urlParams.get('instructions');
             }
 
+            var str = document.cookie;
             var pos = str.indexOf("explorer_offset");
             if (pos != -1){
                 var posEnd = str.indexOf(";", pos);
-                offset = parseInt(document.cookie.substring(pos+16, posEnd));
+                offset = parseInt(str.substring(pos+16, posEnd));
                 document.getElementById("leftdiv").scrollTop = offset;
             }
         };
